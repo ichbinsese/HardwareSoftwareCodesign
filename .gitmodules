@@ -1,3 +1,0 @@
-[submodule "udp-offload-engine"]
-	path = udp-offload-engine
-	url = https://github.com/ThalesGroup/udp-offload-engine

@@ -1,0 +1,78 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Tue Nov 25 16:54:19 2025
+# Process ID         : 20564
+# Current directory  : C:/Projects/HWSW/udp-offload-engine/ip
+# Command line       : vivado.exe -mode batch -notrace -source package_uoe_ip.tcl
+# Log file           : C:/Projects/HWSW/udp-offload-engine/ip/vivado.log
+# Journal file       : C:/Projects/HWSW/udp-offload-engine/ip\vivado.jou
+# Running On         : DESKTOP-7JMSQS2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz
+# CPU Frequency      : 3792 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 4
+# Host memory        : 17141 MB
+# Swap memory        : 18253 MB
+# Total Virtual      : 35394 MB
+# Available Virtual  : 16126 MB
+#-----------------------------------------------------------
+source package_uoe_ip.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 498.094 ; gain = 210.254
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: 'C:/Projects/HWSW/udp-offload-engine/src/uoe_module/uoe_config.vhd'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: 'C:/Projects/HWSW/udp-offload-engine/src/uoe_module/wrapped_uoe_core.vhd'.
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: 'C:/Projects/HWSW/udp-offload-engine/src/common/axis_mux.vhd'.
+INFO: [IP_Flow 19-5654] Module 'top_uoe' uses VHDL-2008 sources with a VHDL top file. These VHDL-2008 files will not be analysed by the packager.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/2025.1/Vivado/data/ip'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_EXT_RX' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_MAC_TX' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_RAW_RX' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'M_UDP_RX' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_EXT_TX' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_MAC_RX' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_RAW_TX' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_UDP_TX' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'INTERRUPT' of definition 'xilinx.com:signal:interrupt:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'INTERRUPT': Added interface parameter 'SENSITIVITY' with value 'LEVEL_HIGH'.
+WARNING: [IP_Flow 19-11888] Component Definition 'thales.org:user:top_uoe:1.0 (top_uoe_v1_0)': IP description "top_uoe_v1_0" is not meaningful: same as name or display name
+WARNING: [IP_Flow 19-3158] Bus Interface 'M_EXT_RX': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3158] Bus Interface 'M_MAC_TX': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3158] Bus Interface 'M_RAW_RX': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3158] Bus Interface 'M_UDP_RX': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3158] Bus Interface 'S_EXT_TX': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3158] Bus Interface 'S_MAC_RX': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3158] Bus Interface 'S_RAW_TX': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3158] Bus Interface 'S_UDP_TX': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3158] Bus Interface 'S_AXI': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+INFO: [IP_Flow 19-2181] Payment is not required for this core.
+WARNING: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK_RX' of definition 'xilinx.com:signal:clock:1.0' (from TCL Argument).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK_TX' of definition 'xilinx.com:signal:clock:1.0' (from TCL Argument).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK_UOE' of definition 'xilinx.com:signal:clock:1.0' (from TCL Argument).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RST_RX' of definition 'xilinx.com:signal:reset:1.0' (from TCL Argument).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK_RX': Added interface parameter 'ASSOCIATED_RESET' with value 'RST_RX'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RST_TX' of definition 'xilinx.com:signal:reset:1.0' (from TCL Argument).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK_TX': Added interface parameter 'ASSOCIATED_RESET' with value 'RST_TX'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RST_UOE' of definition 'xilinx.com:signal:reset:1.0' (from TCL Argument).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK_UOE': Added interface parameter 'ASSOCIATED_RESET' with value 'RST_UOE'.
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK_UOE': Added interface parameter 'ASSOCIATED_BUSIF' with value 'S_AXI'.
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK_RX': Added interface parameter 'ASSOCIATED_BUSIF' with value 'S_MAC_RX'.
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK_TX': Added interface parameter 'ASSOCIATED_BUSIF' with value 'M_MAC_TX'.
+WARNING: [IP_Flow 19-11770] Clock interface 'CLK_RX' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-11770] Clock interface 'CLK_TX' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-11770] Clock interface 'CLK_UOE' has no FREQ_HZ parameter.
+INFO: [IP_Flow 19-2181] Payment is not required for this core.
+WARNING: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+==================================================================
+SUCCESS: IP 'uoe_top' packaged. Output directory C:/Projects/HWSW/udp-offload-engine/ip/ip_repo.
+Add this path to the project IP repositories to use this IP.
+==================================================================
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 25 16:54:34 2025...

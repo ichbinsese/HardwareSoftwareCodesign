@@ -2074,6 +2074,12 @@
           "uoe_top_0/S_AXI"
         ]
       },
+      "axi_smc_M01_AXI": {
+        "interface_ports": [
+          "axi_smc/M01_AXI",
+          "ten_gig_eth_mac_0/s_axi"
+        ]
+      },
       "processing_system7_0_DDR": {
         "interface_ports": [
           "DDR",
@@ -2100,6 +2106,13 @@
       }
     },
     "nets": {
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "ten_gig_eth_mac_0/rx_clk0",
+          "uoe_top_0/CLK_RX"
+        ]
+      },
       "processing_system7_0_FCLK_CLK0": {
         "ports": [
           "processing_system7_0/FCLK_CLK0",

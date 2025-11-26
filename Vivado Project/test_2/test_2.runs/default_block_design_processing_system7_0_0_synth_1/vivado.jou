@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Wed Nov 26 17:56:51 2025
+# Process ID         : 16884
+# Current directory  : C:/Projects/HWSW/Vivado Project/test_2/test_2.runs/default_block_design_processing_system7_0_0_synth_1
+# Command line       : vivado.exe -log default_block_design_processing_system7_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source default_block_design_processing_system7_0_0.tcl
+# Log file           : C:/Projects/HWSW/Vivado Project/test_2/test_2.runs/default_block_design_processing_system7_0_0_synth_1/default_block_design_processing_system7_0_0.vds
+# Journal file       : C:/Projects/HWSW/Vivado Project/test_2/test_2.runs/default_block_design_processing_system7_0_0_synth_1\vivado.jou
+# Running On         : DESKTOP-7JMSQS2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz
+# CPU Frequency      : 3792 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 4
+# Host memory        : 17141 MB
+# Swap memory        : 18253 MB
+# Total Virtual      : 35394 MB
+# Available Virtual  : 18925 MB
+#-----------------------------------------------------------
+source default_block_design_processing_system7_0_0.tcl -notrace

@@ -1,0 +1,4 @@
+domain_path: C:\Projects\HWSW\Vitis-Project\test\export\test\sw\Test
+app_src_dir: D:\Xilinx\2025.1\Vitis\data\embeddedsw\lib\sw_apps\freertos_lwip_udp_perf_server
+template: freertos_lwip_udp_perf_server
+lang: c

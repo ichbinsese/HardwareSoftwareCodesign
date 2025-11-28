@@ -29,6 +29,7 @@
 /** Connection handle for a UDP Server session */
 
 #include "udp_perf_server.h"
+#include "lwip/udp.h"
 
 extern struct netif server_netif;
 static struct udp_pcb *pcb;
@@ -259,6 +260,7 @@ static void udp_recv_perf_traffic(void *arg, struct udp_pcb *tpcb,
 	return;
 }
 
+/*
 void udp_recv_echo(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const ip_addr_t *addr, u16_t port)
 {
 	if (p != NULL) 
@@ -268,6 +270,7 @@ void udp_recv_echo(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const ip_add
         pbuf_free(p); // free the received buffer
     }
 }
+*/
 
 void start_application(void)
 {
@@ -290,7 +293,8 @@ void start_application(void)
 
 	/* specify callback to use for incoming connections */
 	//udp_recv(pcb, udp_recv_perf_traffic, NULL); // Performance Callback
-	udp_recv(pcb, udp_recv_echo, NULL);
+	udp_recv(pcb, udp_message_callback, NULL);
 
 	return;
 }
+

@@ -41,6 +41,7 @@ extern "C" {
 #include "lwip/inet.h"
 #include "xil_printf.h"
 #include "platform.h"
+#include "udp_communication_handler.h"
 
 /* used as indices into kLabel[] */
 enum {

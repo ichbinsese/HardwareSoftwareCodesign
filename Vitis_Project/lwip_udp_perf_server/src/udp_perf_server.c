@@ -289,8 +289,8 @@ void start_application(void)
 	}
 
 	/* specify callback to use for incoming connections */
-	udp_recv(pcb, udp_recv_perf_traffic, NULL); // Performance Callback
-	//udp_recv(pcb, udp_recv_echo, NULL);
+	//udp_recv(pcb, udp_recv_perf_traffic, NULL); // Performance Callback
+	udp_recv(pcb, udp_recv_echo, NULL);
 
 	return;
 }

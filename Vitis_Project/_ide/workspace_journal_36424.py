@@ -1,4 +1,4 @@
-# 2025-11-28T09:30:37.367438200
+# 2025-11-28T09:03:25.487890300
 import vitis
 
 client = vitis.create_client()
@@ -8,6 +8,14 @@ platform = client.get_component(name="soc_platform")
 status = platform.build()
 
 comp = client.get_component(name="lwip_udp_perf_server")
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
 comp.build()
 
 status = platform.build()

@@ -40,11 +40,6 @@
 #include "lwip/inet.h"
 #include "xil_cache.h"
 
-#if LWIP_DHCP==1
-#include "lwip/dhcp.h"
-extern volatile int dhcp_timoutcntr;
-#endif
-
 extern volatile int TcpFastTmrFlag;
 extern volatile int TcpSlowTmrFlag;
 
@@ -154,28 +149,8 @@ int main(void)
 	/* specify that the network if is up */
 	netif_set_up(netif);
 
-#if (LWIP_DHCP==2) //TODO: CHANGE
-	/* Create a new DHCP client for this interface.
-	 * Note: you must call dhcp_fine_tmr() and dhcp_coarse_tmr() at
-	 * the predefined regular intervals after starting the client.
-	 */
-	dhcp_start(netif);
-	dhcp_timoutcntr = 240;
-	while (((netif->ip_addr.addr) == 0) && (dhcp_timoutcntr > 0))
-		xemacif_input(netif);
-
-	if (dhcp_timoutcntr <= 0) {
-		if ((netif->ip_addr.addr) == 0) {
-			xil_printf("ERROR: DHCP request timed out\r\n");
-			assign_default_ip(&(netif->ip_addr),
-					&(netif->netmask), &(netif->gw));
-		}
-	}
-
-	/* print IP address, netmask and gateway */
-#else
 	assign_default_ip(&(netif->ip_addr), &(netif->netmask), &(netif->gw));
-#endif
+
 	print_ip_settings(&(netif->ip_addr), &(netif->netmask), &(netif->gw));
 
 	xil_printf("\r\n");

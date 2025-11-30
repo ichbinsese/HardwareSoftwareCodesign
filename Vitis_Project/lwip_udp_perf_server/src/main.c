@@ -40,6 +40,7 @@
 #include "lwip/inet.h"
 #include "xil_cache.h"
 #include "udp_protocol_handler.h"
+#include "udp_communication_handler.h"
 #include "lwip/netif.h"
 
 
@@ -47,7 +48,7 @@ int main(void)
 
 {	
 	initialize_server();
-	
+	initialize_comm_handler();
 	while (1) {
 		server_cyclical();
 	}

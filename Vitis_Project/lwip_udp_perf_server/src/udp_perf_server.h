@@ -43,6 +43,8 @@ extern "C" {
 #include "platform.h"
 #include "udp_communication_handler.h"
 
+
+
 /* used as indices into kLabel[] */
 enum {
 	KCONV_UNIT,
@@ -95,6 +97,7 @@ struct perf_stats {
 	s32_t expected_datagram_id;
 	struct interim_report i_report;
 };
+
 
 /* seconds between periodic bandwidth reports */
 #define INTERIM_REPORT_INTERVAL 5

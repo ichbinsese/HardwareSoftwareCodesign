@@ -1,0 +1,12 @@
+#ifndef __ERRRORS_H_
+#define __ERRRORS_H_
+
+#define ERR_OK 0x00
+#define ERR_WRONG_PACKAGE_TYPE 0x01
+#define ERR_WRONG_PACKAGE_LENGHT 0x02
+#define ERR_IP_NOT_INIT 0x03
+#define ERR_TC_MESSAGE_NOT_BOUND 0x04
+
+#define ERR_GENERAL 0xFF
+
+#endif 

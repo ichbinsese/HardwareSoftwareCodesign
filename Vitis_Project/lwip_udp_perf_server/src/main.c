@@ -48,7 +48,6 @@ int main(void)
 
 {	
 	initialize_server();
-	initialize_comm_handler();
 	while (1) {
 		server_cyclical();
 	}

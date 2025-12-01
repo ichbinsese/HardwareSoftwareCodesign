@@ -9,20 +9,20 @@
 #include "xil_printf.h"
 #include "platform.h"
 #include "lwip/def.h"
+#include <stdint.h>
 
-enum tc_message_type{
-    TC_enable_instrument = 0x01,
-    TC_set_receive_state = 0x02,
-    TC_dump_instrument_data = 0x03,
-    TC_read_last_temperature_value = 0x04,
-    TC_set_heater_state = 0x05,
-    TC_get_average_temperature = 0x06
-};
+#define TC_PACKET_TYPE 0x01
 
-typedef void (*tc_subscriber_function) (uint8_t sequence_counter,uint8_t *data);
+#define TC_PREAMBLE_LENGHT 6
 
-void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const ip_addr_t *addr, u16_t port,struct udp_pcb *pcb);
-void initialize_comm_handler();
-void subscribe(enum tc_message_type subscribed_message, tc_subscriber_function subscriber);
+
+
+
+
+void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const ip_addr_t *addr, u16_t port);
+uint32_t receive_message(uint8_t *package, int package_lenght);
+uint32_t udp_send_message(struct pbuf *p);
+uint32_t set_pcb(struct udp_pcb *init_pcb);
+
 
 #endif

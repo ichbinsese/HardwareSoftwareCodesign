@@ -40,7 +40,8 @@ set(USER_COMPILE_SOURCES
 "udp_perf_server.c"
 "udp_protocol_handler.c"
 "udp_communication_handler.c"
-"message_creator.c"
+"tm_tc_protocol_handler.c"
+
 )
 
 # -----------------------------------------

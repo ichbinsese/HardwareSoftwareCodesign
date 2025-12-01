@@ -260,24 +260,6 @@ static void udp_recv_perf_traffic(void *arg, struct udp_pcb *tpcb,
 	return;
 }
 
-/*
-void udp_recv_echo(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const ip_addr_t *addr, u16_t port)
-{
-	if (p != NULL) 
-	{
-        // send received data back to sender
-       
-        pbuf_free(p); // free the received buffer
-    }
-}
-*/
-
-void udp_message_callback_internal(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const ip_addr_t *addr, u16_t port){
-	udp_message_callback(arg,tpcb,p,addr,port,pcb);
-	 
-}
-
-
 void start_application(void)
 {
 	err_t err;
@@ -299,7 +281,7 @@ void start_application(void)
 
 	/* specify callback to use for incoming connections */
 	//udp_recv(pcb, udp_recv_perf_traffic, NULL); // Performance Callback
-	udp_recv(pcb, udp_message_callback_internal, NULL);
-
+	udp_recv(pcb, udp_message_callback, NULL);
+	set_pcb(pcb);
 	return;
 }

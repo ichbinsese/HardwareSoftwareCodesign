@@ -1,10 +1,8 @@
 #include "udp_protocol_handler.h"
-
-
-
-
+#include "lwip/netif.h"
 
 struct netif server_netif;
+struct netif *netif;
 static void print_ip(char *msg, ip_addr_t *ip)
 {
 	print(msg);
@@ -39,7 +37,7 @@ static void assign_default_ip(ip_addr_t *ip, ip_addr_t *mask, ip_addr_t *gw)
 }
 
 int initialize_server(){
-    struct netif *netif;
+
 
 	/* the mac address of the board. this should be unique per board */
 	unsigned char mac_ethernet_address[] = {
@@ -109,5 +107,5 @@ void server_cyclical(){
 			tcp_slowtmr();
 			TcpSlowTmrFlag = 0;
 		}
-		xemacif_input(&server_netif);
+		xemacif_input(netif);
 }

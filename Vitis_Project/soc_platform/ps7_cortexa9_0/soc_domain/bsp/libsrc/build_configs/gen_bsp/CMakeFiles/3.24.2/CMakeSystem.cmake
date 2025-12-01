@@ -1,9 +1,9 @@
-set(CMAKE_HOST_SYSTEM "Windows-10.0.19045")
+set(CMAKE_HOST_SYSTEM "Windows-10.0.26200")
 set(CMAKE_HOST_SYSTEM_NAME "Windows")
-set(CMAKE_HOST_SYSTEM_VERSION "10.0.19045")
+set(CMAKE_HOST_SYSTEM_VERSION "10.0.26200")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "AMD64")
 
-include("C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/cortexa9_toolchain.cmake")
+include("C:/Projects/SWHW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/cortexa9_toolchain.cmake")
 
 set(CMAKE_SYSTEM "Generic")
 set(CMAKE_SYSTEM_NAME "Generic")

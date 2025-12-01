@@ -8,6 +8,7 @@
 #include "lwip/inet.h"
 #include "xil_printf.h"
 #include "platform.h"
+#include "lwip/def.h"
 
 enum tc_message_type{
     TC_enable_instrument = 0x01,
@@ -20,7 +21,7 @@ enum tc_message_type{
 
 typedef void (*tc_subscriber_function) (uint8_t sequence_counter,uint8_t *data);
 
-void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const ip_addr_t *addr, u16_t port);
+void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const ip_addr_t *addr, u16_t port,struct udp_pcb *pcb);
 void initialize_comm_handler();
 void subscribe(enum tc_message_type subscribed_message, tc_subscriber_function subscriber);
 

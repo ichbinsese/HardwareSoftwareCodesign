@@ -2,7 +2,9 @@
 #define __MESSAGE_CREATOR_H_
 #include "lwip/pbuf.h"
 #include "lwip/udp.h"
+#include <string.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 #define START_0 0xAF
 #define START_1 0xFE
@@ -26,7 +28,7 @@ enum tm_message_type{
 };
 
 
-struct pbuf* create_message(enum tm_message_type type, uint8_t* data, uint16_t data_lenght,uint8_t sequence_counter);
+void create_message(struct pbuf* p, enum tm_message_type type, uint8_t* data, uint16_t data_lenght,uint8_t sequence_counter);
 void small_to_big_endian(uint8_t* data, int data_lenght);
 
 #endif

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp
+# Install script for directory: C:/Projects/SWHW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,27 +34,27 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/Xilinx/2025.1/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Xilinx/2025.1/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/cmake_install.cmake")
+  include("C:/Projects/SWHW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/cmake_install.cmake")
+  include("C:/Projects/SWHW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/cmake_install.cmake")
+  include("C:/Projects/SWHW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/xiltimer/src/cmake_install.cmake")
+  include("C:/Projects/SWHW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/xiltimer/src/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -65,5 +65,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Projects/SWHW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

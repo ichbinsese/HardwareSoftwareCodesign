@@ -1,0 +1,47 @@
+<<<<<<< HEAD
+# 2025-12-01T17:35:15.053537500
+=======
+# 2025-12-01T16:56:09.034971
+>>>>>>> dea921cd1b327b81de829fbf5dd90eb6ce380616
+import vitis
+
+client = vitis.create_client()
+client.set_workspace(path="Vitis_Project")
+
+advanced_options = client.create_advanced_options_dict(dt_overlay="0")
+
+platform = client.create_platform_component(name = "soc_platform",hw_design = "$COMPONENT_LOCATION/../../Vivado_Project/soc_design_wrapper.xsa",os = "standalone",cpu = "ps7_cortexa9_0",domain_name = "standalone_ps7_cortexa9_0",generate_dtb = False,advanced_options = advanced_options,compiler = "gcc")
+
+platform = client.get_component(name="soc_platform")
+domain = platform.add_domain(cpu = "ps7_cortexa9_0",os = "standalone",name = "soc_domain",display_name = "soc_domain",support_app = "lwip_udp_perf_server",generate_dtb = False)
+
+comp = client.create_app_component(name="lwip_udp_perf_server",platform = "$COMPONENT_LOCATION/../soc_platform/export/soc_platform/soc_platform.xpfm",domain = "soc_domain",template = "lwip_udp_perf_server")
+
+status = platform.build()
+
+comp = client.get_component(name="lwip_udp_perf_server")
+comp.build()
+
+<<<<<<< HEAD
+=======
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+>>>>>>> dea921cd1b327b81de829fbf5dd90eb6ce380616
+vitis.dispose()
+
+vitis.dispose()
+

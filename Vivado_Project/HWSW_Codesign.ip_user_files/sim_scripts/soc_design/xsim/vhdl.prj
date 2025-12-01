@@ -1,0 +1,12 @@
+vhdl xil_defaultlib  \
+"../../../bd/soc_design/ipshared/55d5/hdl/two_bit_adder_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/soc_design/ipshared/55d5/hdl/two_bit_adder.vhd" \
+"../../../bd/soc_design/ip/soc_design_two_bit_adder_0_2/sim/soc_design_two_bit_adder_0_2.vhd" \
+"../../../bd/soc_design/ipshared/95dd/hdl/instruments_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/soc_design/ipshared/95dd/hdl/instruments.vhd" \
+"../../../bd/soc_design/ip/soc_design_instruments_0_2/sim/soc_design_instruments_0_2.vhd" \
+"../../../bd/soc_design/ip/soc_design_axi_smc_2/bd_0/ip/ip_1/sim/bd_81cb_psr_aclk_0.vhd" \
+"../../../bd/soc_design/ip/soc_design_rst_ps7_0_100M_2/sim/soc_design_rst_ps7_0_100M_2.vhd" \
+
+# Do not sort compile order
+nosort

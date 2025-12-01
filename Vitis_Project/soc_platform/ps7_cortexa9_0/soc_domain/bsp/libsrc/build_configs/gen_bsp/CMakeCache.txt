@@ -278,7 +278,7 @@ TOOLCHAIN_DEP_FLAGS:STRING= -MMD -MP
 TOOLCHAIN_EXTRA_C_FLAGS:STRING= -O2 -g -Wall -Wextra -fno-tree-loop-distribute-patterns
 
 //Enable Interval Timer
-XILTIMER_en_interval_timer:BOOL=ON
+XILTIMER_en_interval_timer:BOOL=True
 
 //This parameter is used to select specific timer for sleep functionality
 XILTIMER_sleep_timer:STRING=Default
@@ -396,7 +396,7 @@ lwip220_default_tcp_recvmbox_size:STRING=200
 lwip220_default_udp_recvmbox_size:STRING=100
 
 //Is DHCP required?
-lwip220_dhcp:BOOL=ON
+lwip220_dhcp:BOOL=True
 
 //Debug dhcp protocol
 lwip220_dhcp_debug:BOOL=OFF
@@ -445,13 +445,13 @@ lwip220_ip_reass_max_pbufs:STRING=128
 lwip220_ip_reassembly:STRING=1
 
 //IPv6 enable value
-lwip220_ipv6_enable:BOOL=OFF
+lwip220_ipv6_enable:BOOL=False
 
 //IPv6 Options
 lwip220_ipv6_options:BOOL=ON
 
 //ACD check on offered addresses?
-lwip220_lwip_dhcp_does_acd_check:BOOL=ON
+lwip220_lwip_dhcp_does_acd_check:BOOL=True
 
 //TCPIP input core locking
 lwip220_lwip_tcpip_core_locking_input:BOOL=OFF

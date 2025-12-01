@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Dec  1 17:19:16 2025" VIVADOVERSION="2025.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Dec  1 21:45:43 2025" VIVADOVERSION="2025.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="soc_design" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -69,7 +69,7 @@
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_RAS_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="IO" NAME="DDR_reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_DDR_DRSTB">
+    <PORT DIR="IO" NAME="DDR_reset_n" SIGIS="rst" SIGNAME="processing_system7_0_DDR_DRSTB">
       <CONNECTIONS>
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_DRSTB"/>
       </CONNECTIONS>
@@ -1632,8 +1632,8 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="axi_smc" PORT="aclk"/>
-            <CONNECTION INSTANCE="two_bit_adder_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="slowest_sync_clk"/>
+            <CONNECTION INSTANCE="two_bit_adder_0" PORT="s00_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -2026,8 +2026,8 @@
         <PORT DIR="O" NAME="mb_reset" POLARITY="ACTIVE_HIGH" SIGIS="rst"/>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="two_bit_adder_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_smc" PORT="aresetn"/>
+            <CONNECTION INSTANCE="two_bit_adder_0" PORT="s00_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>
@@ -2047,7 +2047,7 @@
       <PARAMETERS>
         <PARAMETER NAME="C_S00_AXI_ADDR_WIDTH" VALUE="4"/>
         <PARAMETER NAME="C_S00_AXI_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="Component_Name" VALUE="soc_design_two_bit_adder_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="soc_design_two_bit_adder_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S00_AXI_BASEADDR" VALUE="0x43C00000"/>
         <PARAMETER NAME="C_S00_AXI_HIGHADDR" VALUE="0x43C0FFFF"/>

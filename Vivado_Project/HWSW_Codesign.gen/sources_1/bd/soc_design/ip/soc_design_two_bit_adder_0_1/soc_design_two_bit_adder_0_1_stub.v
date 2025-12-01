@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Mon Dec  1 17:20:55 2025
+// Date        : Mon Dec  1 17:20:54 2025
 // Host        : Azmis_Laptop running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/HWSW_Codesign.gen/sources_1/bd/soc_design/ip/soc_design_two_bit_adder_0_0/soc_design_two_bit_adder_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top soc_design_two_bit_adder_0_1 -prefix
+//               soc_design_two_bit_adder_0_1_ soc_design_two_bit_adder_0_0_stub.v
 // Design      : soc_design_two_bit_adder_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
@@ -16,7 +16,7 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* CHECK_LICENSE_TYPE = "soc_design_two_bit_adder_0_0,two_bit_adder,{}" *) (* core_generation_info = "soc_design_two_bit_adder_0_0,two_bit_adder,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=two_bit_adder,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *) (* downgradeipidentifiedwarnings = "yes" *) 
 (* x_core_info = "two_bit_adder,Vivado 2025.1" *) 
-module soc_design_two_bit_adder_0_0(s00_axi_awaddr, s00_axi_awprot, 
+module soc_design_two_bit_adder_0_1(s00_axi_awaddr, s00_axi_awprot, 
   s00_axi_awvalid, s00_axi_awready, s00_axi_wdata, s00_axi_wstrb, s00_axi_wvalid, 
   s00_axi_wready, s00_axi_bresp, s00_axi_bvalid, s00_axi_bready, s00_axi_araddr, 
   s00_axi_arprot, s00_axi_arvalid, s00_axi_arready, s00_axi_rdata, s00_axi_rresp, 

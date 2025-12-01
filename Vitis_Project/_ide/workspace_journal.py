@@ -20,3 +20,9 @@ status = platform.build()
 
 comp.build()
 
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../Vivado_Project/soc_design_wrapper.xsa")
+
+status = platform.build()
+
+comp.build()
+

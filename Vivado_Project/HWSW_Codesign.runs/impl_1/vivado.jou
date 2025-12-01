@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Mon Dec  1 21:28:57 2025
-# Process ID         : 45660
+# Start of session at: Mon Dec  1 21:46:42 2025
+# Process ID         : 49276
 # Current directory  : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/HWSW_Codesign.runs/impl_1
 # Command line       : vivado.exe -log soc_design_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source soc_design_wrapper.tcl -notrace
 # Log file           : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/HWSW_Codesign.runs/impl_1/soc_design_wrapper.vdi
@@ -19,6 +19,6 @@
 # Host memory        : 16802 MB
 # Swap memory        : 2818 MB
 # Total Virtual      : 19621 MB
-# Available Virtual  : 3699 MB
+# Available Virtual  : 3504 MB
 #-----------------------------------------------------------
 source soc_design_wrapper.tcl -notrace

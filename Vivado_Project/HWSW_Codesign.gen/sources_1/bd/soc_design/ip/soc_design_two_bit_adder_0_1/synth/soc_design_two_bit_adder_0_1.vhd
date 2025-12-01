@@ -53,7 +53,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY soc_design_two_bit_adder_0_0 IS
+ENTITY soc_design_two_bit_adder_0_1 IS
   PORT (
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -77,11 +77,11 @@ ENTITY soc_design_two_bit_adder_0_0 IS
     s00_axi_aclk : IN STD_LOGIC;
     s00_axi_aresetn : IN STD_LOGIC
   );
-END soc_design_two_bit_adder_0_0;
+END soc_design_two_bit_adder_0_1;
 
-ARCHITECTURE soc_design_two_bit_adder_0_0_arch OF soc_design_two_bit_adder_0_0 IS
+ARCHITECTURE soc_design_two_bit_adder_0_1_arch OF soc_design_two_bit_adder_0_1 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
-  ATTRIBUTE DowngradeIPIdentifiedWarnings OF soc_design_two_bit_adder_0_0_arch: ARCHITECTURE IS "yes";
+  ATTRIBUTE DowngradeIPIdentifiedWarnings OF soc_design_two_bit_adder_0_1_arch: ARCHITECTURE IS "yes";
   COMPONENT two_bit_adder IS
     GENERIC (
       C_S00_AXI_DATA_WIDTH : INTEGER;
@@ -112,11 +112,11 @@ ARCHITECTURE soc_design_two_bit_adder_0_0_arch OF soc_design_two_bit_adder_0_0 I
     );
   END COMPONENT two_bit_adder;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF soc_design_two_bit_adder_0_0_arch: ARCHITECTURE IS "two_bit_adder,Vivado 2025.1";
+  ATTRIBUTE X_CORE_INFO OF soc_design_two_bit_adder_0_1_arch: ARCHITECTURE IS "two_bit_adder,Vivado 2025.1";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
-  ATTRIBUTE CHECK_LICENSE_TYPE OF soc_design_two_bit_adder_0_0_arch : ARCHITECTURE IS "soc_design_two_bit_adder_0_0,two_bit_adder,{}";
+  ATTRIBUTE CHECK_LICENSE_TYPE OF soc_design_two_bit_adder_0_1_arch : ARCHITECTURE IS "soc_design_two_bit_adder_0_1,two_bit_adder,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF soc_design_two_bit_adder_0_0_arch: ARCHITECTURE IS "soc_design_two_bit_adder_0_0,two_bit_adder,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=two_bit_adder,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}";
+  ATTRIBUTE CORE_GENERATION_INFO OF soc_design_two_bit_adder_0_1_arch: ARCHITECTURE IS "soc_design_two_bit_adder_0_1,two_bit_adder,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=two_bit_adder,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
@@ -177,4 +177,4 @@ BEGIN
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn
     );
-END soc_design_two_bit_adder_0_0_arch;
+END soc_design_two_bit_adder_0_1_arch;

@@ -1,18 +1,18 @@
 {
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
-    "xci_name": "soc_design_two_bit_adder_0_0",
+    "xci_name": "soc_design_two_bit_adder_0_1",
     "cell_name": "two_bit_adder_0",
     "component_reference": "xilinx.com:user:two_bit_adder:1.0",
     "ip_revision": "2",
-    "gen_directory": "../../../../../../HWSW_Codesign.gen/sources_1/bd/soc_design/ip/soc_design_two_bit_adder_0_0",
+    "gen_directory": "../../../../../../HWSW_Codesign.gen/sources_1/bd/soc_design/ip/soc_design_two_bit_adder_0_1",
     "parameters": {
       "component_parameters": {
         "C_S00_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "C_S00_AXI_ADDR_WIDTH": [ { "value": "4", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "C_S00_AXI_BASEADDR": [ { "value": "0xFFFFFFFF", "resolve_type": "user", "format": "bitString", "enabled": false, "usage": "all" } ],
         "C_S00_AXI_HIGHADDR": [ { "value": "0x00000000", "resolve_type": "user", "format": "bitString", "enabled": false, "usage": "all" } ],
-        "Component_Name": [ { "value": "soc_design_two_bit_adder_0_0", "resolve_type": "user", "usage": "all" } ]
+        "Component_Name": [ { "value": "soc_design_two_bit_adder_0_1", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "C_S00_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -35,7 +35,7 @@
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
         "IPREVISION": [ { "value": "2" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../HWSW_Codesign.gen/sources_1/bd/soc_design/ip/soc_design_two_bit_adder_0_0" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../HWSW_Codesign.gen/sources_1/bd/soc_design/ip/soc_design_two_bit_adder_0_1" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2025.1" } ],
@@ -98,7 +98,7 @@
             "HAS_RRESP": [ { "value": "1", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "NUM_READ_OUTSTANDING": [ { "value": "8", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "NUM_WRITE_OUTSTANDING": [ { "value": "8", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "MAX_BURST_LENGTH": [ { "value": "1", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "MAX_BURST_LENGTH": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
             "CLK_DOMAIN": [ { "value": "soc_design_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "NUM_READ_THREADS": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],

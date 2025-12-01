@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Mon Dec  1 17:20:55 2025
+-- Date        : Mon Dec  1 17:20:54 2025
 -- Host        : Azmis_Laptop running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/HWSW_Codesign.gen/sources_1/bd/soc_design/ip/soc_design_two_bit_adder_0_0/soc_design_two_bit_adder_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top soc_design_two_bit_adder_0_1 -prefix
+--               soc_design_two_bit_adder_0_1_ soc_design_two_bit_adder_0_0_sim_netlist.vhdl
 -- Design      : soc_design_two_bit_adder_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -15,7 +15,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity soc_design_two_bit_adder_0_0_two_bit_adder_slave_lite_v1_0_S00_AXI is
+entity soc_design_two_bit_adder_0_1_two_bit_adder_slave_lite_v1_0_S00_AXI is
   port (
     axi_awready_reg_0 : out STD_LOGIC;
     axi_arready_reg_0 : out STD_LOGIC;
@@ -35,11 +35,9 @@ entity soc_design_two_bit_adder_0_0_two_bit_adder_slave_lite_v1_0_S00_AXI is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of soc_design_two_bit_adder_0_0_two_bit_adder_slave_lite_v1_0_S00_AXI : entity is "two_bit_adder_slave_lite_v1_0_S00_AXI";
-end soc_design_two_bit_adder_0_0_two_bit_adder_slave_lite_v1_0_S00_AXI;
+end soc_design_two_bit_adder_0_1_two_bit_adder_slave_lite_v1_0_S00_AXI;
 
-architecture STRUCTURE of soc_design_two_bit_adder_0_0_two_bit_adder_slave_lite_v1_0_S00_AXI is
+architecture STRUCTURE of soc_design_two_bit_adder_0_1_two_bit_adder_slave_lite_v1_0_S00_AXI is
   signal \FSM_onehot_state_write[1]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_onehot_state_write[2]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_onehot_state_write_reg_n_0_[1]\ : STD_LOGIC;
@@ -2260,7 +2258,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity soc_design_two_bit_adder_0_0_two_bit_adder is
+entity soc_design_two_bit_adder_0_1_two_bit_adder is
   port (
     axi_awready_reg : out STD_LOGIC;
     axi_arready_reg : out STD_LOGIC;
@@ -2280,13 +2278,11 @@ entity soc_design_two_bit_adder_0_0_two_bit_adder is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of soc_design_two_bit_adder_0_0_two_bit_adder : entity is "two_bit_adder";
-end soc_design_two_bit_adder_0_0_two_bit_adder;
+end soc_design_two_bit_adder_0_1_two_bit_adder;
 
-architecture STRUCTURE of soc_design_two_bit_adder_0_0_two_bit_adder is
+architecture STRUCTURE of soc_design_two_bit_adder_0_1_two_bit_adder is
 begin
-two_bit_adder_slave_lite_v1_0_S00_AXI_inst: entity work.soc_design_two_bit_adder_0_0_two_bit_adder_slave_lite_v1_0_S00_AXI
+two_bit_adder_slave_lite_v1_0_S00_AXI_inst: entity work.soc_design_two_bit_adder_0_1_two_bit_adder_slave_lite_v1_0_S00_AXI
      port map (
       axi_arready_reg_0 => axi_arready_reg,
       axi_awready_reg_0 => axi_awready_reg,
@@ -2311,7 +2307,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity soc_design_two_bit_adder_0_0 is
+entity soc_design_two_bit_adder_0_1 is
   port (
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -2336,16 +2332,16 @@ entity soc_design_two_bit_adder_0_0 is
     s00_axi_aresetn : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of soc_design_two_bit_adder_0_0 : entity is true;
+  attribute NotValidForBitStream of soc_design_two_bit_adder_0_1 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of soc_design_two_bit_adder_0_0 : entity is "soc_design_two_bit_adder_0_0,two_bit_adder,{}";
+  attribute CHECK_LICENSE_TYPE of soc_design_two_bit_adder_0_1 : entity is "soc_design_two_bit_adder_0_0,two_bit_adder,{}";
   attribute downgradeipidentifiedwarnings : string;
-  attribute downgradeipidentifiedwarnings of soc_design_two_bit_adder_0_0 : entity is "yes";
+  attribute downgradeipidentifiedwarnings of soc_design_two_bit_adder_0_1 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of soc_design_two_bit_adder_0_0 : entity is "two_bit_adder,Vivado 2025.1";
-end soc_design_two_bit_adder_0_0;
+  attribute x_core_info of soc_design_two_bit_adder_0_1 : entity is "two_bit_adder,Vivado 2025.1";
+end soc_design_two_bit_adder_0_1;
 
-architecture STRUCTURE of soc_design_two_bit_adder_0_0 is
+architecture STRUCTURE of soc_design_two_bit_adder_0_1 is
   signal \<const0>\ : STD_LOGIC;
   attribute x_interface_info : string;
   attribute x_interface_info of s00_axi_aclk : signal is "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK";
@@ -2386,7 +2382,7 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-U0: entity work.soc_design_two_bit_adder_0_0_two_bit_adder
+U0: entity work.soc_design_two_bit_adder_0_1_two_bit_adder
      port map (
       axi_arready_reg => s00_axi_arready,
       axi_awready_reg => s00_axi_awready,

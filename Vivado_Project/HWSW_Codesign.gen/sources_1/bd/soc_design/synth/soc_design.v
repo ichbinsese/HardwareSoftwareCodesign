@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-//Date        : Mon Dec  1 17:18:45 2025
+//Date        : Mon Dec  1 21:45:42 2025
 //Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 //Command     : generate_target soc_design.bd
 //Design      : soc_design
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "soc_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=soc_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_ps7_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "soc_design.hwdef" *) 
+(* CORE_GENERATION_INFO = "soc_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=soc_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_ps7_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "soc_design.hwdef" *) 
 module soc_design
    (DDR_addr,
     DDR_ba,
@@ -268,7 +268,7 @@ module soc_design
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_ps7_0_100M_peripheral_aresetn),
         .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
-  soc_design_two_bit_adder_0_0 two_bit_adder_0
+  soc_design_two_bit_adder_0_1 two_bit_adder_0
        (.s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(axi_smc_M00_AXI_ARADDR),
         .s00_axi_aresetn(rst_ps7_0_100M_peripheral_aresetn),

@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Mon Dec  1 17:20:55 2025
+// Date        : Mon Dec  1 17:20:54 2025
 // Host        : Azmis_Laptop running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/HWSW_Codesign.gen/sources_1/bd/soc_design/ip/soc_design_two_bit_adder_0_0/soc_design_two_bit_adder_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top soc_design_two_bit_adder_0_1 -prefix
+//               soc_design_two_bit_adder_0_1_ soc_design_two_bit_adder_0_0_sim_netlist.v
 // Design      : soc_design_two_bit_adder_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -15,7 +15,7 @@
 
 (* CHECK_LICENSE_TYPE = "soc_design_two_bit_adder_0_0,two_bit_adder,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "two_bit_adder,Vivado 2025.1" *) 
 (* NotValidForBitStream *)
-module soc_design_two_bit_adder_0_0
+module soc_design_two_bit_adder_0_1
    (s00_axi_awaddr,
     s00_axi_awprot,
     s00_axi_awvalid,
@@ -84,7 +84,7 @@ module soc_design_two_bit_adder_0_0
   assign s00_axi_rresp[0] = \<const0> ;
   GND GND
        (.G(\<const0> ));
-  soc_design_two_bit_adder_0_0_two_bit_adder U0
+  soc_design_two_bit_adder_0_1_two_bit_adder U0
        (.axi_arready_reg(s00_axi_arready),
         .axi_awready_reg(s00_axi_awready),
         .axi_rvalid_reg(s00_axi_rvalid),
@@ -104,8 +104,7 @@ module soc_design_two_bit_adder_0_0
         .s00_axi_wvalid(s00_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "two_bit_adder" *) 
-module soc_design_two_bit_adder_0_0_two_bit_adder
+module soc_design_two_bit_adder_0_1_two_bit_adder
    (axi_awready_reg,
     axi_arready_reg,
     axi_rvalid_reg,
@@ -159,7 +158,7 @@ module soc_design_two_bit_adder_0_0_two_bit_adder
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
 
-  soc_design_two_bit_adder_0_0_two_bit_adder_slave_lite_v1_0_S00_AXI two_bit_adder_slave_lite_v1_0_S00_AXI_inst
+  soc_design_two_bit_adder_0_1_two_bit_adder_slave_lite_v1_0_S00_AXI two_bit_adder_slave_lite_v1_0_S00_AXI_inst
        (.axi_arready_reg_0(axi_arready_reg),
         .axi_awready_reg_0(axi_awready_reg),
         .axi_rvalid_reg_0(axi_rvalid_reg),
@@ -179,8 +178,7 @@ module soc_design_two_bit_adder_0_0_two_bit_adder
         .s00_axi_wvalid(s00_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "two_bit_adder_slave_lite_v1_0_S00_AXI" *) 
-module soc_design_two_bit_adder_0_0_two_bit_adder_slave_lite_v1_0_S00_AXI
+module soc_design_two_bit_adder_0_1_two_bit_adder_slave_lite_v1_0_S00_AXI
    (axi_awready_reg_0,
     axi_arready_reg_0,
     axi_rvalid_reg_0,

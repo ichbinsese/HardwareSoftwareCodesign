@@ -53,7 +53,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY soc_design_two_bit_adder_0_0 IS
+ENTITY soc_design_two_bit_adder_0_1 IS
   PORT (
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -77,11 +77,11 @@ ENTITY soc_design_two_bit_adder_0_0 IS
     s00_axi_aclk : IN STD_LOGIC;
     s00_axi_aresetn : IN STD_LOGIC
   );
-END soc_design_two_bit_adder_0_0;
+END soc_design_two_bit_adder_0_1;
 
-ARCHITECTURE soc_design_two_bit_adder_0_0_arch OF soc_design_two_bit_adder_0_0 IS
+ARCHITECTURE soc_design_two_bit_adder_0_1_arch OF soc_design_two_bit_adder_0_1 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
-  ATTRIBUTE DowngradeIPIdentifiedWarnings OF soc_design_two_bit_adder_0_0_arch: ARCHITECTURE IS "yes";
+  ATTRIBUTE DowngradeIPIdentifiedWarnings OF soc_design_two_bit_adder_0_1_arch: ARCHITECTURE IS "yes";
   COMPONENT two_bit_adder IS
     GENERIC (
       C_S00_AXI_DATA_WIDTH : INTEGER;
@@ -171,4 +171,4 @@ BEGIN
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn
     );
-END soc_design_two_bit_adder_0_0_arch;
+END soc_design_two_bit_adder_0_1_arch;

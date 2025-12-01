@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1764620883" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/test_design_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1764621946" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/test_design_wrapper.dcp">
   <File Type="PA-TCL" Name="soc_design_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="soc_design_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="soc_design_wrapper.vds"/>
@@ -57,6 +57,4 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="soc_design_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_design_rst_ps7_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="soc_design_axi_smc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="soc_design_two_bit_adder_0_0"/>
 </GenRun>

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCC6CFA53F622E079",
+      "boundary_crc": "0xCC6CFA53B4580162",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../HWSW_Codesign.gen/sources_1/bd/soc_design",
       "name": "soc_design",
@@ -12,9 +12,9 @@
     },
     "design_tree": {
       "processing_system7_0": "",
-      "two_bit_adder_0": "",
       "axi_smc": "",
-      "rst_ps7_0_100M": ""
+      "rst_ps7_0_100M": "",
+      "two_bit_adder_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1920,14 +1920,6 @@
           }
         }
       },
-      "two_bit_adder_0": {
-        "vlnv": "xilinx.com:user:two_bit_adder:1.0",
-        "ip_revision": "2",
-        "xci_name": "soc_design_two_bit_adder_0_0",
-        "xci_path": "ip\\soc_design_two_bit_adder_0_0\\soc_design_two_bit_adder_0_0.xci",
-        "inst_hier_path": "two_bit_adder_0",
-        "has_run_ip_tcl": "true"
-      },
       "axi_smc": {
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
         "ip_revision": "27",
@@ -2007,6 +1999,14 @@
         "xci_path": "ip\\soc_design_rst_ps7_0_100M_0\\soc_design_rst_ps7_0_100M_0.xci",
         "inst_hier_path": "rst_ps7_0_100M",
         "has_run_ip_tcl": "true"
+      },
+      "two_bit_adder_0": {
+        "vlnv": "xilinx.com:user:two_bit_adder:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_design_two_bit_adder_0_1",
+        "xci_path": "ip\\soc_design_two_bit_adder_0_1\\soc_design_two_bit_adder_0_1.xci",
+        "inst_hier_path": "two_bit_adder_0",
+        "has_run_ip_tcl": "true"
       }
     },
     "interface_nets": {
@@ -2041,8 +2041,8 @@
           "processing_system7_0/FCLK_CLK0",
           "processing_system7_0/M_AXI_GP0_ACLK",
           "axi_smc/aclk",
-          "two_bit_adder_0/s00_axi_aclk",
-          "rst_ps7_0_100M/slowest_sync_clk"
+          "rst_ps7_0_100M/slowest_sync_clk",
+          "two_bit_adder_0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -2054,8 +2054,8 @@
       "rst_ps7_0_100M_peripheral_aresetn": {
         "ports": [
           "rst_ps7_0_100M/peripheral_aresetn",
-          "two_bit_adder_0/s00_axi_aresetn",
-          "axi_smc/aresetn"
+          "axi_smc/aresetn",
+          "two_bit_adder_0/s00_axi_aresetn"
         ]
       }
     },

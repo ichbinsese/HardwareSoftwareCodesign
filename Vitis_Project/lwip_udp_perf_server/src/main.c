@@ -43,18 +43,58 @@
 #include "udp_communication_handler.h"
 #include "lwip/netif.h"
 
+#define AXI_ADDER_BASE_ADDRESS XPAR_TWO_BIT_ADDER_0_BASEADDR
+#define REG1_OFFSET 0x0
+#define REG2_OFFSET 0x4
+#define REG3_OFFSET 0x8
+
+int test_my_adder() {
+    uint32_t operand1 = 123;
+    uint32_t operand2 = 456;
+    uint32_t result;
+
+    xil_printf("--- AXI Adder Test ---\n");
+
+    // 1. Write the first operand to register 1 (offset 0x0)
+    xil_printf("Writing operand 1 (%u) to register 1...\n", operand1);
+    Xil_Out32(AXI_ADDER_BASE_ADDRESS + REG1_OFFSET, operand1);
+	u32 reg_1_read = Xil_In32(AXI_ADDER_BASE_ADDRESS + REG1_OFFSET);
+	xil_printf("Reading result from register 1: %u\n", reg_1_read);
+    // 2. Write the second operand to register 2 (offset 0x4)
+    xil_printf("Writing operand 2 (%u) to register 2...\n", operand2);
+    Xil_Out32(AXI_ADDER_BASE_ADDRESS + REG2_OFFSET, operand2);
+	u32 reg_2_read = Xil_In32(AXI_ADDER_BASE_ADDRESS + REG2_OFFSET);
+	xil_printf("Reading result from register 2: %u\n", reg_2_read);
+    // 3. Read the result from register 3 (offset 0x8)
+    // The VHDL IP's logic continuously performs the addition, so the result is immediately available.
+    result = Xil_In32(AXI_ADDER_BASE_ADDRESS + REG3_OFFSET);
+    xil_printf("Reading result from register 3: %u\n", result);
+
+    // 4. Verify the result
+    if (result == (operand1 + operand2)) {
+        xil_printf("Success! The result is correct: %u + %u = %u\n", operand1, operand2, result);
+    } else {
+        xil_printf("Error! The result is incorrect. Expected: %u, Got: %u\n", (operand1 + operand2), result);
+    }
+
+    return 0;
+}
 
 int main(void)
-
 {	
 	initialize_server();
 	initialize_comm_handler();
+
+    test_my_adder();
+
 	while (1) {
 		server_cyclical();
 	}
 
-	/* never reached */
+	//never reached 
 	cleanup_platform();
 
 	return 0;
-}
+} 
+
+

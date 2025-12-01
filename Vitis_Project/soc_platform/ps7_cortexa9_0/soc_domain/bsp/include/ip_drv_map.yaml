@@ -88,3 +88,6 @@ ps7_usb_0:
 ps7_xadc_0:
 - ps7_xadc
 - xadcps
+two_bit_adder_0:
+- two_bit_adder
+- None

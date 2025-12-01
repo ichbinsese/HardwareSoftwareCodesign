@@ -361,6 +361,10 @@
 #define XPAR_PS7_AFI_3_BASEADDR 0xf800b000
 #define XPAR_PS7_AFI_3_HIGHADDR 0xf800bfff
 
+/* Definitions for peripheral TWO_BIT_ADDER_0 */
+#define XPAR_TWO_BIT_ADDER_0_BASEADDR 0x43c00000
+#define XPAR_TWO_BIT_ADDER_0_HIGHADDR 0x43c0ffff
+
 /*  BOARD definition */
 #define XPS_BOARD_PYNQ-Z2
 

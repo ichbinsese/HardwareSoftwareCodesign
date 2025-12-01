@@ -3,7 +3,7 @@
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vivado_Project\\HWSW_Codesign\\soc_design_wrapper.xsa",
+    "xsa": "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vivado_Project\\soc_design_wrapper.xsa",
     "xsaPathInPlatform": "soc_platform\\hw\\soc_design_wrapper.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",
@@ -52,6 +52,20 @@
         "isBootDomain": true,
         "qemuData": "resources\\zynq_fsbl\\qemu",
         "qemuArgsFile": "resources\\zynq_fsbl\\qemu\\qemu_args.txt",
+        "pmcQemuArgsFile": "",
+        "isBSPGenReq": false
+      },
+      {
+        "name": "standalone_ps7_cortexa9_0",
+        "displayName": "standalone_ps7_cortexa9_0",
+        "processor": "ps7_cortexa9_0",
+        "cpuType": "cortex-a9",
+        "cpuInstance": "ps7_cortexa9_0",
+        "os": "standalone",
+        "appTemplate": "empty_application",
+        "isBootDomain": false,
+        "qemuData": "resources\\standalone_ps7_cortexa9_0\\qemu",
+        "qemuArgsFile": "resources\\standalone_ps7_cortexa9_0\\qemu\\qemu_args.txt",
         "pmcQemuArgsFile": "",
         "isBSPGenReq": false
       },

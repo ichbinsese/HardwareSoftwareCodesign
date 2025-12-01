@@ -1,13 +1,17 @@
 #include "tm_tc_protocol_handler.h"
 #include <stdint.h>
 #include "lwip/err.h"
+#include "lwip/ip4_addr.h"
 #include "udp_protocol_handler.h"
 #include "errors.h"
 
 tc_subscriber_function subscribers[7] = {NULL,NULL,NULL,NULL,NULL,NULL,NULL};
+uint8_t sequence_counters[7] = {0,0,0,0,0,0,0};
 
 uint32_t provide(enum tc_message_type message, uint8_t sequence_counter, uint8_t *data, int data_lenght);
 uint32_t send_tm_ack_message(uint8_t sequence_counter);
+uint32_t send_tm_exec_message(uint8_t status,uint8_t sequence_counter);
+uint8_t get_sequence_counter(enum tm_message_type message);
 
 uint32_t receive_message(uint8_t *package, int package_lenght){
         uint32_t err;
@@ -52,6 +56,19 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
     return ERR_OK;
 }
 
+uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_lenght){
+    uint32_t err;
+    struct pbuf* p;
+
+    if(type == TM_Ack || type == TM_Exec) return ERR_ILLEGAL_MESSAGE;
+
+    uint8_t sequence_counter = sequence_counters[(int) type];
+    err = create_message(p, type, data, data_lenght,sequence_counter);
+    err = udp_send_message(p);
+    sequence_counters[(int) type] = sequence_counters[(int) type] + 1;
+    return err;
+}
+
 uint32_t send_tm_ack_message(uint8_t sequence_counter){
     uint32_t err;
     struct pbuf* p;
@@ -75,9 +92,6 @@ uint32_t small_to_big_endian(uint8_t* data, int data_lenght){
         data[i] = temp[data_lenght - 1 - i];
     }
     free(temp);
-    return ERR_OK;
-}
-uint32_t initialize_tm_tc_handler(){
     return ERR_OK;
 }
 

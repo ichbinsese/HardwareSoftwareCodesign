@@ -1,10 +1,10 @@
-# 1 "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts"
+# 1 "C:\\Users\\azmib\\Desktop\\TEST_Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts"
+# 1 "C:\\Users\\azmib\\Desktop\\TEST_Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts"
 /dts-v1/;
-# 1 "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\zynq-7000.dtsi" 1
-# 10 "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\zynq-7000.dtsi"
+# 1 "C:\\Users\\azmib\\Desktop\\TEST_Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\zynq-7000.dtsi" 1
+# 10 "C:\\Users\\azmib\\Desktop\\TEST_Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\zynq-7000.dtsi"
 / {
  #address-cells = <1>;
  #size-cells = <1>;
@@ -585,8 +585,8 @@
   };
  };
 };
-# 3 "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
-# 1 "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\pl.dtsi" 1
+# 3 "C:\\Users\\azmib\\Desktop\\TEST_Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
+# 1 "C:\\Users\\azmib\\Desktop\\TEST_Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\pl.dtsi" 1
 / {
  amba_pl: amba_pl {
   ranges;
@@ -602,6 +602,18 @@
    clock-output-names = "fabric_clk";
    clocks = <&clkc 15>;
   };
+  instruments_0: instruments@43c10000 {
+   xlnx,s00-axi-data-width = <32>;
+   compatible = "xlnx,instruments-1.0";
+   status = "okay";
+   clock-names = "s00_axi_aclk";
+   xlnx,s00-axi-addr-width = <4>;
+   xlnx,ip-name = "instruments";
+   xlnx,edk-iptype = "PERIPHERAL";
+   reg = <0x43c10000 0x10000>;
+   clocks = <&clkc 15>;
+   xlnx,name = "instruments_0";
+  };
   two_bit_adder_0: two_bit_adder@43c00000 {
    xlnx,s00-axi-data-width = <32>;
    compatible = "xlnx,two-bit-adder-1.0";
@@ -616,8 +628,8 @@
   };
  };
 };
-# 4 "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
-# 1 "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\pcw.dtsi" 1
+# 4 "C:\\Users\\azmib\\Desktop\\TEST_Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
+# 1 "C:\\Users\\azmib\\Desktop\\TEST_Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\pcw.dtsi" 1
  &ps7_cortexa9_0 {
   xlnx,i-cache-size = <0x8000>;
   xlnx,d-cache-line-size = <20>;
@@ -892,7 +904,7 @@
   fclk-enable = <0x1>;
   ps-clk-frequency = <50000000>;
  };
-# 5 "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
+# 5 "C:\\Users\\azmib\\Desktop\\TEST_Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
 / {
  board = "pynq-z2";
  compatible = "xlnx,pynq-z2";
@@ -944,6 +956,7 @@
          <0x0 &ps7_ram_0_memory 0x0 0x30000>,
          <0xffff0000 &ps7_ram_1_memory 0xffff0000 0xfe00>,
          <0x43c00000 &two_bit_adder_0 0x43c00000 0x10000>,
+         <0x43c10000 &instruments_0 0x43c10000 0x10000>,
          <0xf8008000 &ps7_afi_0 0xf8008000 0x1000>,
          <0xf8009000 &ps7_afi_1 0xf8009000 0x1000>,
          <0xf800a000 &ps7_afi_2 0xf800a000 0x1000>,

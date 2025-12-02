@@ -3,7 +3,7 @@
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "C:\\Users\\azmib\\Desktop\\HardwareSoftwareCodesign\\Vivado_Project\\soc_design_wrapper.xsa",
+    "xsa": "C:\\Users\\azmib\\Desktop\\TEST_Codesign\\Vivado_Project\\soc_design_wrapper.xsa",
     "xsaPathInPlatform": "soc_platform\\hw\\soc_design_wrapper.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",

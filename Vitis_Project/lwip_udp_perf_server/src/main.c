@@ -91,8 +91,8 @@ int main(void)
 	while (1) {
 		server_cyclical();
 
-        static int loop_counter = 100;
-        if (loop_counter >= 100) 
+        static int loop_counter = 1000;
+        if (loop_counter >= 1000000) 
         {
             test_my_counter();
             loop_counter = 0;

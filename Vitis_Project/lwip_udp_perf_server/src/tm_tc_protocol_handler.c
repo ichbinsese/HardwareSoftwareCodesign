@@ -6,7 +6,7 @@
 #include "errors.h"
 
 tc_subscriber_function subscribers[7] = {NULL,NULL,NULL,NULL,NULL,NULL,NULL};
-uint8_t sequence_counters[7] = {0,0,0,0,0,0,0};
+//uint8_t sequence_counters[7] = {0,0,0,0,0,0,0};
 
 uint32_t provide(enum tc_message_type message, uint8_t sequence_counter, uint8_t *data, int data_lenght);
 uint32_t send_tm_ack_message(uint8_t sequence_counter);
@@ -17,14 +17,14 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
         uint32_t err;
         if(package[2] != TC_PACKET_TYPE){
             xil_printf("received corrupt or wrong package, package type not 0x01");
-            //return ERR_WRONG_PACKAGE_TYPE;
+            return ERR_WRONG_PACKAGE_TYPE;
         }
         enum tc_message_type message_type = (enum tc_message_type) package[3];
         uint8_t sequence_counter = package[4];
         uint16_t nominal_package_lenght = ((uint16_t)package[5] << 8) | package[6];
         if(nominal_package_lenght!= package_lenght){
             xil_printf("received corrupt or wrong package, stated package lenght does not match actual lenght");
-            //return ERR_WRONG_PACKAGE_LENGHT;
+            return ERR_WRONG_PACKAGE_LENGHT;
         }
         int data_lenght = package_lenght - TC_PREAMBLE_LENGHT;
         err = send_tm_ack_message(sequence_counter);
@@ -62,16 +62,16 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
     return ERR_OK;
 }
 
-uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_lenght){
+uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_lenght,uint8_t sequence_counter){
     uint32_t err;
     struct pbuf *p;
 
     if(type == TM_Ack || type == TM_Exec) return ERR_ILLEGAL_MESSAGE;
 
-    uint8_t sequence_counter = sequence_counters[(int) type];
+    //uint8_t sequence_counter = sequence_counters[(int) type];
     err = create_message(&p, type, data, data_lenght,sequence_counter);
     err = udp_send_message(p);
-    sequence_counters[(int) type] = sequence_counters[(int) type] + 1;
+    //sequence_counters[(int) type] = sequence_counters[(int) type] + 1;
     return err;
 }
 

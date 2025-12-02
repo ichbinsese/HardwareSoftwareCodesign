@@ -16,9 +16,6 @@
 #define TC_PREAMBLE_LENGHT 6
 
 
-
-
-
 void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const ip_addr_t *addr, u16_t port);
 uint32_t receive_message(uint8_t *package, int package_lenght);
 uint32_t udp_send_message(struct pbuf *p);

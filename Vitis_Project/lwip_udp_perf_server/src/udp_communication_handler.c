@@ -33,9 +33,7 @@ void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const
             q = q->next;
         }
         pbuf_free(p);
-        //receive_message(NULL,2);
         receive_message(&buffer[0], offset);
-        //initialize_tm_tc_handler();
     }
 }
 
@@ -48,7 +46,6 @@ uint32_t udp_send_message(struct pbuf *p){
             udp_error = udp_sendto(pcb, p, last_received_address, last_received_port);
             xil_printf("%d",udp_error);
         }
-
         err = ERR_OK;
     }
     else {

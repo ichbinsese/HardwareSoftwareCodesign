@@ -18,7 +18,7 @@
 #define TM_INSTRUMENT_HOUSEKEEPING_LENGHT  0x0A
 #define TM_SENSOR_TEMPERATURE_REPLY_LENGHT  0x0A
 
-#define TM_PREAMBLE_LENGHT 6
+#define TM_PREAMBLE_LENGHT 7
 
 enum tm_message_type{
     TM_Ack = 0x01,

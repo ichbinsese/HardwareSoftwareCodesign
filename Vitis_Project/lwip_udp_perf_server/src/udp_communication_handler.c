@@ -21,6 +21,7 @@ void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const
 	{
         last_received_address = addr;
         last_received_port = port;
+        xil_printf("%d",addr->addr);
 
         struct pbuf *q;
         q = p;
@@ -40,11 +41,14 @@ void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const
 
 uint32_t udp_send_message(struct pbuf *p){
     uint32_t err;
+    err_t udp_error;
     if (last_received_address != NULL) 
 	{
         if(p != NULL ){
-            udp_sendto(pcb, p, last_received_address, last_received_port);
+            udp_error = udp_sendto(pcb, p, last_received_address, last_received_port);
+            xil_printf("%d",udp_error);
         }
+
         err = ERR_OK;
     }
     else {

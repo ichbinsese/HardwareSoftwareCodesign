@@ -74,33 +74,16 @@ def tc_get_average_temperature(seq: int, sensor_id: int) -> bytes:
 # ---------- TM parsing (at least the header) ----------
 
 def parse_tm(packet: bytes):
+    print(packet.hex())
     if len(packet) < 7:
-        print("TM too short:", packet.hex())
         return
-
     start, ptype, pid, seq, total_len = struct.unpack(">H B B B H", packet[:7])
     payload = packet[7:total_len]
 
     print(f"TM header: start=0x{start:04X}, type=0x{ptype:02X}, "
-          f"id=0x{pid:02X}, seq={seq}, len={total_len}")
+          f"id=0x{pid:02X}, seq={seq}, len={total_len} payload={payload}")
 
-    if start != START_WORD:
-        print("  !! Wrong start word")
-        return
-    if ptype != TYPE_TM:
-        print("  !! Not a TM packet (type should be 0x00)")
 
-    # Minimal decoding of a few types; you can extend this
-    if pid == PID_TM_ACK:
-        print("  TM Ack (no payload expected)")
-    elif pid == PID_TM_EXEC:
-        if len(payload) >= 1:
-            status = payload[0]
-            print(f"  TM Exec status=0x{status:02X}")
-        else:
-            print("  TM Exec payload missing")
-    else:
-        print("  TM payload (raw hex):", payload.hex())
 
 # ---------- Simple interactive client ----------
 
@@ -162,10 +145,23 @@ def main():
         except socket.timeout:
             print("No TM received (timeout)")
             continue
+            
 
         print(f"Received {len(data)} bytes from {addr}")
         parse_tm(data)
         print()
+
+        try:
+            data, addr = sock.recvfrom(2048)
+        except socket.timeout:
+            print("No TM received (timeout)")
+            continue
+            
+
+        print(f"Received {len(data)} bytes from {addr}")
+        parse_tm(data)
+        print()
+
 
 if __name__ == "__main__":
     main()

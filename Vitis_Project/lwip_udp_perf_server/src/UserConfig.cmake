@@ -41,7 +41,6 @@ set(USER_COMPILE_SOURCES
 "udp_protocol_handler.c"
 "udp_communication_handler.c"
 "tm_tc_protocol_handler.c"
-
 )
 
 # -----------------------------------------

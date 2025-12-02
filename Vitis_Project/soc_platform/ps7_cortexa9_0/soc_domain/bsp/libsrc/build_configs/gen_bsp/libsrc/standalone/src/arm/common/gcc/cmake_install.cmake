@@ -1,4 +1,4 @@
-# Install script for directory: C:/Projects/SWHW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/standalone/src/arm/common/gcc
+# Install script for directory: C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/standalone/src/arm/common/gcc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

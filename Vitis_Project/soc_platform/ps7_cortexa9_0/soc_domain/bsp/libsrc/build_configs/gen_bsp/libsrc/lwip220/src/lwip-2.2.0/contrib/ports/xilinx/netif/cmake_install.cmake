@@ -1,4 +1,4 @@
-# Install script for directory: C:/Projects/SWHW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/netif
+# Install script for directory: C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/netif
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

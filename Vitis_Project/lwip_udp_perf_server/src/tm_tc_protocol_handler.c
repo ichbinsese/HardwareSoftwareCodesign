@@ -21,7 +21,7 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
         }
         enum tc_message_type message_type = (enum tc_message_type) package[3];
         uint8_t sequence_counter = package[4];
-        uint16_t nominal_package_lenght = ((uint16_t)package[6] << 8) | package[5];
+        uint16_t nominal_package_lenght = ((uint16_t)package[5] << 8) | package[6];
         if(nominal_package_lenght!= package_lenght){
             xil_printf("received corrupt or wrong package, stated package lenght does not match actual lenght");
             return ERR_WRONG_PACKAGE_LENGHT;
@@ -34,7 +34,7 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
         }
         err = provide(message_type, sequence_counter, &package[7], data_lenght);
         err = send_tm_exec_message(err, sequence_counter);
-        return err;
+        return  err;
 }
 
  uint32_t create_message(struct pbuf* p, enum tm_message_type type, uint8_t* data, uint16_t data_lenght,uint8_t sequence_counter){
@@ -44,8 +44,12 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
     packet[2] = TM_PACKAGE_TYPE;
     packet[3] = (uint8_t) type;
     packet[4] = sequence_counter;
-    packet[5] = (data_lenght + TM_PREAMBLE_LENGHT) & 0xFF;        
-    packet[6] = ((data_lenght + TM_PREAMBLE_LENGHT)>> 8) & 0xFF;
+    packet[6] = (data_lenght + TM_PREAMBLE_LENGHT) & 0xFF;        
+    packet[5] = ((data_lenght + TM_PREAMBLE_LENGHT)>> 8) & 0xFF;
+    for(int i = 0; i < 7; i++){
+        xil_printf("%x", packet[i]);
+    }
+
     if(data_lenght > 0){
           memcpy(packet + TM_PREAMBLE_LENGHT + 1, data, data_lenght * sizeof(uint8_t));
                                      //maybe + 0 idk

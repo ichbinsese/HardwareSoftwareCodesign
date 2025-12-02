@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1764621947">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1764661444">
   <File Type="PA-TCL" Name="soc_design_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="soc_design_wrapper_reports.tcl"/>
   <File Type="INIT-TIMING" Name="soc_design_wrapper_timing_summary_init.rpt"/>
@@ -167,4 +167,5 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="soc_design_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_design_rst_ps7_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_design_instruments_0_0"/>
 </GenRun>

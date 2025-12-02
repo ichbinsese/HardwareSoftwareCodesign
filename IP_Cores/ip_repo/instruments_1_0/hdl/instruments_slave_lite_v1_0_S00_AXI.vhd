@@ -105,7 +105,7 @@ architecture arch_imp of instruments_slave_lite_v1_0_S00_AXI is
 	constant OPT_MEM_ADDR_BITS : integer := 1;
 	------------------------------------------------
 	---- Signals for user logic register space example
-	signal user_counter : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+	signal user_counter :std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := x"00000000";
 	--------------------------------------------------
 	---- Number of Slave Registers 4
 	signal slv_reg0	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);

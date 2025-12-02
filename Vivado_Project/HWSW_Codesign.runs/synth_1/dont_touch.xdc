@@ -16,4 +16,7 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_
 # IP: bd/soc_design/ip/soc_design_two_bit_adder_0_1/soc_design_two_bit_adder_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_two_bit_adder_0_1 || ORIG_REF_NAME==soc_design_two_bit_adder_0_1} -quiet] -quiet
 
+# IP: bd/soc_design/ip/soc_design_instruments_0_0/soc_design_instruments_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_instruments_0_0 || ORIG_REF_NAME==soc_design_instruments_0_0} -quiet] -quiet
+
 # XDC: c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/HWSW_Codesign.gen/sources_1/bd/soc_design/soc_design_ooc.xdc

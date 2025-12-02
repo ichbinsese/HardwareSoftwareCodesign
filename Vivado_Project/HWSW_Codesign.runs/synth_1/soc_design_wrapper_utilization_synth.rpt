@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Mon Dec  1 21:46:35 2025
+| Date         : Tue Dec  2 08:45:08 2025
 | Host         : Azmis_Laptop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file soc_design_wrapper_utilization_synth.rpt -pb soc_design_wrapper_utilization_synth.pb
 | Design       : soc_design_wrapper
@@ -160,6 +160,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | soc_design_two_bit_adder_0_1      |    1 |
 | soc_design_rst_ps7_0_100M_0       |    1 |
 | soc_design_processing_system7_0_0 |    1 |
+| soc_design_instruments_0_0        |    1 |
 | soc_design_axi_smc_0              |    1 |
 +-----------------------------------+------+
 

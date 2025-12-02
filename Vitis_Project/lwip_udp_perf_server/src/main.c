@@ -28,6 +28,7 @@
  */
 
 #include <stdio.h>
+#include <xil_io.h>
 #include "xparameters.h"
 #include "netif/xadapter.h"
 #include "platform.h"
@@ -43,7 +44,10 @@
 #include "udp_communication_handler.h"
 #include "lwip/netif.h"
 
+#define DEBUG
+
 #define AXI_ADDER_BASE_ADDRESS XPAR_TWO_BIT_ADDER_0_BASEADDR
+#define AXI_COUNTER_BASE_ADDRESS XPAR_INSTRUMENTS_0_BASEADDR
 #define REG1_OFFSET 0x0
 #define REG2_OFFSET 0x4
 #define REG3_OFFSET 0x8
@@ -68,15 +72,32 @@ int test_my_adder() {
     return 0;
 }
 
+int test_my_counter()
+{
+    uint32_t result;
+    result = Xil_In32(AXI_COUNTER_BASE_ADDRESS + REG2_OFFSET);
+    xil_printf("Counter Value: %u\n", result);
+    return 0;
+}
+
 int main(void)
 {	
 	initialize_server();
 	initialize_comm_handler();
 
     test_my_adder();
+    test_my_counter();
 
 	while (1) {
 		server_cyclical();
+
+        static int loop_counter = 100;
+        if (loop_counter >= 100) 
+        {
+            test_my_counter();
+            loop_counter = 0;
+        }
+        loop_counter++;
 	}
 
 	//never reached 

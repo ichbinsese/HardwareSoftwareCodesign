@@ -51,7 +51,8 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Managed_IP"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/Instrument_IP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/instruments_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PSRCDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>

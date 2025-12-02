@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity instruments_slave_lite_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-
+        
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -103,13 +103,14 @@ architecture arch_imp of instruments_slave_lite_v1_0_S00_AXI is
 	-- ADDR_LSB = 3 for 64 bits (n downto 3)
 	constant ADDR_LSB  : integer := (C_S_AXI_DATA_WIDTH/32)+ 1;
 	constant OPT_MEM_ADDR_BITS : integer := 1;
+	constant USER_READ_BIT : integer := 0;
+	constant USER_INSTRUMENT_MAX : unsigned := x"0000AFFE";
 	------------------------------------------------
 	---- Signals for user logic register space example
-	signal user_counter :std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := x"00000000";
 	--------------------------------------------------
 	---- Number of Slave Registers 4
-	signal slv_reg0	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-	signal slv_reg1	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+	signal user_control_reg	: std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+	signal user_instrument_data	: std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
 	signal slv_reg2	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal slv_reg3	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal byte_index	: integer;
@@ -210,8 +211,8 @@ begin
 	begin
 	  if rising_edge(S_AXI_ACLK) then 
 	    if S_AXI_ARESETN = '0' then
-	      slv_reg0 <= (others => '0');
-	      slv_reg1 <= (others => '0');
+	      user_control_reg <= (others => '0');
+	      user_instrument_data <= (others => '0');
 	      slv_reg2 <= (others => '0');
 	      slv_reg3 <= (others => '0');
 	    else
@@ -222,36 +223,12 @@ begin
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
 	                -- Respective byte enables are asserted as per write strobes                   
 	                -- slave registor 0
-	                slv_reg0(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
-	          when b"01" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 1
-	                slv_reg1(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
-	          when b"10" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 2
-	                slv_reg2(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
-	          when b"11" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 3
-	                slv_reg3(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+	                user_control_reg(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 	              end if;
 	            end loop;
 	          when others =>
-	            slv_reg0 <= slv_reg0;
-	            slv_reg1 <= slv_reg1;
+	            user_control_reg <= user_control_reg;
+	            user_instrument_data <= user_instrument_data;
 	            slv_reg2 <= slv_reg2;
 	            slv_reg3 <= slv_reg3;
 	        end case;
@@ -303,10 +280,8 @@ begin
 	       end if;                                                   
 	  end process;                                          
 	-- Implement memory mapped register select and read logic generation
-	 S_AXI_RDATA <= slv_reg0 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00" ) else 
-	 user_counter when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "01" ) else 
-	 slv_reg2 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "10" ) else 
-	 slv_reg3 when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "11" ) else 
+	 S_AXI_RDATA <= user_control_reg when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "00" ) else 
+	 user_instrument_data when (axi_araddr(ADDR_LSB+OPT_MEM_ADDR_BITS downto ADDR_LSB) = "01" ) else 
 	 (others => '0');
 
 	-- Add user logic here
@@ -314,10 +289,13 @@ begin
     begin
         if rising_edge(S_AXI_ACLK) then
             if (S_AXI_ARESETN = '1') then
-                if (unsigned(user_counter) >= x"0000AFFE") then --TODO! Add a define here
-                    user_counter <= x"00000000";
-                else
-                    user_counter <= std_logic_vector(unsigned(user_counter)+1); 
+                if (user_control_reg(USER_READ_BIT) = '1') then
+                    if (unsigned(user_instrument_data) >= USER_INSTRUMENT_MAX) then --TODO! Add a define here
+                        user_instrument_data <= (others => '0');
+                    else
+                        user_instrument_data <= std_logic_vector(unsigned(user_instrument_data)+1); 
+                    end if;
+                    user_control_reg(USER_READ_BIT) <= '0';
                 end if;
             end if;
         end if;

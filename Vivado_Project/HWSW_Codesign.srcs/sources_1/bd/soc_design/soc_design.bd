@@ -2046,7 +2046,7 @@
       },
       "instruments_0": {
         "vlnv": "xilinx.com:user:instruments:1.0",
-        "ip_revision": "2",
+        "ip_revision": "4",
         "xci_name": "soc_design_instruments_0_0",
         "xci_path": "ip\\soc_design_instruments_0_0\\soc_design_instruments_0_0.xci",
         "inst_hier_path": "instruments_0",

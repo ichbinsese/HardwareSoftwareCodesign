@@ -4,7 +4,7 @@
     "xci_name": "soc_design_instruments_0_0",
     "cell_name": "instruments_0",
     "component_reference": "xilinx.com:user:instruments:1.0",
-    "ip_revision": "2",
+    "ip_revision": "4",
     "gen_directory": "../../../../../../HWSW_Codesign.gen/sources_1/bd/soc_design/ip/soc_design_instruments_0_0",
     "parameters": {
       "component_parameters": {
@@ -33,7 +33,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2" } ],
+        "IPREVISION": [ { "value": "4" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../HWSW_Codesign.gen/sources_1/bd/soc_design/ip/soc_design_instruments_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],

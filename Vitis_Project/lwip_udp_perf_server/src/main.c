@@ -28,6 +28,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <xil_io.h>
 #include "xparameters.h"
 #include "netif/xadapter.h"
@@ -52,6 +53,8 @@
 #define REG2_OFFSET 0x4
 #define REG3_OFFSET 0x8
 
+#define INSTR_ENABLE_BIT 0
+
 int test_my_adder() {
     uint32_t operand1 = 123;
     uint32_t operand2 = 456;
@@ -75,8 +78,28 @@ int test_my_adder() {
 int test_my_counter()
 {
     uint32_t result;
+    uint32_t enable = 0;
+
+    static uint32_t last_val = 0;
+
+    xil_printf("\n--START INSTRUMENT--\n");
+    enable = enable | (1 << INSTR_ENABLE_BIT);
+    xil_printf("ENABLE Value: %x\n", enable);
+
+    Xil_Out32(AXI_COUNTER_BASE_ADDRESS + REG1_OFFSET, enable);
     result = Xil_In32(AXI_COUNTER_BASE_ADDRESS + REG2_OFFSET);
-    xil_printf("Counter Value: %u\n", result);
+    xil_printf("Counter Value: %x\n", result);
+
+    enable = Xil_In32(AXI_COUNTER_BASE_ADDRESS + REG1_OFFSET);
+    xil_printf("ENABLE Value: %x\n", enable);
+
+    if (last_val == 0xAFFE && result == 0)
+    {
+        xil_printf("\n##########CORRECT###########\n");
+        exit(0);
+    }
+
+    last_val = result;
     return 0;
 }
 
@@ -92,7 +115,7 @@ int main(void)
 		server_cyclical();
 
         static int loop_counter = 1000;
-        if (loop_counter >= 1000000) 
+        if (loop_counter >= 1000) 
         {
             test_my_counter();
             loop_counter = 0;

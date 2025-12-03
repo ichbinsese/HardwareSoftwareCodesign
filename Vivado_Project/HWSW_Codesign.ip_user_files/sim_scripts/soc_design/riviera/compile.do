@@ -160,8 +160,8 @@ vcom -work xil_defaultlib -93  -incr \
 "../../../bd/soc_design/ipshared/55d5/hdl/two_bit_adder_slave_lite_v1_0_S00_AXI.vhd" \
 "../../../bd/soc_design/ipshared/55d5/hdl/two_bit_adder.vhd" \
 "../../../bd/soc_design/ip/soc_design_two_bit_adder_0_1/sim/soc_design_two_bit_adder_0_1.vhd" \
-"../../../bd/soc_design/ipshared/341e/hdl/instruments_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/soc_design/ipshared/341e/hdl/instruments.vhd" \
+"../../../bd/soc_design/ipshared/cc41/hdl/instruments_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/soc_design/ipshared/cc41/hdl/instruments.vhd" \
 "../../../bd/soc_design/ip/soc_design_instruments_0_0/sim/soc_design_instruments_0_0.vhd" \
 
 vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../HWSW_Codesign.gen/sources_1/bd/soc_design/ipshared/ec67/hdl" "+incdir+../../../../HWSW_Codesign.gen/sources_1/bd/soc_design/ipshared/6cfa/hdl" "+incdir+../../../../HWSW_Codesign.gen/sources_1/bd/soc_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../HWSW_Codesign.gen/sources_1/bd/soc_design/ipshared/a8e4/hdl/verilog" "+incdir+../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_21 -l processing_system7_vip_v1_0_23 -l xil_defaultlib -l xlconstant_v1_1_10 -l proc_sys_reset_v5_0_17 -l smartconnect_v1_0 -l axi_register_slice_v2_1_35 \

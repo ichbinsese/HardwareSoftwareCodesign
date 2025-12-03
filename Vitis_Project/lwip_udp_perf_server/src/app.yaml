@@ -1,4 +1,4 @@
-domain_path: C:\Users\azmib\Desktop\TEST_Codesign\Vitis_Project\soc_platform\export\soc_platform\sw\soc_domain
+domain_path: C:\Users\azmib\Desktop\Vitis_Project\soc_platform\export\soc_platform\sw\soc_domain
 app_src_dir: C:\Xilinx\2025.1\Vitis\data\embeddedsw\lib\sw_apps\lwip_udp_perf_server
 template: lwip_udp_perf_server
 lang: c

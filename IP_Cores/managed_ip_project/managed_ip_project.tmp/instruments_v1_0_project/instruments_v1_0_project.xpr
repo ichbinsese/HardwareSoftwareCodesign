@@ -4,10 +4,10 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="70" Path="c:/projects/swhw/hardwaresoftwarecodesign/ip_cores/managed_ip_project/managed_ip_project.tmp/instruments_v1_0_project/instruments_v1_0_project.xpr">
+<Project Product="Vivado" Version="7" Minor="70" Path="c:/users/azmib/desktop/hardwaresoftwarecodesign/ip_cores/managed_ip_project/managed_ip_project.tmp/instruments_v1_0_project/instruments_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="673986598c264c03a847e01c0e21fa8d"/>
+    <Option Name="Id" Val="5f601460fa8c454d831671c61f28315c"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -46,10 +46,11 @@
     <Option Name="TargetLanguage" Val="VHDL"/>
     <Option Name="SimulatorLanguage" Val="VHDL"/>
     <Option Name="BoardPart" Val=""/>
+    <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../../../../../Users/azmib/AppData/Roaming/Xilinx/Vivado/2025.1/xhub/board_store/xilinx_board_store"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../Projects/SWHW/HardwareSoftwareCodesign/IP_Cores/ip_repo"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../../Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/ip_repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -92,27 +93,27 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../../../../../Projects/SWHW/HardwareSoftwareCodesign/IP_Cores/ip_repo/instruments_1_0/hdl/instruments_slave_lite_v1_0_S00_AXI.vhd">
+      <File Path="$PPRDIR/../../../../../../../../Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/ip_repo/instruments_1_0/hdl/instruments_slave_lite_v1_0_S00_AXI.vhd">
         <FileInfo>
           <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../../../Projects/SWHW/HardwareSoftwareCodesign/IP_Cores/ip_repo/instruments_1_0/hdl/instruments.vhd">
+      <File Path="$PPRDIR/../../../../../../../../Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/ip_repo/instruments_1_0/hdl/instruments.vhd">
         <FileInfo>
           <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../../../Projects/SWHW/HardwareSoftwareCodesign/IP_Cores/ip_repo/instruments_1_0/component.xml">
+      <File Path="$PPRDIR/../../../../../../../../Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/ip_repo/instruments_1_0/component.xml">
         <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="instruments"/>
-        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../../../../Projects/SWHW/HardwareSoftwareCodesign/IP_Cores/ip_repo/instruments_1_0/hdl/instruments.vhd"/>
+        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../../../../../Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/ip_repo/instruments_1_0/hdl/instruments.vhd"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">

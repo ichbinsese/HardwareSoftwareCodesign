@@ -23,7 +23,7 @@
 
 
 
-uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_lenght,uint8_t sequence_counter);
+uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_lenght);
 uint32_t subscribe(enum tc_message_type subscribed_message, tc_subscriber_function subscriber);
 uint32_t receive_message(uint8_t *package, int package_lenght);
 

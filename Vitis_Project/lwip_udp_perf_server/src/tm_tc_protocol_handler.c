@@ -7,11 +7,12 @@
 
 tc_subscriber_function subscribers[7] = {NULL,NULL,NULL,NULL,NULL,NULL,NULL};
 //uint8_t sequence_counters[7] = {0,0,0,0,0,0,0};
+uint8_t global_sequence_counter = 0;
 
-uint32_t provide(enum tc_message_type message, uint8_t sequence_counter, uint8_t *data, int data_lenght);
+uint32_t provide(enum tc_message_type message, uint8_t *data, int data_lenght);
 uint32_t send_tm_ack_message(uint8_t sequence_counter);
 uint32_t send_tm_exec_message(uint8_t status,uint8_t sequence_counter);
-uint8_t get_sequence_counter(enum tm_message_type message);
+
 
 uint32_t receive_message(uint8_t *package, int package_lenght){
         uint32_t err;
@@ -27,12 +28,13 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
             return ERR_WRONG_PACKAGE_LENGHT;
         }
         int data_lenght = package_lenght - TC_PREAMBLE_LENGHT;
+        global_sequence_counter = sequence_counter;
         err = send_tm_ack_message(sequence_counter);
         if(err != ERR_OK) {
             send_tm_exec_message(err, sequence_counter);
             return err;
         }
-        err = provide(message_type, sequence_counter, &package[7], data_lenght);
+        err = provide(message_type, &package[7], data_lenght);
         err = send_tm_exec_message(1, sequence_counter);
         return  err;
 }
@@ -62,16 +64,14 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
     return ERR_OK;
 }
 
-uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_lenght,uint8_t sequence_counter){
+uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_lenght){
     uint32_t err;
     struct pbuf *p;
 
     if(type == TM_Ack || type == TM_Exec) return ERR_ILLEGAL_MESSAGE;
-
-    //uint8_t sequence_counter = sequence_counters[(int) type];
-    err = create_message(&p, type, data, data_lenght,sequence_counter);
+    err = create_message(&p, type, data, data_lenght,global_sequence_counter);
     err = udp_send_message(p);
-    //sequence_counters[(int) type] = sequence_counters[(int) type] + 1;
+    global_sequence_counter++;
     return err;
 }
 
@@ -79,7 +79,6 @@ uint32_t send_tm_ack_message(uint8_t sequence_counter){
     uint32_t err;
     struct pbuf *p;
     err = create_message(&p, TM_Ack, NULL, 0, sequence_counter);
-
     err = udp_send_message(p);
     return err;
 }
@@ -106,10 +105,10 @@ uint32_t subscribe(enum tc_message_type subscribed_message, tc_subscriber_functi
     subscribers[(int) subscribed_message] = subscriber;
 }
 
-uint32_t provide(enum tc_message_type message, uint8_t sequence_counter, uint8_t *data, int data_lenght){
+uint32_t provide(enum tc_message_type message, uint8_t *data, int data_lenght){
     tc_subscriber_function subscriber = subscribers[(int) message];
     if(subscriber != NULL) {
-       return (subscriber)(sequence_counter,data,data_lenght);
+       return (subscriber)(data,data_lenght);
     }
     else return ERR_TC_MESSAGE_NOT_BOUND;
 }

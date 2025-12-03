@@ -37,7 +37,11 @@ void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const
     }
 }
 
-uint32_t udp_send_message(struct pbuf *p){
+uint32_t udp_send_message(uint8_t *packet, int packet_lenght){
+    struct pbuf *p;
+    p = pbuf_alloc(PBUF_TRANSPORT, packet_lenght, PBUF_RAM);
+    memcpy(p->payload, packet, packet_lenght);
+    free(packet);
     uint32_t err;
     err_t udp_error;
     if (last_received_address != NULL) 

@@ -21,6 +21,7 @@ enum tc_message_type{
     TC_get_average_temperature = 0x06
 };
 
-typedef uint32_t (*tc_subscriber_function) (uint8_t *data, int data_lenght);
+
+
 
 #endif 

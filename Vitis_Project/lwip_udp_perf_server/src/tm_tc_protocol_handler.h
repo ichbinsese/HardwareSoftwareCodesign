@@ -1,30 +1,24 @@
 #ifndef __TM_TC_PROTOCOL_HANDER_H_
 #define __TM_TC_PROTOCOL_HANDER_H_
+
 #include "message_creator.h"
+#include "message_types.h"
 #include "udp_communication_handler.h"
-#include "lwip/pbuf.h"
-#include "lwip/udp.h"
 #include <string.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include "message_types.h"
+
 
 #define START_0 0xAF
 #define START_1 0xFE
 #define TM_PACKAGE_TYPE 0x00
 
-#define TM_ACK_LENGHT  0x07
-#define TM_EXEC_LENGHT  0x08
-#define TM_INSTRUMENT_DATA_MAX_LENGHT  0xFE
-#define TM_INSTRUMENT_HOUSEKEEPING_LENGHT  0x0A
-#define TM_SENSOR_TEMPERATURE_REPLY_LENGHT  0x0A
 
 #define TM_PREAMBLE_LENGHT 7
 
 
 
 uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_lenght);
-uint32_t subscribe(enum tc_message_type subscribed_message, tc_subscriber_function subscriber);
 uint32_t receive_message(uint8_t *package, int package_lenght);
 
 #endif

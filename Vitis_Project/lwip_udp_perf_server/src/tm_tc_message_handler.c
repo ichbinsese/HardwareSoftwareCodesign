@@ -1,6 +1,7 @@
 
 #include "tm_tc_message_handler.h"
 #include "errors.h"
+#include "lwip/def.h"
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
@@ -146,26 +147,34 @@ uint32_t handle_tc_set_heater_state_callback(uint8_t *data, int data_lenght){
 }
 
 
-uint32_t send_tm_instrument_data_message(uint8_t *data, int data_lenght){
+uint32_t send_tm_instrument_data_message(uint16_t *data, int data_lenght){
     uint32_t err;
-    int reps = data_lenght / TM_INSTRUMENT_DATA_MAX_LENGHT;
-    uint8_t last_lenght = data_lenght % TM_INSTRUMENT_DATA_MAX_LENGHT;
+    int reps = (data_lenght * 2) / TM_INSTRUMENT_DATA_MAX_LENGHT;
+    uint8_t last_lenght = (data_lenght * 2) % TM_INSTRUMENT_DATA_MAX_LENGHT;
     int offset = 1;
     uint8_t* data_packet;
     data_packet = malloc(sizeof(uint8_t) * (TM_INSTRUMENT_DATA_MAX_LENGHT + 1));
-    data_packet[0] = 0x00;
+
     for(int i = 0; i < reps; i++){
-        memcpy(data_packet + 1, data + offset, sizeof(uint8_t) * TM_INSTRUMENT_DATA_MAX_LENGHT);
-        err = send_tm_message(TM_instrument_data,data_packet,TM_INSTRUMENT_DATA_MAX_LENGHT);
+        if(i == 0) data_packet[0] = 0x00;
+        else data_packet[0] = 0x01;
+        offset++;
+        for(int j = 1; j < TM_INSTRUMENT_DATA_MAX_LENGHT;j += 2){
+            data_packet[j+1] = (uint8_t)(data_packet[offset] >> 8);  
+            data_packet[j] = (uint8_t)(data_packet[offset] & 0xFF);
+        }
+        err = send_tm_message(TM_instrument_data,data_packet,TM_INSTRUMENT_DATA_MAX_LENGHT + 1);
         if(err != ERR_OK){
             free(data_packet);
             return err;
         }
-        offset += TM_INSTRUMENT_DATA_MAX_LENGHT + 1;
-        data_packet[0] = 0x01;
     }
-    memcpy(data_packet + 1, data + offset, sizeof(uint8_t) * last_lenght);
     data_packet[0] = 0xFF;
+    offset++;
+    for(int j = 1; j < last_lenght;j += 2){
+        data_packet[j+1] = (uint8_t)(data_packet[offset] >> 8);  
+        data_packet[j] = (uint8_t)(data_packet[offset] & 0xFF);
+    }    
     err = send_tm_message(TM_instrument_data,data_packet,last_lenght);
     free(data_packet);
     return err;
@@ -177,7 +186,7 @@ uint32_t send_tm_instrument_housekeeping_message(uint8_t receive_state, uint8_t 
 
 }
 uint32_t send_tm_sensor_temperature_reply(uint8_t sensor_id, uint16_t temp_value){
-    uint8_t data[] = {sensor_id,(uint8_t)(temp_value >> 8),(uint8_t)(temp_value & 0xFF)};
+    uint8_t data[] = {sensor_id,(uint8_t)(temp_value & 0xFF),(uint8_t)(temp_value >> 8)};
     return send_tm_message(TM_instrument_housekeeping, data, TM_SENSOR_TEMPERATURE_REPLY_DATA_LENGHT);;
 }
 

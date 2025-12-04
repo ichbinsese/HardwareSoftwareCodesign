@@ -24,7 +24,7 @@ uint32_t set_tc_get_average_temperature_callback(tc_read_last_temperature_functi
 uint32_t set_tc_sensor_temperature_reply_callback(tc_set_heater_state_function function);
 
 
-uint32_t send_tm_instrument_data_message(uint8_t *data, int data_lenght);
+uint32_t send_tm_instrument_data_message(uint16_t *data, int data_lenght);
 uint32_t send_tm_instrument_housekeeping_message(uint8_t receive_state, uint8_t number_bytes_received, uint8_t buffer_overflow);
 uint32_t send_tm_sensor_temperature_reply(uint8_t sensor_id, uint16_t temp_value);
 

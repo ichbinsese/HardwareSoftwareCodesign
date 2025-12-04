@@ -12,28 +12,30 @@ uint32_t send_tm_exec_message(uint8_t status,uint8_t sequence_counter);
 
 
 uint32_t receive_message(uint8_t *package, int package_lenght){
-        uint32_t err;
-        if(package[2] != TC_PACKET_TYPE){
-            xil_printf("received corrupt or wrong package, package type not 0x01");
-            return ERR_WRONG_PACKAGE_TYPE;
-        }
-        enum tc_message_type message_type = (enum tc_message_type) package[3];
-        uint8_t sequence_counter = package[4];
-        uint16_t nominal_package_lenght = ((uint16_t)package[5] << 8) | package[6];
-        if(nominal_package_lenght!= package_lenght){
-            xil_printf("received corrupt or wrong package, stated package lenght does not match actual lenght");
-            return ERR_WRONG_PACKAGE_LENGHT;
-        }
-        int data_lenght = package_lenght - TC_PREAMBLE_LENGHT;
-        global_sequence_counter = sequence_counter;
-        err = send_tm_ack_message(sequence_counter);
-        if(err != ERR_OK) {
-            send_tm_exec_message(err, sequence_counter);
-            return err;
-        }
-        err = tc_message_callback(message_type, &package[7], data_lenght);
-        err = send_tm_exec_message(err, sequence_counter);
-        return  err;
+    uint32_t err;
+    if(package[2] != TC_PACKET_TYPE){
+        xil_printf("received corrupt or wrong package, package type not 0x01");
+        return ERR_WRONG_PACKAGE_TYPE;
+    }
+    enum tc_message_type message_type = (enum tc_message_type) package[3];
+    uint8_t sequence_counter = package[4];
+    //TODO MAYBE CHANGE FOR BIG ENDIAN
+    uint16_t nominal_package_lenght = ((uint16_t)package[5] << 8) | package[6];
+    if(nominal_package_lenght!= package_lenght){
+        xil_printf("received corrupt or wrong package, stated package lenght does not match actual lenght");
+        return ERR_WRONG_PACKAGE_LENGHT;
+    }
+    
+    int data_lenght = package_lenght - TC_PREAMBLE_LENGHT;
+    global_sequence_counter = sequence_counter;
+    err = send_tm_ack_message(sequence_counter);
+    if(err != ERR_OK) {
+        send_tm_exec_message(err, sequence_counter);
+        return err;
+    }
+    err = tc_message_callback(message_type, &package[7], data_lenght);
+    err = send_tm_exec_message(err, sequence_counter);
+    return  err;
 }
 
  uint32_t create_message( uint8_t** packet, enum tm_message_type type, uint8_t* data, uint16_t data_lenght,uint8_t sequence_counter){
@@ -43,6 +45,7 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
     (*packet)[2] = TM_PACKAGE_TYPE;
     (*packet)[3] = (uint8_t) type;
     (*packet)[4] = sequence_counter;
+    //TODO MAYBE CHANGE FOR BIG ENDIAN
     (*packet)[6] = (data_lenght + TM_PREAMBLE_LENGHT) & 0xFF;        
     (*packet)[5] = ((data_lenght + TM_PREAMBLE_LENGHT)>> 8) & 0xFF;
      
@@ -56,9 +59,9 @@ uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_leng
     uint32_t err;
     uint8_t* packet = NULL;
     if(type == TM_Ack || type == TM_Exec) return ERR_ILLEGAL_MESSAGE;
+    global_sequence_counter++;
     err = create_message(&packet,type, data, data_lenght,global_sequence_counter);
     err = udp_send_message(packet,TM_PREAMBLE_LENGHT + data_lenght);
-    global_sequence_counter++;
     return err;
 }
 

@@ -13,7 +13,7 @@
 
 #define TC_PACKET_TYPE 0x01
 
-#define TC_PREAMBLE_LENGHT 6
+#define TC_PREAMBLE_LENGHT 7
 
 
 void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const ip_addr_t *addr, u16_t port);

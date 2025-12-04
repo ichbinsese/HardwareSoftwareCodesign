@@ -42,12 +42,19 @@
 #include "udp_protocol_handler.h"
 #include "udp_communication_handler.h"
 #include "lwip/netif.h"
+#include "tm_tc_message_handler.h"
+#include <stdint.h>
 
+u_int32_t enable_instrument_test(u_int8_t cmd_state){
+	xil_printf("%x",cmd_state);
+	send_tm_sensor_temperature_reply(1, 2);
+}
 
 int main(void)
 
 {	
 	initialize_server();
+	set_tc_enable_instrument_callback(&enable_instrument_test);
 	while (1) {
 		server_cyclical();
 	}

@@ -162,6 +162,17 @@ def main():
         parse_tm(data)
         print()
 
+        try:
+            data, addr = sock.recvfrom(2048)
+        except socket.timeout:
+            print("No TM received (timeout)")
+            continue
+            
+
+        print(f"Received {len(data)} bytes from {addr}")
+        parse_tm(data)
+        print()
+
 
 if __name__ == "__main__":
     main()

@@ -1,7 +1,6 @@
 #ifndef __TM_TC_PROTOCOL_HANDER_H_
 #define __TM_TC_PROTOCOL_HANDER_H_
 
-#include "message_creator.h"
 #include "message_types.h"
 #include "udp_communication_handler.h"
 #include <string.h>

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/lwip220/src
+# Install script for directory: C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/lwip220/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,36 +34,36 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/Xilinx/2025.1/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Xilinx/2025.1/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/lib/liblwip220.a")
+   "C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/lib/liblwip220.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/lib" TYPE STATIC_LIBRARY MESSAGE_LAZY FILES "C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/liblwip220.a")
+  file(INSTALL DESTINATION "C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/lib" TYPE STATIC_LIBRARY MESSAGE_LAZY FILES "C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/liblwip220.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/include/../include")
+   "C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/include/../include")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/include/.." TYPE DIRECTORY MESSAGE_LAZY FILES "C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/include")
+  file(INSTALL DESTINATION "C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/include/.." TYPE DIRECTORY MESSAGE_LAZY FILES "C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/include")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/cmake_install.cmake")
+  include("C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/cmake_install.cmake")
 
 endif()
 

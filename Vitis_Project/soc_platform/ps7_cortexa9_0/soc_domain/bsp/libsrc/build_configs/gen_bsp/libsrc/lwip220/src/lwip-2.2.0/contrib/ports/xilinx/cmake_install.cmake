@@ -1,4 +1,4 @@
-# Install script for directory: C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx
+# Install script for directory: C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/Xilinx/2025.1/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Xilinx/2025.1/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Projects/HWSW/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/netif/cmake_install.cmake")
+  include("C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp/libsrc/lwip220/src/lwip-2.2.0/contrib/ports/xilinx/netif/cmake_install.cmake")
 
 endif()
 

@@ -26,10 +26,15 @@
  * OF SUCH DAMAGE.
  *
  */
+#define PERIOD_50MS 50
+
+#include <stdint.h>
+
 #if defined(SDT) || __MICROBLAZE__
 #include "arch/cc.h"
 #include "platform.h"
 #include "platform_config.h"
+#include "stdio.h"
 #include "xil_cache.h"
 #include "xparameters.h"
 #include "xil_exception.h"
@@ -40,12 +45,6 @@
 
 #include "lwip/tcp.h"
 
-#if LWIP_DHCP==1
-volatile int dhcp_timoutcntr = 240;
-void dhcp_fine_tmr();
-void dhcp_coarse_tmr();
-#endif
-
 #ifdef SDT
 #include "xiltimer.h"
 #include "xinterrupt_wrap.h"
@@ -53,15 +52,11 @@ void dhcp_coarse_tmr();
 #include "xintc.h"
 #endif
 
-#if LWIP_DHCP_DOES_ACD_CHECK
-#include "lwip/acd.h"
-#endif
-
 volatile int TcpFastTmrFlag = 0;
 volatile int TcpSlowTmrFlag = 0;
 
 volatile u64_t tickcntr = 0;
-void timer_callback()
+void lwip_timer_callback()
 {
 	/* we need to call tcp_fasttmr & tcp_slowtmr at intervals specified
 	 * by lwIP.
@@ -70,27 +65,11 @@ void timer_callback()
         static int Tcp_Fasttimer = 0;
         static int Tcp_Slowtimer = 0;
 
-#if LWIP_DHCP==1
-	static int dhcp_timer = 0;
-        static int dhcp_finetimer = 0;
-#if LWIP_DHCP_DOES_ACD_CHECK == 1
-        static int acd_timer = 0;
-#endif
-#endif
-
         tickcntr++;
 
         Tcp_Fasttimer++;
         Tcp_Slowtimer++;
 
-#if LWIP_DHCP==1
-        dhcp_finetimer++;
-        dhcp_timer++;
-        dhcp_timoutcntr--;
-#if LWIP_DHCP_DOES_ACD_CHECK == 1
-        acd_timer++;
-#endif
-#endif
 
 	if(Tcp_Fasttimer % 5 == 0)
 	{
@@ -101,26 +80,19 @@ void timer_callback()
 	{
 		TcpSlowTmrFlag = 1;
 	}
+}
 
-#if LWIP_DHCP==1
-	if(dhcp_finetimer % 10 == 0)
-	{
-		dhcp_fine_tmr();
-	}
-	if (dhcp_timer >= 1200)
-	{
-		dhcp_coarse_tmr();
-		dhcp_timer = 0;
-	}
+void TimerCounterHandler(void *CallBackRef, u32_t TmrCtrNumber)
+{
+	static uint8_t ticks_50ms;
 
-#if LWIP_DHCP_DOES_ACD_CHECK == 1
-        if(acd_timer % 2 == 0)
-        {
-                acd_tmr();
-        }
-#endif /* LWIP_DHCP_DOES_ACD_CHECK */
+	ticks_50ms++;
+    if (ticks_50ms * TIMER_INTERVAL_MS >= PERIOD_50MS) {
+        ticks_50ms = 0;
+		lwip_timer_callback();
+    }
 
-#endif /*LWIP_DHCP */
+    schedule_tasks();
 }
 
 #ifndef SDT
@@ -214,15 +186,9 @@ void init_platform()
 }
 
 #ifdef SDT
-void TimerCounterHandler(void *CallBackRef, u32_t TmrCtrNumber)
-{
-	timer_callback();
-}
-
 void init_timer()
 {
-	/* Calibrate the platform timer for 50 ms */
-	XTimer_SetInterval(50);
+	XTimer_SetInterval(TIMER_INTERVAL_MS);
 	XTimer_SetHandler(TimerCounterHandler, 0, XINTERRUPT_DEFAULT_PRIORITY);
 }
 /* Timer ticking for SDT flow */

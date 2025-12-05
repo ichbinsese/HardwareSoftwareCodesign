@@ -2,8 +2,8 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-//Date        : Fri Dec  5 11:51:49 2025
-//Host        : Azmis_Laptop running 64-bit major release  (build 9200)
+//Date        : Fri Dec  5 22:57:05 2025
+//Host        : Abdu_Acer running 64-bit major release  (build 9200)
 //Command     : generate_target soc_design_wrapper.bd
 //Design      : soc_design_wrapper
 //Purpose     : IP block netlist

@@ -13,18 +13,20 @@
 
 #define INSTRUMENT_ENABLE_BIT 0
 
-#define KILOBYTE 1000
-#define MEMORYSIZE 20 //200 * KILOBYTE
+
+#define MEMORYSIZE  (1024U)               // example: bytes
+#define BUFFER_CAPACITY (MEMORYSIZE / 2)  // number of uint16_t entries
 
 
-static uint16_t main_memory[MEMORYSIZE / 2];
+static uint16_t main_memory[BUFFER_CAPACITY];
+
+static uint32_t head = 0;   // index where next write will go (0..BUFFER_CAPACITY-1)
+static uint32_t tail = 0;   // index of oldest element (0..BUFFER_CAPACITY-1)
+static uint32_t count = 0;  // number of elements currently stored (0..BUFFER_CAPACITY)
+
 static uint8_t instrument_enable = 0;
 static uint8_t tc_receive_state = 0;
-static uint8_t overflow = 0;
-static uint8_t bytes_read = 0;
-
-static uint16_t* oldest_data_addr;
-static uint16_t* neweset_data_addr;
+static uint8_t overflow = 0;        // true if at least one overwrite has occurred
 
 uint16_t read_instrument_val()
 {
@@ -38,30 +40,43 @@ uint16_t read_instrument_val()
     return (uint16_t)result;
 }
 
-void instrument_cyclic()
+static void ring_push(uint16_t sample)
 {
-    if (tc_receive_state == 1 && instrument_enable == 1)
+    // write sample at head
+    main_memory[head] = sample;
+
+    // advance head
+    head = (head + 1u) % BUFFER_CAPACITY;
+
+    if (count == BUFFER_CAPACITY)
     {
-        static uint32_t cur_memory_location = UINT32_MAX;
-        cur_memory_location += 1;
+        overflow = 1;
+        tail = (tail + 1u) % BUFFER_CAPACITY;
+    }
+    else
+    {
+        count++;
+    }
+}
 
-        if (cur_memory_location == MEMORYSIZE/2)
-        {
-            cur_memory_location = 0;
-            overflow = 1;
-        }
+static uint8_t bytes_read()
+{
+    uint32_t bytes = count * sizeof(uint16_t);
 
-        uint16_t instrument_val = read_instrument_val();
-        main_memory[cur_memory_location] = instrument_val; 
+    if (bytes >= UINT8_MAX)
+    {
+        return UINT8_MAX;
+    }
+    return bytes;
+}
 
-        if (bytes_read == UINT8_MAX - 1)
-        {
-            bytes_read = UINT8_MAX;
-        }
-        else 
-        {
-            bytes_read += 2;
-        }
+void instrument_cyclic(void)
+{
+    if (tc_receive_state == 1u && instrument_enable == 1u)
+    {
+        uint16_t instrument_val = read_instrument_val(); 
+
+        ring_push(instrument_val);
     }
 }
 
@@ -80,8 +95,66 @@ uint32_t tc_receive_state_callback(uint8_t recevie_state_in)
     return ERR_OK;
 }
 
-uint32_t dump_instrument_data_callback()
+uint32_t dump_instrument_data_callback(void)
 {
+    if (instrument_enable != 1u || tc_receive_state != 1u)
+    {
+        return ERR_OK;
+    }
+
+    if (count == 0u)
+    {
+        return ERR_OK;
+    }
+
+    const uint32_t max_samples_per_msg = TM_INSTRUMENT_DATA_MAX_LENGHT / sizeof(uint16_t);
+
+    while (count > 0u)
+    {
+        uint32_t samples_to_send = count;
+
+        // Limit to message capacity
+        if (samples_to_send > max_samples_per_msg)
+        {
+            samples_to_send = max_samples_per_msg;
+        }
+
+        uint32_t tail_to_end = BUFFER_CAPACITY - tail; // samples until wrap
+
+        if (samples_to_send <= tail_to_end)
+        {
+            // Contiguous region: direct send
+            send_tm_instrument_data_message(&main_memory[tail],
+                                            (int)(samples_to_send * sizeof(uint16_t)));
+        }
+        else
+        {
+            // Wrapped region: need a temporary buffer to linearize
+            static uint16_t transmit_buffer[TM_INSTRUMENT_DATA_MAX_LENGHT / 2];
+
+            uint32_t first_part = tail_to_end;
+            uint32_t second_part = samples_to_send - first_part;
+
+            memcpy(transmit_buffer,
+                   &main_memory[tail],
+                   first_part * sizeof(uint16_t));
+
+            memcpy(transmit_buffer + first_part,
+                   &main_memory[0],
+                   second_part * sizeof(uint16_t));
+
+            send_tm_instrument_data_message(transmit_buffer,
+                                            (int)(samples_to_send * sizeof(uint16_t)));
+        }
+
+        // Advance tail by the number of samples sent
+        tail = (tail + samples_to_send) % BUFFER_CAPACITY;
+        count -= samples_to_send;
+    }
+    head = 0;
+    tail = 0;
+    count = 0;
+    overflow = 0;
 
     return ERR_OK;
 }
@@ -98,7 +171,7 @@ uint32_t instrument_housekeeping()
 {
     if (instrument_enable == 1)
     {
-        send_tm_instrument_housekeeping_message(tc_receive_state, bytes_read, overflow);
+        send_tm_instrument_housekeeping_message(tc_receive_state, bytes_read(), overflow);
     }
     return ERR_OK;
 }

@@ -48,7 +48,7 @@ uint32_t udp_send_message(uint8_t *packet, int packet_lenght){
 	{
         if(p != NULL ){
             udp_error = udp_sendto(pcb, p, last_received_address, last_received_port);
-            xil_printf("%d",udp_error);
+            //xil_printf("%d",udp_error);
         }
         err = ERR_OK;
     }

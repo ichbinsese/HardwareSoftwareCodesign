@@ -13,6 +13,11 @@ uint32_t send_tm_exec_message(uint8_t status,uint8_t sequence_counter);
 
 uint32_t receive_message(uint8_t *package, int package_lenght){
     uint32_t err;
+        xil_printf("\n");
+    for(int i = 0; i < package_lenght; i++){
+        xil_printf("%x",package[i]);
+    }
+    xil_printf("\n");
     if(package[2] != TC_PACKET_TYPE){
         xil_printf("received corrupt or wrong package, package type not 0x01");
         return ERR_WRONG_PACKAGE_TYPE;
@@ -21,6 +26,7 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
     uint8_t sequence_counter = package[4];
     //TODO MAYBE CHANGE FOR BIG ENDIAN
     uint16_t nominal_package_lenght = ((uint16_t)package[5] << 8) | package[6];
+    xil_printf("%x  ",nominal_package_lenght);
     if(nominal_package_lenght!= package_lenght){
         xil_printf("received corrupt or wrong package, stated package lenght does not match actual lenght");
         return ERR_WRONG_PACKAGE_LENGHT;

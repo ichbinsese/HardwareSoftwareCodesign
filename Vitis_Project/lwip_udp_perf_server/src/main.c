@@ -45,6 +45,7 @@
 #include "lwip/netif.h"
 
 #include "scheduler.h"
+#include "instrument_control.h"
 
 extern u64_t tickcntr;
 
@@ -52,8 +53,9 @@ extern u64_t tickcntr;
 int main(void)
 
 {	
-	initialize_server();
+	initialize_instrument();
 
+	initialize_server();
 	while (1) {
 		tasks_cyclical();
 		server_cyclical();

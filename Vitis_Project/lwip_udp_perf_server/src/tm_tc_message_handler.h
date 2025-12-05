@@ -6,6 +6,7 @@
 #include "tm_tc_protocol_handler.h"
 
 
+#define TM_INSTRUMENT_DATA_MAX_LENGHT 65528
 
 
 

@@ -3,6 +3,7 @@
 #include <xil_io.h>
 #include "xparameters.h"
 #include "errors.h"
+#include "tm_tc_message_handler.h"
 
 #define INSTRUMENT_CONTROL_OFFSET 0x00
 #define INSTRUMENT_DATA_OFFSET 0x04
@@ -15,10 +16,15 @@
 #define KILOBYTE 1000
 #define MEMORYSIZE 20 //200 * KILOBYTE
 
+
 static uint16_t main_memory[MEMORYSIZE / 2];
-static uint8_t control_enable = 1;
+static uint8_t instrument_enable = 0;
+static uint8_t tc_receive_state = 0;
 static uint8_t overflow = 0;
 static uint8_t bytes_read = 0;
+
+static uint16_t* oldest_data_addr;
+static uint16_t* neweset_data_addr;
 
 uint16_t read_instrument_val()
 {
@@ -34,7 +40,7 @@ uint16_t read_instrument_val()
 
 void instrument_cyclic()
 {
-    if (control_enable == 1)
+    if (tc_receive_state == 1 && instrument_enable == 1)
     {
         static uint32_t cur_memory_location = UINT32_MAX;
         cur_memory_location += 1;
@@ -61,6 +67,38 @@ void instrument_cyclic()
 
 uint32_t enable_instrument_callback(uint8_t enable_in)
 {
-    control_enable = enable_in;
+    instrument_enable = enable_in;
+    return ERR_OK;
+}
+
+uint32_t tc_receive_state_callback(uint8_t recevie_state_in)
+{
+    if (instrument_enable == 1)
+    {
+    tc_receive_state = recevie_state_in;
+    }
+    return ERR_OK;
+}
+
+uint32_t dump_instrument_data_callback()
+{
+
+    return ERR_OK;
+}
+
+uint32_t initialize_instrument()
+{
+    set_tc_set_receive_state_callback(&tc_receive_state_callback);
+    set_tc_enable_instrument_callback(&enable_instrument_callback);
+    set_tc_dump_instrument_data_callback(&dump_instrument_data_callback);
+    return ERR_OK;
+}
+
+uint32_t instrument_housekeeping()
+{
+    if (instrument_enable == 1)
+    {
+        send_tm_instrument_housekeeping_message(tc_receive_state, bytes_read, overflow);
+    }
     return ERR_OK;
 }

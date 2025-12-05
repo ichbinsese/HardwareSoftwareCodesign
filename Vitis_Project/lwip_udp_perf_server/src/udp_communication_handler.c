@@ -7,8 +7,7 @@
 #include "tm_tc_protocol_handler.h"
 #include "errors.h"
 
-
-ip_addr_t *last_received_address;
+ip_addr_t last_received_address;
 u16_t last_received_port;
 
 struct udp_pcb *pcb;
@@ -19,7 +18,7 @@ void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const
     
     if (p != NULL) 
 	{
-        last_received_address = addr;
+        last_received_address = *addr;
         last_received_port = port;
         xil_printf("%d",addr->addr);
 
@@ -38,17 +37,21 @@ void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const
 }
 
 uint32_t udp_send_message(uint8_t *packet, int packet_lenght){
+    xil_printf("\n");
+    for(int i = 0; i < packet_lenght; i++){
+        xil_printf("%x",packet[i]);
+    }
+    xil_printf("\n");
     struct pbuf *p;
     p = pbuf_alloc(PBUF_TRANSPORT, packet_lenght, PBUF_RAM);
     memcpy(p->payload, packet, packet_lenght);
     free(packet);
     uint32_t err;
     err_t udp_error;
-    if (last_received_address != NULL) 
+    if (last_received_address.addr != 0) 
 	{
         if(p != NULL ){
-            udp_error = udp_sendto(pcb, p, last_received_address, last_received_port);
-            //xil_printf("%d",udp_error);
+            udp_error = udp_sendto(pcb, p, &last_received_address, last_received_port);
         }
         err = ERR_OK;
     }

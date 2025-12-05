@@ -28,6 +28,7 @@ TC_GET_AVERAGE_TEMP = 0x06
 
 # Target satellite IP and port
 SAT_IP = "192.168.1.10"
+
 SAT_PORT = 5001
 
 # Local port to bind so that replies come back here
@@ -183,7 +184,7 @@ def main():
 
     # Create single socket for sending + receiving
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.bind(("0.0.0.0", LOCAL_PORT))  # bind to fixed port so device replies here
+    sock.bind(("192.168.1.1", LOCAL_PORT))  # bind to fixed port so device replies here
 
     # Start TM listener thread
     threading.Thread(target=tm_listener, args=(sock,), daemon=True).start()

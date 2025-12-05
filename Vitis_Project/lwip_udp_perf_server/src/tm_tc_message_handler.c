@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <xil_printf.h>
 
 #define TC_ENABLE_INSTRUMET_DATA_LENGHT 1
 #define TC_SET_RECEIVE_STATE_DATA_LENGHT 1
@@ -146,10 +147,22 @@ uint32_t handle_tc_set_heater_state_callback(uint8_t *data, int data_lenght){
 }
 
 
+
 uint32_t send_tm_instrument_data_message(uint16_t *data, int data_lenght){
     uint32_t err;
+    for(int i = 0; i < data_lenght; i++){
+        xil_printf("%x",data[i]);
+    }
     int reps = (data_lenght * 2) / TM_INSTRUMENT_DATA_MAX_LENGHT;
-    uint8_t last_lenght = (data_lenght * 2) % TM_INSTRUMENT_DATA_MAX_LENGHT;
+    uint16_t last_lenght = (data_lenght * 2) % TM_INSTRUMENT_DATA_MAX_LENGHT;
+    if(data_lenght * 2 < TM_INSTRUMENT_DATA_MAX_LENGHT){
+        reps = 0;
+        last_lenght = data_lenght * 2;
+    }
+    if(last_lenght == 0 && reps > 1){
+        reps--;
+        last_lenght = TM_INSTRUMENT_DATA_MAX_LENGHT;
+    }
     int offset = 1;
     uint8_t* data_packet;
     data_packet = malloc(sizeof(uint8_t) * (TM_INSTRUMENT_DATA_MAX_LENGHT + 1));
@@ -157,10 +170,10 @@ uint32_t send_tm_instrument_data_message(uint16_t *data, int data_lenght){
     for(int i = 0; i < reps; i++){
         if(i == 0) data_packet[0] = 0x00;
         else data_packet[0] = 0x01;
-        offset++;
         for(int j = 1; j < TM_INSTRUMENT_DATA_MAX_LENGHT;j += 2){
-            data_packet[j+1] = (uint8_t)(data_packet[offset] >> 8);  
-            data_packet[j] = (uint8_t)(data_packet[offset] & 0xFF);
+            data_packet[j+1] = (uint8_t)(data[offset] >> 8);  
+            data_packet[j] = (uint8_t)(data[offset] & 0xFF);
+            offset++;
         }
         err = send_tm_message(TM_instrument_data,data_packet,TM_INSTRUMENT_DATA_MAX_LENGHT + 1);
         if(err != ERR_OK){
@@ -169,10 +182,10 @@ uint32_t send_tm_instrument_data_message(uint16_t *data, int data_lenght){
         }
     }
     data_packet[0] = 0xFF;
-    offset++;
     for(int j = 1; j < last_lenght;j += 2){
-        data_packet[j+1] = (uint8_t)(data_packet[offset] >> 8);  
-        data_packet[j] = (uint8_t)(data_packet[offset] & 0xFF);
+        data_packet[j+1] = (uint8_t)(data[offset] >> 8);  
+        data_packet[j] = (uint8_t)(data[offset] & 0xFF);
+        offset++;
     }    
     err = send_tm_message(TM_instrument_data,data_packet,last_lenght);
     free(data_packet);

@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.16)
 
 if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   file(REMOVE_RECURSE
-  "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\ps7_cortexa9_0\\standalone_ps7_cortexa9_0\\bsp\\include\\sleep.h"
-  "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\ps7_cortexa9_0\\standalone_ps7_cortexa9_0\\bsp\\include\\xiltimer.h"
-  "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\ps7_cortexa9_0\\standalone_ps7_cortexa9_0\\bsp\\include\\xtimer_config.h"
-  "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\ps7_cortexa9_0\\standalone_ps7_cortexa9_0\\bsp\\lib\\libxiltimer.a"
+  "C:\\Users\\theha\\Desktop\\Vitis_Project\\soc_platform\\ps7_cortexa9_0\\standalone_ps7_cortexa9_0\\bsp\\include\\sleep.h"
+  "C:\\Users\\theha\\Desktop\\Vitis_Project\\soc_platform\\ps7_cortexa9_0\\standalone_ps7_cortexa9_0\\bsp\\include\\xiltimer.h"
+  "C:\\Users\\theha\\Desktop\\Vitis_Project\\soc_platform\\ps7_cortexa9_0\\standalone_ps7_cortexa9_0\\bsp\\include\\xtimer_config.h"
+  "C:\\Users\\theha\\Desktop\\Vitis_Project\\soc_platform\\ps7_cortexa9_0\\standalone_ps7_cortexa9_0\\bsp\\lib\\libxiltimer.a"
   )
 endif()

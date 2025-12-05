@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/xiltimer/src/core/default_timer
+# Install script for directory: C:/Users/theha/Desktop/Vitis_Project/soc_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/xiltimer/src/core/default_timer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

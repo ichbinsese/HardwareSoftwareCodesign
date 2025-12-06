@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/theha/Desktop/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/xiltimer/src/core/scutimer
+# Install script for directory: C:/Users/abdud/Desktop/HWSWCodesign/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/xiltimer/src/core/scutimer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

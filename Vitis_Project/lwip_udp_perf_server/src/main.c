@@ -54,6 +54,7 @@ int main(void)
 
 {	
 	initialize_instrument();
+	initialize_temperature_control();
 
 	initialize_server();
 	while (1) {

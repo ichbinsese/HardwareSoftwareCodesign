@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/theha/Desktop/Vitis_Project/soc_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/xiltimer/src/core/default_timer
+# Install script for directory: C:/Users/abdud/Desktop/HWSWCodesign/HardwareSoftwareCodesign/Vitis_Project/soc_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/xiltimer/src/core/default_timer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

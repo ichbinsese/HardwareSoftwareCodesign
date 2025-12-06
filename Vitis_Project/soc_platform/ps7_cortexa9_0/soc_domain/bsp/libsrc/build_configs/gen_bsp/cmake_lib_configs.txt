@@ -14,7 +14,7 @@
 -- Found assembler: C:/Xilinx/2025.1/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp
+-- Build files have been written to: C:/Users/abdud/Desktop/HWSWCodesign/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/build_configs/gen_bsp
 -- Cache values
 // BOARD
 BOARD:STRING=pynq-z2
@@ -29,10 +29,10 @@ CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/bsp
 CMAKE_SIZE:FILEPATH=arm-none-eabi-size
 
 // Specs file path for using CMAKE toolchain files
-CMAKE_SPECS_FILE:STRING=C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/Xilinx.spec
+CMAKE_SPECS_FILE:STRING=C:/Users/abdud/Desktop/HWSWCodesign/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/Xilinx.spec
 
 // The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/cortexa9_toolchain.cmake
+CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Users/abdud/Desktop/HWSWCodesign/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/cortexa9_toolchain.cmake
 
 // Device Id
 DEVICE_ID:STRING=7z020

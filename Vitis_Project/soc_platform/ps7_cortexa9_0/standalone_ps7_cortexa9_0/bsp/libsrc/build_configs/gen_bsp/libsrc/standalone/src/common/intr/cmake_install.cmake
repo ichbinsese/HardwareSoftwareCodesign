@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/theha/Desktop/Vitis_Project/soc_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/standalone/src/common/intr
+# Install script for directory: C:/Users/abdud/Desktop/HWSWCodesign/HardwareSoftwareCodesign/Vitis_Project/soc_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/standalone/src/common/intr
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

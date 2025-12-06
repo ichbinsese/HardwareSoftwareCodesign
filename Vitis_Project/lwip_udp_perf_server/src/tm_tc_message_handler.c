@@ -55,9 +55,9 @@ uint32_t tc_message_callback(enum tc_message_type message_type,  uint8_t *data, 
         case TC_read_last_temperature_value:
             return handle_tc_read_last_temperature_callback(data, data_lenght);
         case TC_set_heater_state:
-            return handle_tc_get_average_temperature_callback(data, data_lenght);
-        case TC_get_average_temperature:
             return handle_tc_set_heater_state_callback(data, data_lenght);
+        case TC_get_average_temperature:
+            return handle_tc_get_average_temperature_callback(data, data_lenght);
       break;
     }
 }

@@ -19,4 +19,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_
 # IP: bd/soc_design/ip/soc_design_temp_control_0_0/soc_design_temp_control_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_temp_control_0_0 || ORIG_REF_NAME==soc_design_temp_control_0_0} -quiet] -quiet
 
-# XDC: c:/Users/abdud/Desktop/HWSWCodesign/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/soc_design_ooc.xdc
+# XDC: c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/soc_design_ooc.xdc

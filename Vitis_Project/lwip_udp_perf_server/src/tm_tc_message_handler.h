@@ -6,7 +6,7 @@
 #include "tm_tc_protocol_handler.h"
 
 
-#define TM_INSTRUMENT_DATA_MAX_LENGHT UINT16_MAX - 7
+#define TM_INSTRUMENT_DATA_MAX_LENGHT (50000)
 
 
 
@@ -22,7 +22,7 @@ uint32_t set_tc_set_receive_state_callback(tc_set_receive_state_function functio
 uint32_t set_tc_dump_instrument_data_callback(tc_dump_instrument_data_function function);
 uint32_t set_tc_read_last_temperature_callback(tc_read_last_temperature_function function);
 uint32_t set_tc_get_average_temperature_callback(tc_read_last_temperature_function function);
-uint32_t set_tc_sensor_temperature_reply_callback(tc_set_heater_state_function function);
+uint32_t set_tc_set_heater_state_callback(tc_set_heater_state_function function);
 
 
 uint32_t send_tm_instrument_data_message(uint16_t *data, int data_lenght);

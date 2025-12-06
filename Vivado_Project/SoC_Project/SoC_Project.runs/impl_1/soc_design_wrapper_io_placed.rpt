@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date                      : Fri Dec  5 22:59:24 2025
-| Host                      : Abdu_Acer running 64-bit major release  (build 9200)
+| Date                      : Sat Dec  6 16:15:09 2025
+| Host                      : Azmis_Laptop running 64-bit major release  (build 9200)
 | Command                   : report_io -file soc_design_wrapper_io_placed.rpt
 | Design                    : soc_design_wrapper
 | Device                    : xc7z020

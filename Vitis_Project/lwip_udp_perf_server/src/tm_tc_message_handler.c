@@ -86,7 +86,7 @@ uint32_t set_tc_get_average_temperature_callback(tc_read_last_temperature_functi
     tc_get_average_temperature_callback_function = function;
     return ERR_OK;
 }
-uint32_t set_tc_sensor_temperature_reply_callback(tc_set_heater_state_function function){
+uint32_t set_tc_set_heater_state_callback(tc_set_heater_state_function function){
     tc_set_heater_state_callback_function = function;
     return ERR_OK;
 }
@@ -150,9 +150,9 @@ uint32_t handle_tc_set_heater_state_callback(uint8_t *data, int data_lenght){
 
 uint32_t send_tm_instrument_data_message(uint16_t *data, int data_lenght){
     uint32_t err;
-    for(int i = 0; i < data_lenght; i++){
-        xil_printf("%x",data[i]);
-    }
+    //for(int i = 0; i < data_lenght; i++){
+    //    xil_printf("%x",data[i]);
+    //}
     int reps = (data_lenght * 2) / TM_INSTRUMENT_DATA_MAX_LENGHT;
     uint16_t last_lenght = (data_lenght * 2) % TM_INSTRUMENT_DATA_MAX_LENGHT;
     if(data_lenght * 2 < TM_INSTRUMENT_DATA_MAX_LENGHT){
@@ -163,14 +163,14 @@ uint32_t send_tm_instrument_data_message(uint16_t *data, int data_lenght){
         reps--;
         last_lenght = TM_INSTRUMENT_DATA_MAX_LENGHT;
     }
-    int offset = 1;
+    int offset = 0;
     uint8_t* data_packet;
     data_packet = malloc(sizeof(uint8_t) * (TM_INSTRUMENT_DATA_MAX_LENGHT + 1));
 
     for(int i = 0; i < reps; i++){
         if(i == 0) data_packet[0] = 0x00;
         else data_packet[0] = 0x01;
-        for(int j = 1; j < TM_INSTRUMENT_DATA_MAX_LENGHT;j += 2){
+        for(int j = 1; j < TM_INSTRUMENT_DATA_MAX_LENGHT + 1;j += 2){
             data_packet[j+1] = (uint8_t)(data[offset] >> 8);  
             data_packet[j] = (uint8_t)(data[offset] & 0xFF);
             offset++;
@@ -182,7 +182,7 @@ uint32_t send_tm_instrument_data_message(uint16_t *data, int data_lenght){
         }
     }
     data_packet[0] = 0xFF;
-    for(int j = 1; j < last_lenght;j += 2){
+    for(int j = 1; j < last_lenght + 1;j += 2){
         data_packet[j+1] = (uint8_t)(data[offset] >> 8);  
         data_packet[j] = (uint8_t)(data[offset] & 0xFF);
         offset++;

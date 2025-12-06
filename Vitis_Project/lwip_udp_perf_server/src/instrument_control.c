@@ -8,13 +8,13 @@
 #define INSTRUMENT_CONTROL_OFFSET 0x00
 #define INSTRUMENT_DATA_OFFSET 0x04
 
-#define INSTRUMENT_CONTROL_ADDR XPAR_IP_INSTRUMENTREADER_0_BASEADDR + INSTRUMENT_CONTROL_OFFSET
-#define INSTRUMENT_DATA_ADDR XPAR_IP_INSTRUMENTREADER_0_BASEADDR + INSTRUMENT_DATA_OFFSET
+#define INSTRUMENT_CONTROL_ADDR (XPAR_IP_INSTRUMENTREADER_0_BASEADDR + INSTRUMENT_CONTROL_OFFSET)
+#define INSTRUMENT_DATA_ADDR (XPAR_IP_INSTRUMENTREADER_0_BASEADDR + INSTRUMENT_DATA_OFFSET)
 
 #define INSTRUMENT_ENABLE_BIT 0
 
 
-#define MEMORYSIZE  (1024U)               // example: bytes
+#define MEMORYSIZE  (200000U)               // example: bytes
 #define BUFFER_CAPACITY (MEMORYSIZE / 2)  // number of uint16_t entries
 
 
@@ -90,7 +90,7 @@ uint32_t tc_receive_state_callback(uint8_t recevie_state_in)
 {
     if (instrument_enable == 1)
     {
-    tc_receive_state = recevie_state_in;
+        tc_receive_state = recevie_state_in;
     }
     return ERR_OK;
 }
@@ -102,55 +102,30 @@ uint32_t dump_instrument_data_callback(void)
         return ERR_OK;
     }
 
-    if (count == 0u)
-    {
-        return ERR_OK;
-    }
+    const uint32_t total_samples = BUFFER_CAPACITY;
+    static uint16_t dump_buffer[BUFFER_CAPACITY];
 
-    const uint32_t max_samples_per_msg = TM_INSTRUMENT_DATA_MAX_LENGHT / sizeof(uint16_t);
+    uint32_t pos = tail;
+    uint32_t idx = 0;
 
-    while (count > 0u)
-    {
-        uint32_t samples_to_send = count;
+    // Copy block tail → end
+    uint32_t tail_to_end = BUFFER_CAPACITY - tail;
+    memcpy(&dump_buffer[idx],
+           &main_memory[pos],
+           tail_to_end * sizeof(uint16_t));
+    idx += tail_to_end;
 
-        // Limit to message capacity
-        if (samples_to_send > max_samples_per_msg)
-        {
-            samples_to_send = max_samples_per_msg;
-        }
+    // Copy block start → head
+    memcpy(&dump_buffer[idx],
+           &main_memory[0],
+           (BUFFER_CAPACITY - tail_to_end) * sizeof(uint16_t));
 
-        uint32_t tail_to_end = BUFFER_CAPACITY - tail; // samples until wrap
+    // At this point, dump_buffer contains the full memory ordered from tail→head
 
-        if (samples_to_send <= tail_to_end)
-        {
-            // Contiguous region: direct send
-            send_tm_instrument_data_message(&main_memory[tail],
-                                            (int)(samples_to_send * sizeof(uint16_t)));
-        }
-        else
-        {
-            // Wrapped region: need a temporary buffer to linearize
-            static uint16_t transmit_buffer[TM_INSTRUMENT_DATA_MAX_LENGHT / 2];
+    // Hand off buffer to existing message-sending function
+    send_tm_instrument_data_message(dump_buffer, total_samples);
 
-            uint32_t first_part = tail_to_end;
-            uint32_t second_part = samples_to_send - first_part;
-
-            memcpy(transmit_buffer,
-                   &main_memory[tail],
-                   first_part * sizeof(uint16_t));
-
-            memcpy(transmit_buffer + first_part,
-                   &main_memory[0],
-                   second_part * sizeof(uint16_t));
-
-            send_tm_instrument_data_message(transmit_buffer,
-                                            (int)(samples_to_send * sizeof(uint16_t)));
-        }
-
-        // Advance tail by the number of samples sent
-        tail = (tail + samples_to_send) % BUFFER_CAPACITY;
-        count -= samples_to_send;
-    }
+    // Reset circular buffer state if desired
     head = 0;
     tail = 0;
     count = 0;

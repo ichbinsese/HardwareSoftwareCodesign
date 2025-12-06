@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date             : Sat Dec  6 16:15:46 2025
+| Date             : Sat Dec  6 23:41:30 2025
 | Host             : Azmis_Laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file soc_design_wrapper_power_routed.rpt -pb soc_design_wrapper_power_summary_routed.pb -rpx soc_design_wrapper_power_routed.rpx
 | Design           : soc_design_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.400        |
+| Total On-Chip Power (W)  | 1.401        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.266        |
 | Device Static (W)        | 0.134        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 68.9         |
-| Junction Temperature (C) | 41.1         |
+| Max Ambient (C)          | 68.8         |
+| Junction Temperature (C) | 41.2         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,17 +52,17 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.005 |        3 |       --- |             --- |
-| Slice Logic             |     0.002 |     2179 |       --- |             --- |
-|   LUT as Logic          |     0.002 |      723 |     53200 |            1.36 |
-|   Register              |    <0.001 |      883 |    106400 |            0.83 |
+| Clocks                  |     0.006 |        3 |       --- |             --- |
+| Slice Logic             |     0.002 |     2216 |       --- |             --- |
+|   LUT as Logic          |     0.002 |      765 |     53200 |            1.44 |
+|   Register              |    <0.001 |      882 |    106400 |            0.83 |
 |   CARRY4                |    <0.001 |       15 |     13300 |            0.11 |
 |   Others                |     0.000 |      329 |       --- |             --- |
 |   LUT as Shift Register |     0.000 |        2 |     17400 |            0.01 |
-| Signals                 |     0.002 |     1584 |       --- |             --- |
+| Signals                 |     0.002 |     1587 |       --- |             --- |
 | PS7                     |     1.256 |        1 |       --- |             --- |
 | Static Power            |     0.134 |          |           |                 |
-| Total                   |     1.400 |          |           |                 |
+| Total                   |     1.401 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -150,8 +150,8 @@ Table of Contents
 +--------------------------+-----------+
 | soc_design_wrapper       |     1.266 |
 |   soc_design_i           |     1.266 |
-|     axi_smc              |     0.008 |
-|       inst               |     0.008 |
+|     axi_smc              |     0.009 |
+|       inst               |     0.009 |
 |     processing_system7_0 |     1.256 |
 |       inst               |     1.256 |
 +--------------------------+-----------+

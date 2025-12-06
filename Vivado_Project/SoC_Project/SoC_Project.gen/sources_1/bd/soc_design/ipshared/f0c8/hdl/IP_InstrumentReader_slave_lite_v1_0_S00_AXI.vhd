@@ -207,46 +207,54 @@ BEGIN
 	-- These registers are cleared when reset (active low) is applied.
 	-- Slave register write enable is asserted when valid address and data are available
 	-- and the slave is ready to accept the write address and write data.
-	PROCESS (S_AXI_ACLK)
-	BEGIN
-		IF rising_edge(S_AXI_ACLK) THEN
-			IF S_AXI_ARESETN = '0' THEN
-				user_control_reg <= (OTHERS => '0');
-				user_instrument_data <= (OTHERS => '0');
-				slv_reg2 <= (OTHERS => '0');
-				slv_reg3 <= (OTHERS => '0');
-			ELSE
-				IF (S_AXI_WVALID = '1') THEN
-					CASE (mem_logic) IS
-						WHEN b"00" =>
-							FOR byte_index IN 0 TO (C_S_AXI_DATA_WIDTH/8 - 1) LOOP
-								IF (S_AXI_WSTRB(byte_index) = '1') THEN
-									-- Respective byte enables are asserted as per write strobes                   
-									-- slave registor 0
-									user_control_reg(byte_index * 8 + 7 DOWNTO byte_index * 8) <= S_AXI_WDATA(byte_index * 8 + 7 DOWNTO byte_index * 8);
-								END IF;
-							END LOOP;
-						WHEN OTHERS =>
-							user_control_reg <= user_control_reg;
-							user_instrument_data <= user_instrument_data;
-							slv_reg2 <= slv_reg2;
-							slv_reg3 <= slv_reg3;
-					END CASE;
+PROCESS (S_AXI_ACLK)
+    VARIABLE temp_uc_reg : STD_LOGIC_VECTOR(C_S_AXI_DATA_WIDTH - 1 DOWNTO 0);
+BEGIN
+    IF rising_edge(S_AXI_ACLK) THEN
+        IF S_AXI_ARESETN = '0' THEN
+            -- reset all registers
+            user_control_reg <= (OTHERS => '0');
+            user_instrument_data <= std_logic_vector(USER_INSTRUMENT_MAX);
+            slv_reg2 <= (OTHERS => '0');
+            slv_reg3 <= (OTHERS => '0');
+        ELSE
+            -- start with current value in a variable so we update only once per clock
+            temp_uc_reg := user_control_reg;
 
-					-- USER LOGIC
-				    ELSIF (user_control_reg(USER_READ_BIT) = '1') THEN
-					   IF (unsigned(user_instrument_data) >= USER_INSTRUMENT_MAX) THEN
-						  user_instrument_data <= (OTHERS => '0');
-					   ELSE
-						  user_instrument_data <= STD_LOGIC_VECTOR(unsigned(user_instrument_data) + 1);
-					   END IF;
-					      user_control_reg(USER_READ_BIT) <= '0';
-					-- USER LOGIC END
+            -- Handle AXI write (byte-wise) when write data valid
+            IF (S_AXI_WVALID = '1') THEN
+                CASE (mem_logic) IS
+                    WHEN b"00" =>
+                        FOR byte_index IN 0 TO (C_S_AXI_DATA_WIDTH/8 - 1) LOOP
+                            IF (S_AXI_WSTRB(byte_index) = '1') THEN
+                                temp_uc_reg(byte_index * 8 + 7 DOWNTO byte_index * 8) :=
+                                    S_AXI_WDATA(byte_index * 8 + 7 DOWNTO byte_index * 8);
+                            END IF;
+                        END LOOP;
+                    WHEN OTHERS =>
+                        NULL;
+                END CASE;
+            END IF;
 
-				END IF;
-			END IF;
-		END IF;
-	END PROCESS;
+            -- User logic: handle USER_READ_BIT action (increment instrument, then clear the bit)
+            IF (temp_uc_reg(USER_READ_BIT) = '1') THEN
+                IF (unsigned(user_instrument_data) >= USER_INSTRUMENT_MAX) THEN
+                    user_instrument_data <= (OTHERS => '0');
+                ELSE
+                    user_instrument_data <= STD_LOGIC_VECTOR(unsigned(user_instrument_data) + 1);
+                END IF;
+                temp_uc_reg(USER_READ_BIT) := '0';
+            END IF;
+
+            -- Commit the single update to the signal (single driver)
+            user_control_reg <= temp_uc_reg;
+
+            -- other slave regs (if they're written elsewhere) keep their existing update logic
+            -- (you currently only write slv_reg2/slv_reg3 under OTHERS; adapt if needed)
+        END IF;
+    END IF;
+END PROCESS;
+
 
 	-- Implement read state machine
 	PROCESS (S_AXI_ACLK)

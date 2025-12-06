@@ -2,8 +2,8 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Fri Dec  5 22:58:13 2025
--- Host        : Abdu_Acer running 64-bit major release  (build 9200)
+-- Date        : Sat Dec  6 22:03:55 2025
+-- Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top soc_design_axi_smc_0 -prefix
 --               soc_design_axi_smc_0_ soc_design_axi_smc_0_stub.vhdl
 -- Design      : soc_design_axi_smc_0

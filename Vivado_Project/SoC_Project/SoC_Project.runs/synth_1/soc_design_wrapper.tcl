@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 5
 set_param general.usePosixSpawnForFork 1
 set_param bd.open.in_stealth_mode 1
 OPTRACE "Creating in-memory project" START { }
@@ -72,7 +73,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {C:/Users/azmib/AppData/Roaming/Xilinx/Vivado/2025.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_repo_paths c:/Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores [current_project]
+set_property ip_repo_paths c:/Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/ip_repo [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

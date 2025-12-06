@@ -118,7 +118,7 @@ OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.cache/wt [current_project]
   set_property parent.project_path C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.xpr [current_project]
-  set_property ip_repo_paths c:/Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores [current_project]
+  set_property ip_repo_paths C:/Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/ip_repo [current_project]
   update_ip_catalog
   set_property ip_output_repo C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]

@@ -13,9 +13,9 @@
     "design_tree": {
       "processing_system7_0": "",
       "IP_InstrumentReader_0": "",
+      "temp_control_0": "",
       "axi_smc": "",
-      "rst_ps7_0_100M": "",
-      "temp_control_0": ""
+      "rst_ps7_0_100M": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1923,10 +1923,18 @@
       },
       "IP_InstrumentReader_0": {
         "vlnv": "xilinx.com:user:IP_InstrumentReader:1.0",
-        "ip_revision": "4",
+        "ip_revision": "7",
         "xci_name": "soc_design_IP_InstrumentReader_0_0",
         "xci_path": "ip\\soc_design_IP_InstrumentReader_0_0\\soc_design_IP_InstrumentReader_0_0.xci",
         "inst_hier_path": "IP_InstrumentReader_0",
+        "has_run_ip_tcl": "true"
+      },
+      "temp_control_0": {
+        "vlnv": "xilinx.com:user:temp_control:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_design_temp_control_0_0",
+        "xci_path": "ip\\soc_design_temp_control_0_0\\soc_design_temp_control_0_0.xci",
+        "inst_hier_path": "temp_control_0",
         "has_run_ip_tcl": "true"
       },
       "axi_smc": {
@@ -2042,14 +2050,6 @@
         "xci_name": "soc_design_rst_ps7_0_100M_0",
         "xci_path": "ip\\soc_design_rst_ps7_0_100M_0\\soc_design_rst_ps7_0_100M_0.xci",
         "inst_hier_path": "rst_ps7_0_100M",
-        "has_run_ip_tcl": "true"
-      },
-      "temp_control_0": {
-        "vlnv": "xilinx.com:user:temp_control:1.0",
-        "ip_revision": "2",
-        "xci_name": "soc_design_temp_control_0_0",
-        "xci_path": "ip\\soc_design_temp_control_0_0\\soc_design_temp_control_0_0.xci",
-        "inst_hier_path": "temp_control_0",
         "has_run_ip_tcl": "true"
       }
     },

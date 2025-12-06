@@ -4,7 +4,7 @@
     "xci_name": "soc_design_IP_InstrumentReader_0_0",
     "cell_name": "IP_InstrumentReader_0",
     "component_reference": "xilinx.com:user:IP_InstrumentReader:1.0",
-    "ip_revision": "4",
+    "ip_revision": "7",
     "gen_directory": "../../../../../../SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_IP_InstrumentReader_0_0",
     "parameters": {
       "component_parameters": {
@@ -33,7 +33,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "4" } ],
+        "IPREVISION": [ { "value": "7" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_IP_InstrumentReader_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],

@@ -55,9 +55,12 @@ vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../SoC_Project.gen/sou
 "../../../bd/soc_design/ip/soc_design_processing_system7_0_0/sim/soc_design_processing_system7_0_0.v" \
 
 vcom -work xil_defaultlib  -93  \
-"../../../bd/soc_design/ipshared/09b8/hdl/IP_InstrumentReader_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/soc_design/ipshared/09b8/hdl/IP_InstrumentReader.vhd" \
+"../../../bd/soc_design/ipshared/f0c8/hdl/IP_InstrumentReader_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/soc_design/ipshared/f0c8/hdl/IP_InstrumentReader.vhd" \
 "../../../bd/soc_design/ip/soc_design_IP_InstrumentReader_0_0/sim/soc_design_IP_InstrumentReader_0_0.vhd" \
+"../../../bd/soc_design/ipshared/ea3d/hdl/temp_control_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/soc_design/ipshared/ea3d/hdl/temp_control.vhd" \
+"../../../bd/soc_design/ip/soc_design_temp_control_0_0/sim/soc_design_temp_control_0_0.vhd" \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/ec67/hdl" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/6cfa/hdl" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/a8e4/hdl/verilog" "+incdir+../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
 "../../../bd/soc_design/ip/soc_design_axi_smc_0/bd_0/sim/bd_404a.v" \
@@ -161,9 +164,6 @@ vlog -work xil_defaultlib  -incr -mfcu  -sv -L axi_vip_v1_1_21 -L smartconnect_v
 
 vcom -work xil_defaultlib  -93  \
 "../../../bd/soc_design/ip/soc_design_rst_ps7_0_100M_0/sim/soc_design_rst_ps7_0_100M_0.vhd" \
-"../../../bd/soc_design/ipshared/ea3d/hdl/temp_control_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/soc_design/ipshared/ea3d/hdl/temp_control.vhd" \
-"../../../bd/soc_design/ip/soc_design_temp_control_0_0/sim/soc_design_temp_control_0_0.vhd" \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/ec67/hdl" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/6cfa/hdl" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/a8e4/hdl/verilog" "+incdir+../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
 "../../../bd/soc_design/sim/soc_design.v" \

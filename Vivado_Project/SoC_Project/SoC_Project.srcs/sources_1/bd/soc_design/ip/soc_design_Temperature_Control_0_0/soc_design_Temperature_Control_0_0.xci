@@ -4,7 +4,7 @@
     "xci_name": "soc_design_Temperature_Control_0_0",
     "cell_name": "Temperature_Control_0",
     "component_reference": "xilinx.com:user:Temperature_Control:1.0",
-    "ip_revision": "2",
+    "ip_revision": "8",
     "gen_directory": "../../../../../../SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0",
     "parameters": {
       "component_parameters": {
@@ -33,7 +33,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2" } ],
+        "IPREVISION": [ { "value": "8" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],

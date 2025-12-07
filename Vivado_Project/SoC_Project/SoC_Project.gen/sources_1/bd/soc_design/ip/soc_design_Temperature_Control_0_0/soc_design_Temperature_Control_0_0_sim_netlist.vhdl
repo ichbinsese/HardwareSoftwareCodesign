@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Sun Dec  7 15:35:32 2025
+-- Date        : Sun Dec  7 18:16:19 2025
 -- Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/soc_design_Temperature_Control_0_0_sim_netlist.vhdl
@@ -290,8 +290,6 @@ architecture STRUCTURE of soc_design_Temperature_Control_0_0_Temperature_Control
   signal \sensor1_raw0_carry__1_i_2_n_0\ : STD_LOGIC;
   signal \sensor1_raw0_carry__1_i_3_n_0\ : STD_LOGIC;
   signal \sensor1_raw0_carry__1_i_4_n_0\ : STD_LOGIC;
-  signal \sensor1_raw0_carry__1_i_5_n_0\ : STD_LOGIC;
-  signal \sensor1_raw0_carry__1_i_6_n_0\ : STD_LOGIC;
   signal \sensor1_raw0_carry__1_n_0\ : STD_LOGIC;
   signal \sensor1_raw0_carry__1_n_1\ : STD_LOGIC;
   signal \sensor1_raw0_carry__1_n_2\ : STD_LOGIC;
@@ -302,8 +300,6 @@ architecture STRUCTURE of soc_design_Temperature_Control_0_0_Temperature_Control
   signal \sensor1_raw0_carry__2_i_4_n_0\ : STD_LOGIC;
   signal \sensor1_raw0_carry__2_i_5_n_0\ : STD_LOGIC;
   signal \sensor1_raw0_carry__2_i_6_n_0\ : STD_LOGIC;
-  signal \sensor1_raw0_carry__2_i_7_n_0\ : STD_LOGIC;
-  signal \sensor1_raw0_carry__2_i_8_n_0\ : STD_LOGIC;
   signal \sensor1_raw0_carry__2_n_0\ : STD_LOGIC;
   signal \sensor1_raw0_carry__2_n_1\ : STD_LOGIC;
   signal \sensor1_raw0_carry__2_n_2\ : STD_LOGIC;
@@ -1498,9 +1494,10 @@ sensor1_raw0_carry: unisim.vcomponents.CARRY4
       CO(1) => \sensor1_raw0_carry__0_n_2\,
       CO(0) => \sensor1_raw0_carry__0_n_3\,
       CYINIT => '0',
-      DI(3 downto 2) => B"00",
-      DI(1) => \sensor1_raw0_carry__0_i_1_n_0\,
-      DI(0) => \sensor1_raw0_carry__0_i_2_n_0\,
+      DI(3) => '0',
+      DI(2) => \sensor1_raw0_carry__0_i_1_n_0\,
+      DI(1) => \sensor1_raw0_carry__0_i_2_n_0\,
+      DI(0) => ticks_reg(9),
       O(3 downto 0) => \NLW_sensor1_raw0_carry__0_O_UNCONNECTED\(3 downto 0),
       S(3) => \sensor1_raw0_carry__0_i_3_n_0\,
       S(2) => \sensor1_raw0_carry__0_i_4_n_0\,
@@ -1509,11 +1506,11 @@ sensor1_raw0_carry: unisim.vcomponents.CARRY4
     );
 \sensor1_raw0_carry__0_i_1\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"E"
+      INIT => X"8"
     )
         port map (
-      I0 => ticks_reg(10),
-      I1 => ticks_reg(11),
+      I0 => ticks_reg(12),
+      I1 => ticks_reg(13),
       O => \sensor1_raw0_carry__0_i_1_n_0\
     );
 \sensor1_raw0_carry__0_i_2\: unisim.vcomponents.LUT2
@@ -1521,8 +1518,8 @@ sensor1_raw0_carry: unisim.vcomponents.CARRY4
       INIT => X"E"
     )
         port map (
-      I0 => ticks_reg(8),
-      I1 => ticks_reg(9),
+      I0 => ticks_reg(10),
+      I1 => ticks_reg(11),
       O => \sensor1_raw0_carry__0_i_2_n_0\
     );
 \sensor1_raw0_carry__0_i_3\: unisim.vcomponents.LUT2
@@ -1536,11 +1533,11 @@ sensor1_raw0_carry: unisim.vcomponents.CARRY4
     );
 \sensor1_raw0_carry__0_i_4\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"8"
+      INIT => X"2"
     )
         port map (
-      I0 => ticks_reg(12),
-      I1 => ticks_reg(13),
+      I0 => ticks_reg(13),
+      I1 => ticks_reg(12),
       O => \sensor1_raw0_carry__0_i_4_n_0\
     );
 \sensor1_raw0_carry__0_i_5\: unisim.vcomponents.LUT2
@@ -1554,7 +1551,7 @@ sensor1_raw0_carry: unisim.vcomponents.CARRY4
     );
 \sensor1_raw0_carry__0_i_6\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"1"
+      INIT => X"2"
     )
         port map (
       I0 => ticks_reg(8),
@@ -1570,21 +1567,21 @@ sensor1_raw0_carry: unisim.vcomponents.CARRY4
       CO(0) => \sensor1_raw0_carry__1_n_3\,
       CYINIT => '0',
       DI(3 downto 2) => B"00",
-      DI(1) => \sensor1_raw0_carry__1_i_1_n_0\,
-      DI(0) => \sensor1_raw0_carry__1_i_2_n_0\,
+      DI(1) => ticks_reg(19),
+      DI(0) => ticks_reg(17),
       O(3 downto 0) => \NLW_sensor1_raw0_carry__1_O_UNCONNECTED\(3 downto 0),
-      S(3) => \sensor1_raw0_carry__1_i_3_n_0\,
-      S(2) => \sensor1_raw0_carry__1_i_4_n_0\,
-      S(1) => \sensor1_raw0_carry__1_i_5_n_0\,
-      S(0) => \sensor1_raw0_carry__1_i_6_n_0\
+      S(3) => \sensor1_raw0_carry__1_i_1_n_0\,
+      S(2) => \sensor1_raw0_carry__1_i_2_n_0\,
+      S(1) => \sensor1_raw0_carry__1_i_3_n_0\,
+      S(0) => \sensor1_raw0_carry__1_i_4_n_0\
     );
 \sensor1_raw0_carry__1_i_1\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => ticks_reg(18),
-      I1 => ticks_reg(19),
+      I0 => ticks_reg(22),
+      I1 => ticks_reg(23),
       O => \sensor1_raw0_carry__1_i_1_n_0\
     );
 \sensor1_raw0_carry__1_i_2\: unisim.vcomponents.LUT2
@@ -1592,45 +1589,27 @@ sensor1_raw0_carry: unisim.vcomponents.CARRY4
       INIT => X"8"
     )
         port map (
-      I0 => ticks_reg(16),
-      I1 => ticks_reg(17),
+      I0 => ticks_reg(20),
+      I1 => ticks_reg(21),
       O => \sensor1_raw0_carry__1_i_2_n_0\
     );
 \sensor1_raw0_carry__1_i_3\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"8"
+      INIT => X"2"
     )
         port map (
-      I0 => ticks_reg(22),
-      I1 => ticks_reg(23),
+      I0 => ticks_reg(18),
+      I1 => ticks_reg(19),
       O => \sensor1_raw0_carry__1_i_3_n_0\
     );
 \sensor1_raw0_carry__1_i_4\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"8"
+      INIT => X"2"
     )
         port map (
-      I0 => ticks_reg(20),
-      I1 => ticks_reg(21),
+      I0 => ticks_reg(16),
+      I1 => ticks_reg(17),
       O => \sensor1_raw0_carry__1_i_4_n_0\
-    );
-\sensor1_raw0_carry__1_i_5\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => ticks_reg(19),
-      I1 => ticks_reg(18),
-      O => \sensor1_raw0_carry__1_i_5_n_0\
-    );
-\sensor1_raw0_carry__1_i_6\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => ticks_reg(17),
-      I1 => ticks_reg(16),
-      O => \sensor1_raw0_carry__1_i_6_n_0\
     );
 \sensor1_raw0_carry__2\: unisim.vcomponents.CARRY4
      port map (
@@ -1642,13 +1621,13 @@ sensor1_raw0_carry: unisim.vcomponents.CARRY4
       CYINIT => '0',
       DI(3) => \sensor1_raw0_carry__2_i_1_n_0\,
       DI(2) => \sensor1_raw0_carry__2_i_2_n_0\,
-      DI(1) => \sensor1_raw0_carry__2_i_3_n_0\,
-      DI(0) => \sensor1_raw0_carry__2_i_4_n_0\,
+      DI(1) => ticks_reg(27),
+      DI(0) => ticks_reg(25),
       O(3 downto 0) => \NLW_sensor1_raw0_carry__2_O_UNCONNECTED\(3 downto 0),
-      S(3) => \sensor1_raw0_carry__2_i_5_n_0\,
-      S(2) => \sensor1_raw0_carry__2_i_6_n_0\,
-      S(1) => \sensor1_raw0_carry__2_i_7_n_0\,
-      S(0) => \sensor1_raw0_carry__2_i_8_n_0\
+      S(3) => \sensor1_raw0_carry__2_i_3_n_0\,
+      S(2) => \sensor1_raw0_carry__2_i_4_n_0\,
+      S(1) => \sensor1_raw0_carry__2_i_5_n_0\,
+      S(0) => \sensor1_raw0_carry__2_i_6_n_0\
     );
 \sensor1_raw0_carry__2_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -1670,61 +1649,43 @@ sensor1_raw0_carry: unisim.vcomponents.CARRY4
     );
 \sensor1_raw0_carry__2_i_3\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => ticks_reg(26),
-      I1 => ticks_reg(27),
-      O => \sensor1_raw0_carry__2_i_3_n_0\
-    );
-\sensor1_raw0_carry__2_i_4\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => ticks_reg(24),
-      I1 => ticks_reg(25),
-      O => \sensor1_raw0_carry__2_i_4_n_0\
-    );
-\sensor1_raw0_carry__2_i_5\: unisim.vcomponents.LUT2
-    generic map(
       INIT => X"1"
     )
         port map (
       I0 => ticks_reg(30),
       I1 => ticks_reg(31),
-      O => \sensor1_raw0_carry__2_i_5_n_0\
+      O => \sensor1_raw0_carry__2_i_3_n_0\
     );
-\sensor1_raw0_carry__2_i_6\: unisim.vcomponents.LUT2
+\sensor1_raw0_carry__2_i_4\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => ticks_reg(28),
       I1 => ticks_reg(29),
-      O => \sensor1_raw0_carry__2_i_6_n_0\
+      O => \sensor1_raw0_carry__2_i_4_n_0\
     );
-\sensor1_raw0_carry__2_i_7\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => ticks_reg(26),
-      I1 => ticks_reg(27),
-      O => \sensor1_raw0_carry__2_i_7_n_0\
-    );
-\sensor1_raw0_carry__2_i_8\: unisim.vcomponents.LUT2
+\sensor1_raw0_carry__2_i_5\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"2"
     )
         port map (
-      I0 => ticks_reg(25),
-      I1 => ticks_reg(24),
-      O => \sensor1_raw0_carry__2_i_8_n_0\
+      I0 => ticks_reg(26),
+      I1 => ticks_reg(27),
+      O => \sensor1_raw0_carry__2_i_5_n_0\
+    );
+\sensor1_raw0_carry__2_i_6\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => ticks_reg(24),
+      I1 => ticks_reg(25),
+      O => \sensor1_raw0_carry__2_i_6_n_0\
     );
 sensor1_raw0_carry_i_1: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"8"
+      INIT => X"E"
     )
         port map (
       I0 => ticks_reg(6),
@@ -1760,11 +1721,11 @@ sensor1_raw0_carry_i_4: unisim.vcomponents.LUT2
     );
 sensor1_raw0_carry_i_5: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"2"
+      INIT => X"1"
     )
         port map (
-      I0 => ticks_reg(7),
-      I1 => ticks_reg(6),
+      I0 => ticks_reg(6),
+      I1 => ticks_reg(7),
       O => sensor1_raw0_carry_i_5_n_0
     );
 sensor1_raw0_carry_i_6: unisim.vcomponents.LUT2

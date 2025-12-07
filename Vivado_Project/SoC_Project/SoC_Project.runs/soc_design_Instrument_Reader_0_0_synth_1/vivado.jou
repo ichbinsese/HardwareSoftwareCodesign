@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Sun Dec  7 14:33:48 2025
-# Process ID         : 4212
+# Start of session at: Sun Dec  7 18:15:37 2025
+# Process ID         : 21176
 # Current directory  : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Instrument_Reader_0_0_synth_1
 # Command line       : vivado.exe -log soc_design_Instrument_Reader_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_design_Instrument_Reader_0_0.tcl
 # Log file           : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Instrument_Reader_0_0_synth_1/soc_design_Instrument_Reader_0_0.vds
@@ -19,6 +19,6 @@
 # Host memory        : 16802 MB
 # Swap memory        : 3355 MB
 # Total Virtual      : 20158 MB
-# Available Virtual  : 7693 MB
+# Available Virtual  : 6724 MB
 #-----------------------------------------------------------
 source soc_design_Instrument_Reader_0_0.tcl -notrace

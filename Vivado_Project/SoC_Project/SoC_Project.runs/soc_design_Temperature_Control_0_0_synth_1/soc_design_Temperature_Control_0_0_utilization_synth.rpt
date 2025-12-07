@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Sun Dec  7 15:35:32 2025
+| Date         : Sun Dec  7 18:16:19 2025
 | Host         : Azmis_Laptop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file soc_design_Temperature_Control_0_0_utilization_synth.rpt -pb soc_design_Temperature_Control_0_0_utilization_synth.pb
 | Design       : soc_design_Temperature_Control_0_0
@@ -153,7 +153,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | LUT1     |   64 |                 LUT |
 | LUT5     |   62 |                 LUT |
 | CARRY4   |   44 |          CarryLogic |
-| LUT2     |   34 |                 LUT |
+| LUT2     |   30 |                 LUT |
 | LUT6     |   14 |                 LUT |
 | LUT4     |   12 |                 LUT |
 | LUT3     |    5 |                 LUT |

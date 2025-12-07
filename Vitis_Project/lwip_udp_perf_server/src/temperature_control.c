@@ -44,8 +44,8 @@ static void write_heater_states(void)
 
     Xil_Out32(REG_USER_CONTROL_ADDR, value);
 
-    uint32_t control_reg = Xil_In32(REG_USER_CONTROL_ADDR);
-    xil_printf("\nheater state %u", control_reg);
+    //uint32_t control_reg = Xil_In32(REG_USER_CONTROL_ADDR);
+    //xil_printf("\nheater state %u", control_reg);
 }
 
 

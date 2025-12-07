@@ -1,13 +1,14 @@
 vhdl xil_defaultlib  \
-"../../../bd/soc_design/ipshared/97fb/hdl/temp_control_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/soc_design/ipshared/97fb/hdl/temp_control.vhd" \
-"../../../bd/soc_design/ip/soc_design_temp_control_0_0/sim/soc_design_temp_control_0_0.vhd" \
-"../../../bd/soc_design/ipshared/b265/hdl/Instrument_Reader_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/soc_design/ipshared/b265/hdl/instrument_reader_module.vhd" \
-"../../../bd/soc_design/ipshared/b265/hdl/Instrument_Reader.vhd" \
+"../../../bd/soc_design/ipshared/fc9c/hdl/Instrument_Reader_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/soc_design/ipshared/fc9c/hdl/instrument_reader_module.vhd" \
+"../../../bd/soc_design/ipshared/fc9c/hdl/Instrument_Reader.vhd" \
 "../../../bd/soc_design/ip/soc_design_Instrument_Reader_0_0/sim/soc_design_Instrument_Reader_0_0.vhd" \
 "../../../bd/soc_design/ip/soc_design_axi_smc_0/bd_0/ip/ip_1/sim/bd_404a_psr_aclk_0.vhd" \
 "../../../bd/soc_design/ip/soc_design_rst_ps7_0_100M_0/sim/soc_design_rst_ps7_0_100M_0.vhd" \
+"../../../bd/soc_design/ipshared/0610/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/soc_design/ipshared/0610/hdl/Temperature_Control_Module.vhd" \
+"../../../bd/soc_design/ipshared/0610/hdl/Temperature_Control.vhd" \
+"../../../bd/soc_design/ip/soc_design_Temperature_Control_0_0/sim/soc_design_Temperature_Control_0_0.vhd" \
 
 # Do not sort compile order
 nosort

@@ -58,12 +58,9 @@ vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SoC_Project.gen/sources_1/
 "../../../bd/soc_design/ip/soc_design_processing_system7_0_0/sim/soc_design_processing_system7_0_0.v" \
 
 vcom -work xil_defaultlib -93  \
-"../../../bd/soc_design/ipshared/97fb/hdl/temp_control_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/soc_design/ipshared/97fb/hdl/temp_control.vhd" \
-"../../../bd/soc_design/ip/soc_design_temp_control_0_0/sim/soc_design_temp_control_0_0.vhd" \
-"../../../bd/soc_design/ipshared/b265/hdl/Instrument_Reader_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/soc_design/ipshared/b265/hdl/instrument_reader_module.vhd" \
-"../../../bd/soc_design/ipshared/b265/hdl/Instrument_Reader.vhd" \
+"../../../bd/soc_design/ipshared/fc9c/hdl/Instrument_Reader_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/soc_design/ipshared/fc9c/hdl/instrument_reader_module.vhd" \
+"../../../bd/soc_design/ipshared/fc9c/hdl/Instrument_Reader.vhd" \
 "../../../bd/soc_design/ip/soc_design_Instrument_Reader_0_0/sim/soc_design_Instrument_Reader_0_0.vhd" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/ec67/hdl" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/6cfa/hdl" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/a8e4/hdl/verilog" "+incdir+../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_21 -l processing_system7_vip_v1_0_23 -l xil_defaultlib -l xlconstant_v1_1_10 -l proc_sys_reset_v5_0_17 -l smartconnect_v1_0 -l axi_register_slice_v2_1_35 \
@@ -168,6 +165,10 @@ vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../SoC_Project.gen/sources_
 
 vcom -work xil_defaultlib -93  \
 "../../../bd/soc_design/ip/soc_design_rst_ps7_0_100M_0/sim/soc_design_rst_ps7_0_100M_0.vhd" \
+"../../../bd/soc_design/ipshared/0610/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/soc_design/ipshared/0610/hdl/Temperature_Control_Module.vhd" \
+"../../../bd/soc_design/ipshared/0610/hdl/Temperature_Control.vhd" \
+"../../../bd/soc_design/ip/soc_design_Temperature_Control_0_0/sim/soc_design_Temperature_Control_0_0.vhd" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/ec67/hdl" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/6cfa/hdl" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SoC_Project.gen/sources_1/bd/soc_design/ipshared/a8e4/hdl/verilog" "+incdir+../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" "+incdir+C:/Xilinx/2025.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_21 -l processing_system7_vip_v1_0_23 -l xil_defaultlib -l xlconstant_v1_1_10 -l proc_sys_reset_v5_0_17 -l smartconnect_v1_0 -l axi_register_slice_v2_1_35 \
 "../../../bd/soc_design/sim/soc_design.v" \

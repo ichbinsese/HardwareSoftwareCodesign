@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Sun Dec  7 14:34:46 2025
+-- Date        : Sun Dec  7 18:16:19 2025
 -- Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0_sim_netlist.vhdl
@@ -1115,7 +1115,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity soc_design_Instrument_Reader_0_0_instrument_reader_module is
   port (
     \instrument_val_reg[31]_0\ : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    SS : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 0 to 0 );
     s00_axi_aclk : in STD_LOGIC
   );
@@ -1190,7 +1190,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => Q(0),
       Q => cur_v,
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
@@ -1686,29 +1686,29 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => \instrument_val[0]_i_1_n_0\,
       Q => \^instrument_val_reg[31]_0\(0),
-      R => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[10]\: unisim.vcomponents.FDSE
+\instrument_val_reg[10]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(10),
       Q => \^instrument_val_reg[31]_0\(10),
-      S => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[11]\: unisim.vcomponents.FDSE
+\instrument_val_reg[11]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(11),
       Q => \^instrument_val_reg[31]_0\(11),
-      S => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[12]\: unisim.vcomponents.FDRE
     generic map(
@@ -1719,18 +1719,18 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(12),
       Q => \^instrument_val_reg[31]_0\(12),
-      R => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[13]\: unisim.vcomponents.FDSE
+\instrument_val_reg[13]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(13),
       Q => \^instrument_val_reg[31]_0\(13),
-      S => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[14]\: unisim.vcomponents.FDRE
     generic map(
@@ -1741,18 +1741,18 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(14),
       Q => \^instrument_val_reg[31]_0\(14),
-      R => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[15]\: unisim.vcomponents.FDSE
+\instrument_val_reg[15]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(15),
       Q => \^instrument_val_reg[31]_0\(15),
-      S => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[16]\: unisim.vcomponents.FDRE
     generic map(
@@ -1763,7 +1763,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(16),
       Q => \^instrument_val_reg[31]_0\(16),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[17]\: unisim.vcomponents.FDRE
     generic map(
@@ -1774,7 +1774,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(17),
       Q => \^instrument_val_reg[31]_0\(17),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[18]\: unisim.vcomponents.FDRE
     generic map(
@@ -1785,7 +1785,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(18),
       Q => \^instrument_val_reg[31]_0\(18),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[19]\: unisim.vcomponents.FDRE
     generic map(
@@ -1796,18 +1796,18 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(19),
       Q => \^instrument_val_reg[31]_0\(19),
-      R => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[1]\: unisim.vcomponents.FDSE
+\instrument_val_reg[1]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(1),
       Q => \^instrument_val_reg[31]_0\(1),
-      S => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[20]\: unisim.vcomponents.FDRE
     generic map(
@@ -1818,7 +1818,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(20),
       Q => \^instrument_val_reg[31]_0\(20),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[21]\: unisim.vcomponents.FDRE
     generic map(
@@ -1829,7 +1829,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(21),
       Q => \^instrument_val_reg[31]_0\(21),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[22]\: unisim.vcomponents.FDRE
     generic map(
@@ -1840,7 +1840,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(22),
       Q => \^instrument_val_reg[31]_0\(22),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[23]\: unisim.vcomponents.FDRE
     generic map(
@@ -1851,7 +1851,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(23),
       Q => \^instrument_val_reg[31]_0\(23),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[24]\: unisim.vcomponents.FDRE
     generic map(
@@ -1862,7 +1862,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(24),
       Q => \^instrument_val_reg[31]_0\(24),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[25]\: unisim.vcomponents.FDRE
     generic map(
@@ -1873,7 +1873,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(25),
       Q => \^instrument_val_reg[31]_0\(25),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[26]\: unisim.vcomponents.FDRE
     generic map(
@@ -1884,7 +1884,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(26),
       Q => \^instrument_val_reg[31]_0\(26),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[27]\: unisim.vcomponents.FDRE
     generic map(
@@ -1895,7 +1895,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(27),
       Q => \^instrument_val_reg[31]_0\(27),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[28]\: unisim.vcomponents.FDRE
     generic map(
@@ -1906,7 +1906,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(28),
       Q => \^instrument_val_reg[31]_0\(28),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[29]\: unisim.vcomponents.FDRE
     generic map(
@@ -1917,18 +1917,18 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(29),
       Q => \^instrument_val_reg[31]_0\(29),
-      R => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[2]\: unisim.vcomponents.FDSE
+\instrument_val_reg[2]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(2),
       Q => \^instrument_val_reg[31]_0\(2),
-      S => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[30]\: unisim.vcomponents.FDRE
     generic map(
@@ -1939,7 +1939,7 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(30),
       Q => \^instrument_val_reg[31]_0\(30),
-      R => SS(0)
+      R => SR(0)
     );
 \instrument_val_reg[31]\: unisim.vcomponents.FDRE
     generic map(
@@ -1950,84 +1950,84 @@ cur_v_reg: unisim.vcomponents.FDRE
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(31),
       Q => \^instrument_val_reg[31]_0\(31),
-      R => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[3]\: unisim.vcomponents.FDSE
+\instrument_val_reg[3]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(3),
       Q => \^instrument_val_reg[31]_0\(3),
-      S => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[4]\: unisim.vcomponents.FDSE
+\instrument_val_reg[4]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(4),
       Q => \^instrument_val_reg[31]_0\(4),
-      S => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[5]\: unisim.vcomponents.FDSE
+\instrument_val_reg[5]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(5),
       Q => \^instrument_val_reg[31]_0\(5),
-      S => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[6]\: unisim.vcomponents.FDSE
+\instrument_val_reg[6]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(6),
       Q => \^instrument_val_reg[31]_0\(6),
-      S => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[7]\: unisim.vcomponents.FDSE
+\instrument_val_reg[7]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(7),
       Q => \^instrument_val_reg[31]_0\(7),
-      S => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[8]\: unisim.vcomponents.FDSE
+\instrument_val_reg[8]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(8),
       Q => \^instrument_val_reg[31]_0\(8),
-      S => SS(0)
+      R => SR(0)
     );
-\instrument_val_reg[9]\: unisim.vcomponents.FDSE
+\instrument_val_reg[9]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s00_axi_aclk,
       CE => \instrument_val[31]_i_1_n_0\,
       D => instrument_val(9),
       Q => \^instrument_val_reg[31]_0\(9),
-      S => SS(0)
+      R => SR(0)
     );
 plusOp_carry: unisim.vcomponents.CARRY4
      port map (
@@ -2186,7 +2186,7 @@ Instrument_Reader_slave_lite_v1_0_S00_AXI_inst: entity work.soc_design_Instrumen
 Instrument_reader_module_inst: entity work.soc_design_Instrument_Reader_0_0_instrument_reader_module
      port map (
       Q(0) => control_reg(0),
-      SS(0) => Instrument_Reader_slave_lite_v1_0_S00_AXI_inst_n_1,
+      SR(0) => Instrument_Reader_slave_lite_v1_0_S00_AXI_inst_n_1,
       \instrument_val_reg[31]_0\(31 downto 0) => instrument_val(31 downto 0),
       s00_axi_aclk => s00_axi_aclk
     );

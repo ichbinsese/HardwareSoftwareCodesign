@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Sun Dec  7 10:26:41 2025
+-- Date        : Sun Dec  7 18:16:25 2025
 -- Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0_sim_netlist.vhdl
+--               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0_sim_netlist.vhdl
 -- Design      : soc_design_processing_system7_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -1425,9 +1425,6 @@ architecture STRUCTURE of soc_design_processing_system7_0_0_processing_system7_v
   signal PS7_i_n_330 : STD_LOGIC;
   signal PS7_i_n_331 : STD_LOGIC;
   signal PS7_i_n_332 : STD_LOGIC;
-  signal PS7_i_n_333 : STD_LOGIC;
-  signal PS7_i_n_334 : STD_LOGIC;
-  signal PS7_i_n_335 : STD_LOGIC;
   signal PS7_i_n_336 : STD_LOGIC;
   signal PS7_i_n_337 : STD_LOGIC;
   signal PS7_i_n_338 : STD_LOGIC;
@@ -3295,9 +3292,6 @@ begin
   TRACE_CLK_OUT <= \<const0>\;
   TRACE_CTL <= \TRACE_CTL_PIPE[0]\;
   TRACE_DATA(1 downto 0) <= \TRACE_DATA_PIPE[0]\(1 downto 0);
-  TTC0_WAVE0_OUT <= \<const0>\;
-  TTC0_WAVE1_OUT <= \<const0>\;
-  TTC0_WAVE2_OUT <= \<const0>\;
   TTC1_WAVE0_OUT <= \<const0>\;
   TTC1_WAVE1_OUT <= \<const0>\;
   TTC1_WAVE2_OUT <= \<const0>\;
@@ -3636,9 +3630,9 @@ PS7_i: unisim.vcomponents.PS7
       EMIOTRACECTL => NLW_PS7_i_EMIOTRACECTL_UNCONNECTED,
       EMIOTRACEDATA(31 downto 0) => NLW_PS7_i_EMIOTRACEDATA_UNCONNECTED(31 downto 0),
       EMIOTTC0CLKI(2 downto 0) => B"000",
-      EMIOTTC0WAVEO(2) => PS7_i_n_333,
-      EMIOTTC0WAVEO(1) => PS7_i_n_334,
-      EMIOTTC0WAVEO(0) => PS7_i_n_335,
+      EMIOTTC0WAVEO(2) => TTC0_WAVE2_OUT,
+      EMIOTTC0WAVEO(1) => TTC0_WAVE1_OUT,
+      EMIOTTC0WAVEO(0) => TTC0_WAVE0_OUT,
       EMIOTTC1CLKI(2 downto 0) => B"000",
       EMIOTTC1WAVEO(2) => PS7_i_n_336,
       EMIOTTC1WAVEO(1) => PS7_i_n_337,
@@ -5651,6 +5645,9 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity soc_design_processing_system7_0_0 is
   port (
+    TTC0_WAVE0_OUT : out STD_LOGIC;
+    TTC0_WAVE1_OUT : out STD_LOGIC;
+    TTC0_WAVE2_OUT : out STD_LOGIC;
     USB0_PORT_INDCTL : out STD_LOGIC_VECTOR ( 1 downto 0 );
     USB0_VBUS_PWRSELECT : out STD_LOGIC;
     USB0_VBUS_PWRFAULT : in STD_LOGIC;
@@ -5920,9 +5917,6 @@ architecture STRUCTURE of soc_design_processing_system7_0_0 is
   signal NLW_inst_S_AXI_HP3_WREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_TRACE_CLK_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_TRACE_CTL_UNCONNECTED : STD_LOGIC;
-  signal NLW_inst_TTC0_WAVE0_OUT_UNCONNECTED : STD_LOGIC;
-  signal NLW_inst_TTC0_WAVE1_OUT_UNCONNECTED : STD_LOGIC;
-  signal NLW_inst_TTC0_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_TTC1_WAVE0_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_TTC1_WAVE1_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_TTC1_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
@@ -6163,7 +6157,7 @@ architecture STRUCTURE of soc_design_processing_system7_0_0 is
   attribute X_INTERFACE_INFO of DDR_WEB : signal is "xilinx.com:interface:ddrx:1.0 DDR WE_N";
   attribute X_INTERFACE_INFO of FCLK_CLK0 : signal is "xilinx.com:signal:clock:1.0 FCLK_CLK0 CLK";
   attribute X_INTERFACE_MODE of FCLK_CLK0 : signal is "master";
-  attribute X_INTERFACE_PARAMETER of FCLK_CLK0 : signal is "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN soc_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of FCLK_CLK0 : signal is "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN soc_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of FCLK_RESET0_N : signal is "xilinx.com:signal:reset:1.0 FCLK_RESET0_N RST";
   attribute X_INTERFACE_MODE of FCLK_RESET0_N : signal is "master";
   attribute X_INTERFACE_PARAMETER of FCLK_RESET0_N : signal is "XIL_INTERFACENAME FCLK_RESET0_N, POLARITY ACTIVE_LOW, INSERT_VIP 0";
@@ -6905,9 +6899,9 @@ inst: entity work.soc_design_processing_system7_0_0_processing_system7_v5_5_proc
       TTC0_CLK0_IN => '0',
       TTC0_CLK1_IN => '0',
       TTC0_CLK2_IN => '0',
-      TTC0_WAVE0_OUT => NLW_inst_TTC0_WAVE0_OUT_UNCONNECTED,
-      TTC0_WAVE1_OUT => NLW_inst_TTC0_WAVE1_OUT_UNCONNECTED,
-      TTC0_WAVE2_OUT => NLW_inst_TTC0_WAVE2_OUT_UNCONNECTED,
+      TTC0_WAVE0_OUT => TTC0_WAVE0_OUT,
+      TTC0_WAVE1_OUT => TTC0_WAVE1_OUT,
+      TTC0_WAVE2_OUT => TTC0_WAVE2_OUT,
       TTC1_CLK0_IN => '0',
       TTC1_CLK1_IN => '0',
       TTC1_CLK2_IN => '0',

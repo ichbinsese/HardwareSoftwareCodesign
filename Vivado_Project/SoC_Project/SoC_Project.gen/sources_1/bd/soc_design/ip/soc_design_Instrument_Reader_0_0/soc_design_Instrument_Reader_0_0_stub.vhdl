@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Sun Dec  7 14:34:46 2025
+-- Date        : Sun Dec  7 18:16:19 2025
 -- Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0_stub.vhdl
@@ -41,7 +41,7 @@ entity soc_design_Instrument_Reader_0_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of soc_design_Instrument_Reader_0_0 : entity is "soc_design_Instrument_Reader_0_0,Instrument_Reader,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of soc_design_Instrument_Reader_0_0 : entity is "soc_design_Instrument_Reader_0_0,Instrument_Reader,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=Instrument_Reader,x_ipVersion=1.0,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}";
+  attribute core_generation_info of soc_design_Instrument_Reader_0_0 : entity is "soc_design_Instrument_Reader_0_0,Instrument_Reader,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=Instrument_Reader,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of soc_design_Instrument_Reader_0_0 : entity is "yes";
 end soc_design_Instrument_Reader_0_0;

@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Sun Dec  7 14:34:46 2025
+// Date        : Sun Dec  7 18:16:19 2025
 // Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0_sim_netlist.v
@@ -185,7 +185,7 @@ module soc_design_Instrument_Reader_0_0_Instrument_Reader
         .s00_axi_wvalid(s00_axi_wvalid));
   soc_design_Instrument_Reader_0_0_instrument_reader_module Instrument_reader_module_inst
        (.Q(control_reg),
-        .SS(Instrument_Reader_slave_lite_v1_0_S00_AXI_inst_n_1),
+        .SR(Instrument_Reader_slave_lite_v1_0_S00_AXI_inst_n_1),
         .\instrument_val_reg[31]_0 (instrument_val),
         .s00_axi_aclk(s00_axi_aclk));
 endmodule
@@ -1050,16 +1050,16 @@ endmodule
 (* ORIG_REF_NAME = "instrument_reader_module" *) 
 module soc_design_Instrument_Reader_0_0_instrument_reader_module
    (\instrument_val_reg[31]_0 ,
-    SS,
+    SR,
     Q,
     s00_axi_aclk);
   output [31:0]\instrument_val_reg[31]_0 ;
-  input [0:0]SS;
+  input [0:0]SR;
   input [0:0]Q;
   input s00_axi_aclk;
 
   wire [0:0]Q;
-  wire [0:0]SS;
+  wire [0:0]SR;
   wire cur_v;
   wire [31:1]data0;
   wire [31:1]instrument_val;
@@ -1115,7 +1115,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(1'b1),
         .D(Q),
         .Q(cur_v),
-        .R(SS));
+        .R(SR));
   LUT5 #(
     .INIT(32'h0000FFFE)) 
     \instrument_val[0]_i_1 
@@ -1485,23 +1485,23 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(\instrument_val[0]_i_1_n_0 ),
         .Q(\instrument_val_reg[31]_0 [0]),
-        .R(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[10] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[10]),
         .Q(\instrument_val_reg[31]_0 [10]),
-        .S(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[11] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[11]),
         .Q(\instrument_val_reg[31]_0 [11]),
-        .S(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[12] 
@@ -1509,15 +1509,15 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[12]),
         .Q(\instrument_val_reg[31]_0 [12]),
-        .R(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[13] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[13]),
         .Q(\instrument_val_reg[31]_0 [13]),
-        .S(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[14] 
@@ -1525,15 +1525,15 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[14]),
         .Q(\instrument_val_reg[31]_0 [14]),
-        .R(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[15] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[15]),
         .Q(\instrument_val_reg[31]_0 [15]),
-        .S(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[16] 
@@ -1541,7 +1541,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[16]),
         .Q(\instrument_val_reg[31]_0 [16]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[17] 
@@ -1549,7 +1549,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[17]),
         .Q(\instrument_val_reg[31]_0 [17]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[18] 
@@ -1557,7 +1557,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[18]),
         .Q(\instrument_val_reg[31]_0 [18]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[19] 
@@ -1565,15 +1565,15 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[19]),
         .Q(\instrument_val_reg[31]_0 [19]),
-        .R(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[1] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[1]),
         .Q(\instrument_val_reg[31]_0 [1]),
-        .S(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[20] 
@@ -1581,7 +1581,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[20]),
         .Q(\instrument_val_reg[31]_0 [20]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[21] 
@@ -1589,7 +1589,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[21]),
         .Q(\instrument_val_reg[31]_0 [21]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[22] 
@@ -1597,7 +1597,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[22]),
         .Q(\instrument_val_reg[31]_0 [22]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[23] 
@@ -1605,7 +1605,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[23]),
         .Q(\instrument_val_reg[31]_0 [23]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[24] 
@@ -1613,7 +1613,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[24]),
         .Q(\instrument_val_reg[31]_0 [24]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[25] 
@@ -1621,7 +1621,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[25]),
         .Q(\instrument_val_reg[31]_0 [25]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[26] 
@@ -1629,7 +1629,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[26]),
         .Q(\instrument_val_reg[31]_0 [26]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[27] 
@@ -1637,7 +1637,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[27]),
         .Q(\instrument_val_reg[31]_0 [27]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[28] 
@@ -1645,7 +1645,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[28]),
         .Q(\instrument_val_reg[31]_0 [28]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[29] 
@@ -1653,15 +1653,15 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[29]),
         .Q(\instrument_val_reg[31]_0 [29]),
-        .R(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[2] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[2]),
         .Q(\instrument_val_reg[31]_0 [2]),
-        .S(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[30] 
@@ -1669,7 +1669,7 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[30]),
         .Q(\instrument_val_reg[31]_0 [30]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \instrument_val_reg[31] 
@@ -1677,63 +1677,63 @@ module soc_design_Instrument_Reader_0_0_instrument_reader_module
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[31]),
         .Q(\instrument_val_reg[31]_0 [31]),
-        .R(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[3] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[3]),
         .Q(\instrument_val_reg[31]_0 [3]),
-        .S(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[4] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[4]),
         .Q(\instrument_val_reg[31]_0 [4]),
-        .S(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[5] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[5]),
         .Q(\instrument_val_reg[31]_0 [5]),
-        .S(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[6] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[6]),
         .Q(\instrument_val_reg[31]_0 [6]),
-        .S(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[7] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[7]),
         .Q(\instrument_val_reg[31]_0 [7]),
-        .S(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[8] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[8]),
         .Q(\instrument_val_reg[31]_0 [8]),
-        .S(SS));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
     \instrument_val_reg[9] 
        (.C(s00_axi_aclk),
         .CE(\instrument_val[31]_i_1_n_0 ),
         .D(instrument_val[9]),
         .Q(\instrument_val_reg[31]_0 [9]),
-        .S(SS));
+        .R(SR));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 plusOp_carry
        (.CI(1'b0),

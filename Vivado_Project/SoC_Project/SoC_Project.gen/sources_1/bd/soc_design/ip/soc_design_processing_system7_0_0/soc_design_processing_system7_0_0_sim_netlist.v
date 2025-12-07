@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Sun Dec  7 10:26:41 2025
+// Date        : Sun Dec  7 18:16:25 2025
 // Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0_sim_netlist.v
+//               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0_sim_netlist.v
 // Design      : soc_design_processing_system7_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,7 +16,10 @@
 (* CHECK_LICENSE_TYPE = "soc_design_processing_system7_0_0,processing_system7_v5_5_processing_system7,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "processing_system7_v5_5_processing_system7,Vivado 2025.1" *) 
 (* NotValidForBitStream *)
 module soc_design_processing_system7_0_0
-   (USB0_PORT_INDCTL,
+   (TTC0_WAVE0_OUT,
+    TTC0_WAVE1_OUT,
+    TTC0_WAVE2_OUT,
+    USB0_PORT_INDCTL,
     USB0_VBUS_PWRSELECT,
     USB0_VBUS_PWRFAULT,
     M_AXI_GP0_ARVALID,
@@ -81,6 +84,9 @@ module soc_design_processing_system7_0_0
     PS_SRSTB,
     PS_CLK,
     PS_PORB);
+  output TTC0_WAVE0_OUT;
+  output TTC0_WAVE1_OUT;
+  output TTC0_WAVE2_OUT;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 PORT_INDCTL" *) (* X_INTERFACE_MODE = "master" *) output [1:0]USB0_PORT_INDCTL;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 VBUS_PWRSELECT" *) output USB0_VBUS_PWRSELECT;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 VBUS_PWRFAULT" *) input USB0_VBUS_PWRFAULT;
@@ -123,7 +129,7 @@ module soc_design_processing_system7_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 BRESP" *) input [1:0]M_AXI_GP0_BRESP;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RRESP" *) input [1:0]M_AXI_GP0_RRESP;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RDATA" *) input [31:0]M_AXI_GP0_RDATA;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK0 CLK" *) (* X_INTERFACE_MODE = "master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN soc_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) output FCLK_CLK0;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK0 CLK" *) (* X_INTERFACE_MODE = "master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN soc_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) output FCLK_CLK0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 FCLK_RESET0_N RST" *) (* X_INTERFACE_MODE = "master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_RESET0_N, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) output FCLK_RESET0_N;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO" *) (* X_INTERFACE_MODE = "master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false" *) inout [53:0]MIO;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) (* X_INTERFACE_MODE = "master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, CAN_DEBUG false, TIMEPERIOD_PS 1250, MEMORY_TYPE COMPONENTS, DATA_WIDTH 8, CS_ENABLED true, DATA_MASK_ENABLED true, SLOT Single, MEM_ADDR_MAP ROW_COLUMN_BANK, BURST_LENGTH 8, AXI_ARBITRATION_SCHEME TDM, CAS_LATENCY 11, CAS_WRITE_LATENCY 11" *) inout DDR_CAS_n;
@@ -211,6 +217,9 @@ module soc_design_processing_system7_0_0
   wire PS_CLK;
   wire PS_PORB;
   wire PS_SRSTB;
+  wire TTC0_WAVE0_OUT;
+  wire TTC0_WAVE1_OUT;
+  wire TTC0_WAVE2_OUT;
   wire [1:0]USB0_PORT_INDCTL;
   wire USB0_VBUS_PWRFAULT;
   wire USB0_VBUS_PWRSELECT;
@@ -400,9 +409,6 @@ module soc_design_processing_system7_0_0
   wire NLW_inst_S_AXI_HP3_WREADY_UNCONNECTED;
   wire NLW_inst_TRACE_CLK_OUT_UNCONNECTED;
   wire NLW_inst_TRACE_CTL_UNCONNECTED;
-  wire NLW_inst_TTC0_WAVE0_OUT_UNCONNECTED;
-  wire NLW_inst_TTC0_WAVE1_OUT_UNCONNECTED;
-  wire NLW_inst_TTC0_WAVE2_OUT_UNCONNECTED;
   wire NLW_inst_TTC1_WAVE0_OUT_UNCONNECTED;
   wire NLW_inst_TTC1_WAVE1_OUT_UNCONNECTED;
   wire NLW_inst_TTC1_WAVE2_OUT_UNCONNECTED;
@@ -1235,9 +1241,9 @@ module soc_design_processing_system7_0_0
         .TTC0_CLK0_IN(1'b0),
         .TTC0_CLK1_IN(1'b0),
         .TTC0_CLK2_IN(1'b0),
-        .TTC0_WAVE0_OUT(NLW_inst_TTC0_WAVE0_OUT_UNCONNECTED),
-        .TTC0_WAVE1_OUT(NLW_inst_TTC0_WAVE1_OUT_UNCONNECTED),
-        .TTC0_WAVE2_OUT(NLW_inst_TTC0_WAVE2_OUT_UNCONNECTED),
+        .TTC0_WAVE0_OUT(TTC0_WAVE0_OUT),
+        .TTC0_WAVE1_OUT(TTC0_WAVE1_OUT),
+        .TTC0_WAVE2_OUT(TTC0_WAVE2_OUT),
         .TTC1_CLK0_IN(1'b0),
         .TTC1_CLK1_IN(1'b0),
         .TTC1_CLK2_IN(1'b0),
@@ -3318,9 +3324,6 @@ module soc_design_processing_system7_0_0_processing_system7_v5_5_processing_syst
   wire PS7_i_n_330;
   wire PS7_i_n_331;
   wire PS7_i_n_332;
-  wire PS7_i_n_333;
-  wire PS7_i_n_334;
-  wire PS7_i_n_335;
   wire PS7_i_n_336;
   wire PS7_i_n_337;
   wire PS7_i_n_338;
@@ -3827,6 +3830,9 @@ module soc_design_processing_system7_0_0_processing_system7_v5_5_processing_syst
   (* RTL_KEEP = "true" *) wire [1:0]\TRACE_DATA_PIPE[5] ;
   (* RTL_KEEP = "true" *) wire [1:0]\TRACE_DATA_PIPE[6] ;
   (* RTL_KEEP = "true" *) wire [1:0]\TRACE_DATA_PIPE[7] ;
+  wire TTC0_WAVE0_OUT;
+  wire TTC0_WAVE1_OUT;
+  wire TTC0_WAVE2_OUT;
   wire [1:0]USB0_PORT_INDCTL;
   wire USB0_VBUS_PWRFAULT;
   wire USB0_VBUS_PWRSELECT;
@@ -5044,9 +5050,6 @@ module soc_design_processing_system7_0_0_processing_system7_v5_5_processing_syst
   assign TRACE_CLK_OUT = \<const0> ;
   assign TRACE_CTL = \TRACE_CTL_PIPE[0] ;
   assign TRACE_DATA[1:0] = \TRACE_DATA_PIPE[0] ;
-  assign TTC0_WAVE0_OUT = \<const0> ;
-  assign TTC0_WAVE1_OUT = \<const0> ;
-  assign TTC0_WAVE2_OUT = \<const0> ;
   assign TTC1_WAVE0_OUT = \<const0> ;
   assign TTC1_WAVE1_OUT = \<const0> ;
   assign TTC1_WAVE2_OUT = \<const0> ;
@@ -5291,7 +5294,7 @@ module soc_design_processing_system7_0_0_processing_system7_v5_5_processing_syst
         .EMIOTRACECTL(NLW_PS7_i_EMIOTRACECTL_UNCONNECTED),
         .EMIOTRACEDATA(NLW_PS7_i_EMIOTRACEDATA_UNCONNECTED[31:0]),
         .EMIOTTC0CLKI({1'b0,1'b0,1'b0}),
-        .EMIOTTC0WAVEO({PS7_i_n_333,PS7_i_n_334,PS7_i_n_335}),
+        .EMIOTTC0WAVEO({TTC0_WAVE2_OUT,TTC0_WAVE1_OUT,TTC0_WAVE0_OUT}),
         .EMIOTTC1CLKI({1'b0,1'b0,1'b0}),
         .EMIOTTC1WAVEO({PS7_i_n_336,PS7_i_n_337,PS7_i_n_338}),
         .EMIOUART0CTSN(1'b0),

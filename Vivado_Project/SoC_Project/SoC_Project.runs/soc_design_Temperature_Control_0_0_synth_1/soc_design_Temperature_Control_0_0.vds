@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Sun Dec  7 15:34:33 2025
-# Process ID         : 8904
+# Start of session at: Sun Dec  7 18:15:37 2025
+# Process ID         : 11696
 # Current directory  : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Temperature_Control_0_0_synth_1
 # Command line       : vivado.exe -log soc_design_Temperature_Control_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_design_Temperature_Control_0_0.tcl
 # Log file           : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Temperature_Control_0_0_synth_1/soc_design_Temperature_Control_0_0.vds
@@ -19,12 +19,12 @@
 # Host memory        : 16802 MB
 # Swap memory        : 3355 MB
 # Total Virtual      : 20158 MB
-# Available Virtual  : 6595 MB
+# Available Virtual  : 6689 MB
 #-----------------------------------------------------------
 source soc_design_Temperature_Control_0_0.tcl -notrace
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 497.910 ; gain = 209.824
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 500.219 ; gain = 214.738
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
@@ -32,33 +32,31 @@ WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal pa
 Current IP cache path is c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.cache/ip 
 Command: synth_design -top soc_design_Temperature_Control_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
 Starting synth_design
-INFO: [IP_Flow 19-2162] IP 'soc_design_Temperature_Control_0_0' is locked:
-* IP definition 'Temperature_Control_v1.0 (1.0)' for IP 'soc_design_Temperature_Control_0_0' (customized with software release 2025.1) has a different revision in the IP Catalog.
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-INFO: [Synth 8-7075] Helper process launched with PID 21396
+INFO: [Synth 8-7075] Helper process launched with PID 10924
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1267.004 ; gain = 491.930
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1235.000 ; gain = 491.637
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'soc_design_Temperature_Control_0_0' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/synth/soc_design_Temperature_Control_0_0.vhd:82]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'Temperature_Control' declared at 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control.vhd:5' bound to instance 'U0' of component 'Temperature_Control' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/synth/soc_design_Temperature_Control_0_0.vhd:152]
-INFO: [Synth 8-638] synthesizing module 'Temperature_Control' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control.vhd:49]
+INFO: [Synth 8-3491] module 'Temperature_Control' declared at 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control.vhd:5' bound to instance 'U0' of component 'Temperature_Control' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/synth/soc_design_Temperature_Control_0_0.vhd:152]
+INFO: [Synth 8-638] synthesizing module 'Temperature_Control' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control.vhd:49]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'Temperature_Control_slave_lite_v1_0_S00_AXI' declared at 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd:5' bound to instance 'Temperature_Control_slave_lite_v1_0_S00_AXI_inst' of component 'Temperature_Control_slave_lite_v1_0_S00_AXI' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control.vhd:107]
-INFO: [Synth 8-638] synthesizing module 'Temperature_Control_slave_lite_v1_0_S00_AXI' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd:88]
-INFO: [Synth 8-256] done synthesizing module 'Temperature_Control_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd:88]
+INFO: [Synth 8-3491] module 'Temperature_Control_slave_lite_v1_0_S00_AXI' declared at 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd:5' bound to instance 'Temperature_Control_slave_lite_v1_0_S00_AXI_inst' of component 'Temperature_Control_slave_lite_v1_0_S00_AXI' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control.vhd:107]
+INFO: [Synth 8-638] synthesizing module 'Temperature_Control_slave_lite_v1_0_S00_AXI' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd:88]
+INFO: [Synth 8-256] done synthesizing module 'Temperature_Control_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd:88]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'Temperature_Control_Module' declared at 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_Module.vhd:5' bound to instance 'Temperature_Control_Module_inst' of component 'Temperature_Control_Module' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control.vhd:140]
-INFO: [Synth 8-638] synthesizing module 'Temperature_Control_Module' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_Module.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'Temperature_Control_Module' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_Module.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'Temperature_Control' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control.vhd:49]
+INFO: [Synth 8-3491] module 'Temperature_Control_Module' declared at 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control_Module.vhd:5' bound to instance 'Temperature_Control_Module_inst' of component 'Temperature_Control_Module' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control.vhd:140]
+INFO: [Synth 8-638] synthesizing module 'Temperature_Control_Module' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control_Module.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'Temperature_Control_Module' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control_Module.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'Temperature_Control' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/0610/hdl/Temperature_Control.vhd:49]
 INFO: [Synth 8-256] done synthesizing module 'soc_design_Temperature_Control_0_0' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/synth/soc_design_Temperature_Control_0_0.vhd:82]
 WARNING: [Synth 8-7129] Port CONTROL_REG_IN[31] in module Temperature_Control_Module is either unconnected or has no load
 WARNING: [Synth 8-7129] Port CONTROL_REG_IN[30] in module Temperature_Control_Module is either unconnected or has no load
@@ -97,45 +95,45 @@ WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module Temperature_Control_slave
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module Temperature_Control_slave_lite_v1_0_S00_AXI is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module Temperature_Control_slave_lite_v1_0_S00_AXI is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1381.734 ; gain = 606.660
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1349.680 ; gain = 606.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1381.734 ; gain = 606.660
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1349.680 ; gain = 606.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1381.734 ; gain = 606.660
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1349.680 ; gain = 606.316
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1381.734 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1349.680 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1414.672 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1417.910 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1417.203 ; gain = 2.531
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1419.223 ; gain = 1.312
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1417.203 ; gain = 642.129
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1419.223 ; gain = 675.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1417.203 ; gain = 642.129
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1419.223 ; gain = 675.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1417.203 ; gain = 642.129
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1419.223 ; gain = 675.859
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'Temperature_Control_slave_lite_v1_0_S00_AXI'
 INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'Temperature_Control_slave_lite_v1_0_S00_AXI'
@@ -156,7 +154,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_write_reg' using enc
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_read_reg' using encoding 'sequential' in module 'Temperature_Control_slave_lite_v1_0_S00_AXI'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1417.203 ; gain = 642.129
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1419.223 ; gain = 675.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -201,25 +199,25 @@ WARNING: [Synth 8-7129] Port s00_axi_arprot[2] in module soc_design_Temperature_
 WARNING: [Synth 8-7129] Port s00_axi_arprot[1] in module soc_design_Temperature_Control_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_arprot[0] in module soc_design_Temperature_Control_0_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1435.855 ; gain = 660.781
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1419.223 ; gain = 675.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1585.098 ; gain = 810.023
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1553.672 ; gain = 810.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1585.805 ; gain = 810.730
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1554.047 ; gain = 810.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1614.457 ; gain = 839.383
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1582.668 ; gain = 839.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -237,37 +235,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1798.277 ; gain = 1054.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1798.277 ; gain = 1054.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1798.277 ; gain = 1054.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1798.277 ; gain = 1054.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1798.277 ; gain = 1054.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1798.277 ; gain = 1054.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -285,7 +283,7 @@ Report Cell Usage:
 +------+-------+------+
 |1     |CARRY4 |    44|
 |2     |LUT1   |    64|
-|3     |LUT2   |    34|
+|3     |LUT2   |    30|
 |4     |LUT3   |     5|
 |5     |LUT4   |    12|
 |6     |LUT5   |    62|
@@ -294,31 +292,31 @@ Report Cell Usage:
 |9     |FDSE   |     1|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1798.277 ; gain = 1054.914
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1829.539 ; gain = 1018.996
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1798.277 ; gain = 985.371
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1798.277 ; gain = 1054.914
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1838.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1798.277 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 44 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1842.312 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1799.727 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 6ded3fbd
+Synth Design complete | Checksum: b14e7146
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+33 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 1842.312 ; gain = 1303.066
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1842.312 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1799.727 ; gain = 1277.500
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1799.727 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Temperature_Control_0_0_synth_1/soc_design_Temperature_Control_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP soc_design_Temperature_Control_0_0, cache-ID = 76c5779867078d19
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP soc_design_Temperature_Control_0_0, cache-ID = cffc4ebda0263c31
 INFO: [Coretcl 2-1174] Renamed 3 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1842.312 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1799.727 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Temperature_Control_0_0_synth_1/soc_design_Temperature_Control_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file soc_design_Temperature_Control_0_0_utilization_synth.rpt -pb soc_design_Temperature_Control_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Dec  7 15:35:32 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  7 18:16:19 2025...

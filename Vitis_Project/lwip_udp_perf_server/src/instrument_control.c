@@ -50,10 +50,14 @@ static void ring_push(uint16_t sample)
     // advance head
     head = (head + 1u) % BUFFER_CAPACITY;
 
+    if (tail == head)
+    {
+        tail = (tail + 1u) % BUFFER_CAPACITY;
+    }
+
     if (count == BUFFER_CAPACITY)
     {
         overflow = 1;
-        tail = (tail + 1u) % BUFFER_CAPACITY;
     }
     else
     {
@@ -134,8 +138,6 @@ uint32_t dump_instrument_data()
     send_tm_instrument_data_message(dump_buffer, total_samples);
 
     // Reset circular buffer state if desired
-    head = 0;
-    tail = 0;
     count = 0;
     overflow = 0;
     dump_instrument_data_flag = 0;

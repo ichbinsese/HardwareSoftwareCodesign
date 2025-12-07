@@ -56,13 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "soc_design_Temperature_Control_0_0_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 5
 set_param general.usePosixSpawnForFork 1
-set_param synth.incrementalSynthesisCache C:/Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/managed_ip_project/.Xil/Vivado-12028-Azmis_Laptop/incrSyn
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param bd.open.in_stealth_mode 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
@@ -87,7 +82,7 @@ set_property ip_output_repo c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Viva
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.srcs/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/soc_design_Temperature_Control_0_0.xci
+read_ip -quiet C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.srcs/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/soc_design_Temperature_Control_0_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Dec  7 15:34:24 2025" VIVADOVERSION="2025.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Dec  7 18:15:29 2025" VIVADOVERSION="2025.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="soc_design" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -159,7 +159,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="6" FULLNAME="/Instrument_Reader_0" HWVERSION="1.0" INSTANCE="Instrument_Reader_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Instrument_Reader" VLNV="xilinx.com:user:Instrument_Reader:1.0">
+    <MODULE COREREVISION="7" FULLNAME="/Instrument_Reader_0" HWVERSION="1.0" INSTANCE="Instrument_Reader_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Instrument_Reader" VLNV="xilinx.com:user:Instrument_Reader:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -338,7 +338,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/Temperature_Control_0" HWVERSION="1.0" INSTANCE="Temperature_Control_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Temperature_Control" VLNV="xilinx.com:user:Temperature_Control:1.0">
+    <MODULE COREREVISION="8" FULLNAME="/Temperature_Control_0" HWVERSION="1.0" INSTANCE="Temperature_Control_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Temperature_Control" VLNV="xilinx.com:user:Temperature_Control:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>

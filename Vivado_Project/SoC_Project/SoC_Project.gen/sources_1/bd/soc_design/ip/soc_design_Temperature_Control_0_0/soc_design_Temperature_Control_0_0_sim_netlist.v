@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Sun Dec  7 15:35:32 2025
+// Date        : Sun Dec  7 18:16:19 2025
 // Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/soc_design_Temperature_Control_0_0_sim_netlist.v
@@ -469,8 +469,6 @@ module soc_design_Temperature_Control_0_0_Temperature_Control_Module
   wire sensor1_raw0_carry__1_i_2_n_0;
   wire sensor1_raw0_carry__1_i_3_n_0;
   wire sensor1_raw0_carry__1_i_4_n_0;
-  wire sensor1_raw0_carry__1_i_5_n_0;
-  wire sensor1_raw0_carry__1_i_6_n_0;
   wire sensor1_raw0_carry__1_n_0;
   wire sensor1_raw0_carry__1_n_1;
   wire sensor1_raw0_carry__1_n_2;
@@ -481,8 +479,6 @@ module soc_design_Temperature_Control_0_0_Temperature_Control_Module
   wire sensor1_raw0_carry__2_i_4_n_0;
   wire sensor1_raw0_carry__2_i_5_n_0;
   wire sensor1_raw0_carry__2_i_6_n_0;
-  wire sensor1_raw0_carry__2_i_7_n_0;
-  wire sensor1_raw0_carry__2_i_8_n_0;
   wire sensor1_raw0_carry__2_n_0;
   wire sensor1_raw0_carry__2_n_1;
   wire sensor1_raw0_carry__2_n_2;
@@ -1189,20 +1185,20 @@ module soc_design_Temperature_Control_0_0_Temperature_Control_Module
        (.CI(sensor1_raw0_carry_n_0),
         .CO({sensor1_raw0_carry__0_n_0,sensor1_raw0_carry__0_n_1,sensor1_raw0_carry__0_n_2,sensor1_raw0_carry__0_n_3}),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,sensor1_raw0_carry__0_i_1_n_0,sensor1_raw0_carry__0_i_2_n_0}),
+        .DI({1'b0,sensor1_raw0_carry__0_i_1_n_0,sensor1_raw0_carry__0_i_2_n_0,ticks_reg[9]}),
         .O(NLW_sensor1_raw0_carry__0_O_UNCONNECTED[3:0]),
         .S({sensor1_raw0_carry__0_i_3_n_0,sensor1_raw0_carry__0_i_4_n_0,sensor1_raw0_carry__0_i_5_n_0,sensor1_raw0_carry__0_i_6_n_0}));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     sensor1_raw0_carry__0_i_1
-       (.I0(ticks_reg[10]),
-        .I1(ticks_reg[11]),
+       (.I0(ticks_reg[12]),
+        .I1(ticks_reg[13]),
         .O(sensor1_raw0_carry__0_i_1_n_0));
   LUT2 #(
     .INIT(4'hE)) 
     sensor1_raw0_carry__0_i_2
-       (.I0(ticks_reg[8]),
-        .I1(ticks_reg[9]),
+       (.I0(ticks_reg[10]),
+        .I1(ticks_reg[11]),
         .O(sensor1_raw0_carry__0_i_2_n_0));
   LUT2 #(
     .INIT(4'h8)) 
@@ -1211,10 +1207,10 @@ module soc_design_Temperature_Control_0_0_Temperature_Control_Module
         .I1(ticks_reg[15]),
         .O(sensor1_raw0_carry__0_i_3_n_0));
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
     sensor1_raw0_carry__0_i_4
-       (.I0(ticks_reg[12]),
-        .I1(ticks_reg[13]),
+       (.I0(ticks_reg[13]),
+        .I1(ticks_reg[12]),
         .O(sensor1_raw0_carry__0_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
@@ -1223,7 +1219,7 @@ module soc_design_Temperature_Control_0_0_Temperature_Control_Module
         .I1(ticks_reg[11]),
         .O(sensor1_raw0_carry__0_i_5_n_0));
   LUT2 #(
-    .INIT(4'h1)) 
+    .INIT(4'h2)) 
     sensor1_raw0_carry__0_i_6
        (.I0(ticks_reg[8]),
         .I1(ticks_reg[9]),
@@ -1233,53 +1229,41 @@ module soc_design_Temperature_Control_0_0_Temperature_Control_Module
        (.CI(sensor1_raw0_carry__0_n_0),
         .CO({sensor1_raw0_carry__1_n_0,sensor1_raw0_carry__1_n_1,sensor1_raw0_carry__1_n_2,sensor1_raw0_carry__1_n_3}),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,sensor1_raw0_carry__1_i_1_n_0,sensor1_raw0_carry__1_i_2_n_0}),
+        .DI({1'b0,1'b0,ticks_reg[19],ticks_reg[17]}),
         .O(NLW_sensor1_raw0_carry__1_O_UNCONNECTED[3:0]),
-        .S({sensor1_raw0_carry__1_i_3_n_0,sensor1_raw0_carry__1_i_4_n_0,sensor1_raw0_carry__1_i_5_n_0,sensor1_raw0_carry__1_i_6_n_0}));
+        .S({sensor1_raw0_carry__1_i_1_n_0,sensor1_raw0_carry__1_i_2_n_0,sensor1_raw0_carry__1_i_3_n_0,sensor1_raw0_carry__1_i_4_n_0}));
   LUT2 #(
     .INIT(4'h8)) 
     sensor1_raw0_carry__1_i_1
-       (.I0(ticks_reg[18]),
-        .I1(ticks_reg[19]),
+       (.I0(ticks_reg[22]),
+        .I1(ticks_reg[23]),
         .O(sensor1_raw0_carry__1_i_1_n_0));
   LUT2 #(
     .INIT(4'h8)) 
     sensor1_raw0_carry__1_i_2
-       (.I0(ticks_reg[16]),
-        .I1(ticks_reg[17]),
-        .O(sensor1_raw0_carry__1_i_2_n_0));
-  LUT2 #(
-    .INIT(4'h8)) 
-    sensor1_raw0_carry__1_i_3
-       (.I0(ticks_reg[22]),
-        .I1(ticks_reg[23]),
-        .O(sensor1_raw0_carry__1_i_3_n_0));
-  LUT2 #(
-    .INIT(4'h8)) 
-    sensor1_raw0_carry__1_i_4
        (.I0(ticks_reg[20]),
         .I1(ticks_reg[21]),
+        .O(sensor1_raw0_carry__1_i_2_n_0));
+  LUT2 #(
+    .INIT(4'h2)) 
+    sensor1_raw0_carry__1_i_3
+       (.I0(ticks_reg[18]),
+        .I1(ticks_reg[19]),
+        .O(sensor1_raw0_carry__1_i_3_n_0));
+  LUT2 #(
+    .INIT(4'h2)) 
+    sensor1_raw0_carry__1_i_4
+       (.I0(ticks_reg[16]),
+        .I1(ticks_reg[17]),
         .O(sensor1_raw0_carry__1_i_4_n_0));
-  LUT2 #(
-    .INIT(4'h2)) 
-    sensor1_raw0_carry__1_i_5
-       (.I0(ticks_reg[19]),
-        .I1(ticks_reg[18]),
-        .O(sensor1_raw0_carry__1_i_5_n_0));
-  LUT2 #(
-    .INIT(4'h2)) 
-    sensor1_raw0_carry__1_i_6
-       (.I0(ticks_reg[17]),
-        .I1(ticks_reg[16]),
-        .O(sensor1_raw0_carry__1_i_6_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 sensor1_raw0_carry__2
        (.CI(sensor1_raw0_carry__1_n_0),
         .CO({sensor1_raw0_carry__2_n_0,sensor1_raw0_carry__2_n_1,sensor1_raw0_carry__2_n_2,sensor1_raw0_carry__2_n_3}),
         .CYINIT(1'b0),
-        .DI({sensor1_raw0_carry__2_i_1_n_0,sensor1_raw0_carry__2_i_2_n_0,sensor1_raw0_carry__2_i_3_n_0,sensor1_raw0_carry__2_i_4_n_0}),
+        .DI({sensor1_raw0_carry__2_i_1_n_0,sensor1_raw0_carry__2_i_2_n_0,ticks_reg[27],ticks_reg[25]}),
         .O(NLW_sensor1_raw0_carry__2_O_UNCONNECTED[3:0]),
-        .S({sensor1_raw0_carry__2_i_5_n_0,sensor1_raw0_carry__2_i_6_n_0,sensor1_raw0_carry__2_i_7_n_0,sensor1_raw0_carry__2_i_8_n_0}));
+        .S({sensor1_raw0_carry__2_i_3_n_0,sensor1_raw0_carry__2_i_4_n_0,sensor1_raw0_carry__2_i_5_n_0,sensor1_raw0_carry__2_i_6_n_0}));
   LUT2 #(
     .INIT(4'h2)) 
     sensor1_raw0_carry__2_i_1
@@ -1293,43 +1277,31 @@ module soc_design_Temperature_Control_0_0_Temperature_Control_Module
         .I1(ticks_reg[29]),
         .O(sensor1_raw0_carry__2_i_2_n_0));
   LUT2 #(
-    .INIT(4'hE)) 
-    sensor1_raw0_carry__2_i_3
-       (.I0(ticks_reg[26]),
-        .I1(ticks_reg[27]),
-        .O(sensor1_raw0_carry__2_i_3_n_0));
-  LUT2 #(
-    .INIT(4'h8)) 
-    sensor1_raw0_carry__2_i_4
-       (.I0(ticks_reg[24]),
-        .I1(ticks_reg[25]),
-        .O(sensor1_raw0_carry__2_i_4_n_0));
-  LUT2 #(
     .INIT(4'h1)) 
-    sensor1_raw0_carry__2_i_5
+    sensor1_raw0_carry__2_i_3
        (.I0(ticks_reg[30]),
         .I1(ticks_reg[31]),
-        .O(sensor1_raw0_carry__2_i_5_n_0));
+        .O(sensor1_raw0_carry__2_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
-    sensor1_raw0_carry__2_i_6
+    sensor1_raw0_carry__2_i_4
        (.I0(ticks_reg[28]),
         .I1(ticks_reg[29]),
-        .O(sensor1_raw0_carry__2_i_6_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
-    sensor1_raw0_carry__2_i_7
-       (.I0(ticks_reg[26]),
-        .I1(ticks_reg[27]),
-        .O(sensor1_raw0_carry__2_i_7_n_0));
+        .O(sensor1_raw0_carry__2_i_4_n_0));
   LUT2 #(
     .INIT(4'h2)) 
-    sensor1_raw0_carry__2_i_8
-       (.I0(ticks_reg[25]),
-        .I1(ticks_reg[24]),
-        .O(sensor1_raw0_carry__2_i_8_n_0));
+    sensor1_raw0_carry__2_i_5
+       (.I0(ticks_reg[26]),
+        .I1(ticks_reg[27]),
+        .O(sensor1_raw0_carry__2_i_5_n_0));
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
+    sensor1_raw0_carry__2_i_6
+       (.I0(ticks_reg[24]),
+        .I1(ticks_reg[25]),
+        .O(sensor1_raw0_carry__2_i_6_n_0));
+  LUT2 #(
+    .INIT(4'hE)) 
     sensor1_raw0_carry_i_1
        (.I0(ticks_reg[6]),
         .I1(ticks_reg[7]),
@@ -1353,10 +1325,10 @@ module soc_design_Temperature_Control_0_0_Temperature_Control_Module
         .I1(ticks_reg[1]),
         .O(sensor1_raw0_carry_i_4_n_0));
   LUT2 #(
-    .INIT(4'h2)) 
+    .INIT(4'h1)) 
     sensor1_raw0_carry_i_5
-       (.I0(ticks_reg[7]),
-        .I1(ticks_reg[6]),
+       (.I0(ticks_reg[6]),
+        .I1(ticks_reg[7]),
         .O(sensor1_raw0_carry_i_5_n_0));
   LUT2 #(
     .INIT(4'h1)) 

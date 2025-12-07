@@ -1923,7 +1923,7 @@
       },
       "Instrument_Reader_0": {
         "vlnv": "xilinx.com:user:Instrument_Reader:1.0",
-        "ip_revision": "6",
+        "ip_revision": "7",
         "xci_name": "soc_design_Instrument_Reader_0_0",
         "xci_path": "ip\\soc_design_Instrument_Reader_0_0\\soc_design_Instrument_Reader_0_0.xci",
         "inst_hier_path": "Instrument_Reader_0",
@@ -2046,7 +2046,7 @@
       },
       "Temperature_Control_0": {
         "vlnv": "xilinx.com:user:Temperature_Control:1.0",
-        "ip_revision": "2",
+        "ip_revision": "8",
         "xci_name": "soc_design_Temperature_Control_0_0",
         "xci_path": "ip\\soc_design_Temperature_Control_0_0\\soc_design_Temperature_Control_0_0.xci",
         "inst_hier_path": "Temperature_Control_0",

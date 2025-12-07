@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Sun Dec  7 11:49:22 2025
+| Date         : Sun Dec  7 15:37:37 2025
 | Host         : Azmis_Laptop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file soc_design_wrapper_utilization_placed.rpt -pb soc_design_wrapper_utilization_placed.pb
 | Design       : soc_design_wrapper
@@ -32,13 +32,13 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs                 |  764 |     0 |          0 |     53200 |  1.44 |
-|   LUT as Logic             |  762 |     0 |          0 |     53200 |  1.43 |
+| Slice LUTs                 |  889 |     0 |          0 |     53200 |  1.67 |
+|   LUT as Logic             |  887 |     0 |          0 |     53200 |  1.67 |
 |   LUT as Memory            |    2 |     0 |          0 |     17400 |  0.01 |
 |     LUT as Distributed RAM |    0 |     0 |            |           |       |
 |     LUT as Shift Register  |    2 |     0 |            |           |       |
-| Slice Registers            |  867 |     0 |          0 |    106400 |  0.81 |
-|   Register as Flip Flop    |  867 |     0 |          0 |    106400 |  0.81 |
+| Slice Registers            |  964 |     0 |          0 |    106400 |  0.91 |
+|   Register as Flip Flop    |  964 |     0 |          0 |    106400 |  0.91 |
 |   Register as Latch        |    0 |     0 |          0 |    106400 |  0.00 |
 | F7 Muxes                   |    0 |     0 |          0 |     26600 |  0.00 |
 | F8 Muxes                   |    0 |     0 |          0 |     13300 |  0.00 |
@@ -60,8 +60,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 75    |          Yes |           - |        Reset |
-| 48    |          Yes |         Set |            - |
-| 744   |          Yes |       Reset |            - |
+| 49    |          Yes |         Set |            - |
+| 840   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -71,13 +71,13 @@ Table of Contents
 +--------------------------------------------+------+-------+------------+-----------+-------+
 |                  Site Type                 | Used | Fixed | Prohibited | Available | Util% |
 +--------------------------------------------+------+-------+------------+-----------+-------+
-| Slice                                      |  318 |     0 |          0 |     13300 |  2.39 |
-|   SLICEL                                   |  191 |     0 |            |           |       |
-|   SLICEM                                   |  127 |     0 |            |           |       |
-| LUT as Logic                               |  762 |     0 |          0 |     53200 |  1.43 |
+| Slice                                      |  366 |     0 |          0 |     13300 |  2.75 |
+|   SLICEL                                   |  227 |     0 |            |           |       |
+|   SLICEM                                   |  139 |     0 |            |           |       |
+| LUT as Logic                               |  887 |     0 |          0 |     53200 |  1.67 |
 |   using O5 output only                     |    0 |       |            |           |       |
-|   using O6 output only                     |  518 |       |            |           |       |
-|   using O5 and O6                          |  244 |       |            |           |       |
+|   using O6 output only                     |  660 |       |            |           |       |
+|   using O5 and O6                          |  227 |       |            |           |       |
 | LUT as Memory                              |    2 |     0 |          0 |     17400 |  0.01 |
 |   LUT as Distributed RAM                   |    0 |     0 |            |           |       |
 |     using O5 output only                   |    0 |       |            |           |       |
@@ -87,12 +87,12 @@ Table of Contents
 |     using O5 output only                   |    0 |       |            |           |       |
 |     using O6 output only                   |    2 |       |            |           |       |
 |     using O5 and O6                        |    0 |       |            |           |       |
-| Slice Registers                            |  867 |     0 |          0 |    106400 |  0.81 |
-|   Register driven from within the Slice    |  490 |       |            |           |       |
-|   Register driven from outside the Slice   |  377 |       |            |           |       |
-|     LUT in front of the register is unused |  216 |       |            |           |       |
-|     LUT in front of the register is used   |  161 |       |            |           |       |
-| Unique Control Sets                        |   87 |       |          0 |     13300 |  0.65 |
+| Slice Registers                            |  964 |     0 |          0 |    106400 |  0.91 |
+|   Register driven from within the Slice    |  560 |       |            |           |       |
+|   Register driven from outside the Slice   |  404 |       |            |           |       |
+|     LUT in front of the register is unused |  205 |       |            |           |       |
+|     LUT in front of the register is used   |  199 |       |            |           |       |
+| Unique Control Sets                        |   91 |       |          0 |     13300 |  0.68 |
 +--------------------------------------------+------+-------+------------+-----------+-------+
 * * Note: Available Control Sets calculated as Slice * 1, Review the Control Sets Report for more information regarding control sets.
 
@@ -182,17 +182,17 @@ Table of Contents
 +----------+------+----------------------+
 | Ref Name | Used |  Functional Category |
 +----------+------+----------------------+
-| FDRE     |  744 |         Flop & Latch |
-| LUT3     |  234 |                  LUT |
-| LUT2     |  177 |                  LUT |
-| LUT5     |  172 |                  LUT |
-| LUT6     |  164 |                  LUT |
-| LUT4     |  154 |                  LUT |
+| FDRE     |  840 |         Flop & Latch |
+| LUT5     |  230 |                  LUT |
+| LUT3     |  207 |                  LUT |
+| LUT2     |  178 |                  LUT |
+| LUT6     |  169 |                  LUT |
+| LUT1     |  168 |                  LUT |
+| LUT4     |  162 |                  LUT |
 | BIBUF    |  130 |                   IO |
-| LUT1     |  105 |                  LUT |
 | FDCE     |   75 |         Flop & Latch |
-| FDSE     |   48 |         Flop & Latch |
-| CARRY4   |   19 |           CarryLogic |
+| CARRY4   |   63 |           CarryLogic |
+| FDSE     |   49 |         Flop & Latch |
 | SRL16E   |    2 |   Distributed Memory |
 | PS7      |    1 | Specialized Resource |
 | BUFG     |    1 |                Clock |
@@ -210,14 +210,14 @@ Table of Contents
 10. Instantiated Netlists
 -------------------------
 
-+-----------------------------------+------+
-|              Ref Name             | Used |
-+-----------------------------------+------+
-| soc_design_temp_control_0_0       |    1 |
-| soc_design_rst_ps7_0_100M_0       |    1 |
-| soc_design_processing_system7_0_0 |    1 |
-| soc_design_axi_smc_0              |    1 |
-| soc_design_Instrument_Reader_0_0  |    1 |
-+-----------------------------------+------+
++------------------------------------+------+
+|              Ref Name              | Used |
++------------------------------------+------+
+| soc_design_rst_ps7_0_100M_0        |    1 |
+| soc_design_processing_system7_0_0  |    1 |
+| soc_design_axi_smc_0               |    1 |
+| soc_design_Temperature_Control_0_0 |    1 |
+| soc_design_Instrument_Reader_0_0   |    1 |
++------------------------------------+------+
 
 

@@ -14,6 +14,9 @@ static uint8_t period_500ms_passed = 0;
 static uint8_t period_1000ms_passed = 0;
 
 void tasks_cyclical(){
+
+    dump_instrument_data();
+
     // else if => only do one task each cycle
 	if (period_1000ms_passed == 1)
 	{

@@ -26,6 +26,7 @@ static uint32_t count = 0;  // number of elements currently stored (0..BUFFER_CA
 
 static uint8_t instrument_enable = 0;
 static uint8_t tc_receive_state = 0;
+static uint8_t dump_instrument_data_flag = 0;
 static uint8_t overflow = 0;        // true if at least one overwrite has occurred
 
 uint16_t read_instrument_val()
@@ -35,6 +36,7 @@ uint16_t read_instrument_val()
 
     Xil_Out32(INSTRUMENT_CONTROL_ADDR, read_start);
     result = Xil_In32(INSTRUMENT_DATA_ADDR);
+    read_start = 0;
     Xil_Out32(INSTRUMENT_CONTROL_ADDR, read_start);
 
     return (uint16_t)result;
@@ -97,7 +99,13 @@ uint32_t tc_receive_state_callback(uint8_t recevie_state_in)
 
 uint32_t dump_instrument_data_callback(void)
 {
-    if (instrument_enable != 1u || tc_receive_state != 1u)
+    dump_instrument_data_flag = 1;
+    return ERR_OK;
+}
+
+uint32_t dump_instrument_data()
+{
+    if (instrument_enable != 1u || tc_receive_state != 1u || dump_instrument_data_flag != 1u)
     {
         return ERR_OK;
     }
@@ -130,6 +138,7 @@ uint32_t dump_instrument_data_callback(void)
     tail = 0;
     count = 0;
     overflow = 0;
+    dump_instrument_data_flag = 0;
 
     return ERR_OK;
 }

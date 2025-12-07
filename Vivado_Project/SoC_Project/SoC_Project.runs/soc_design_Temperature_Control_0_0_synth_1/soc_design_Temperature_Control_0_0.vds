@@ -1,0 +1,324 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Dec  7 15:34:33 2025
+# Process ID         : 8904
+# Current directory  : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Temperature_Control_0_0_synth_1
+# Command line       : vivado.exe -log soc_design_Temperature_Control_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_design_Temperature_Control_0_0.tcl
+# Log file           : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Temperature_Control_0_0_synth_1/soc_design_Temperature_Control_0_0.vds
+# Journal file       : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Temperature_Control_0_0_synth_1\vivado.jou
+# Running On         : Azmis_Laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13700H
+# CPU Frequency      : 2918 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16802 MB
+# Swap memory        : 3355 MB
+# Total Virtual      : 20158 MB
+# Available Virtual  : 6595 MB
+#-----------------------------------------------------------
+source soc_design_Temperature_Control_0_0.tcl -notrace
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 497.910 ; gain = 209.824
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.cache/ip 
+Command: synth_design -top soc_design_Temperature_Control_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+INFO: [IP_Flow 19-2162] IP 'soc_design_Temperature_Control_0_0' is locked:
+* IP definition 'Temperature_Control_v1.0 (1.0)' for IP 'soc_design_Temperature_Control_0_0' (customized with software release 2025.1) has a different revision in the IP Catalog.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 21396
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1267.004 ; gain = 491.930
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'soc_design_Temperature_Control_0_0' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/synth/soc_design_Temperature_Control_0_0.vhd:82]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'Temperature_Control' declared at 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control.vhd:5' bound to instance 'U0' of component 'Temperature_Control' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/synth/soc_design_Temperature_Control_0_0.vhd:152]
+INFO: [Synth 8-638] synthesizing module 'Temperature_Control' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control.vhd:49]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'Temperature_Control_slave_lite_v1_0_S00_AXI' declared at 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd:5' bound to instance 'Temperature_Control_slave_lite_v1_0_S00_AXI_inst' of component 'Temperature_Control_slave_lite_v1_0_S00_AXI' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control.vhd:107]
+INFO: [Synth 8-638] synthesizing module 'Temperature_Control_slave_lite_v1_0_S00_AXI' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd:88]
+INFO: [Synth 8-256] done synthesizing module 'Temperature_Control_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_slave_lite_v1_0_S00_AXI.vhd:88]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'Temperature_Control_Module' declared at 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_Module.vhd:5' bound to instance 'Temperature_Control_Module_inst' of component 'Temperature_Control_Module' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control.vhd:140]
+INFO: [Synth 8-638] synthesizing module 'Temperature_Control_Module' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_Module.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'Temperature_Control_Module' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control_Module.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'Temperature_Control' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ipshared/2a44/hdl/Temperature_Control.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'soc_design_Temperature_Control_0_0' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Temperature_Control_0_0/synth/soc_design_Temperature_Control_0_0.vhd:82]
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[31] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[30] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[29] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[28] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[27] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[26] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[25] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[24] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[23] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[22] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[21] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[20] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[19] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[18] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[17] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[16] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[15] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[14] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[13] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[12] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[11] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[10] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[9] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[8] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[7] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[6] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[5] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[4] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[3] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CONTROL_REG_IN[2] in module Temperature_Control_Module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[2] in module Temperature_Control_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[1] in module Temperature_Control_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[0] in module Temperature_Control_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module Temperature_Control_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module Temperature_Control_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module Temperature_Control_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1381.734 ; gain = 606.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1381.734 ; gain = 606.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1381.734 ; gain = 606.660
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1381.734 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1414.672 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1417.203 ; gain = 2.531
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1417.203 ; gain = 642.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1417.203 ; gain = 642.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1417.203 ; gain = 642.129
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'Temperature_Control_slave_lite_v1_0_S00_AXI'
+INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'Temperature_Control_slave_lite_v1_0_S00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              001 |                               00
+                   waddr |                              010 |                               10
+                   wdata |                              100 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_write_reg' using encoding 'one-hot' in module 'Temperature_Control_slave_lite_v1_0_S00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+                   raddr |                               01 |                               10
+                   rdata |                               10 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_read_reg' using encoding 'sequential' in module 'Temperature_Control_slave_lite_v1_0_S00_AXI'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1417.203 ; gain = 642.129
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 10    
+	   4 Input   32 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 3     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 4     
+	   3 Input    1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port s00_axi_awprot[2] in module soc_design_Temperature_Control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awprot[1] in module soc_design_Temperature_Control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awprot[0] in module soc_design_Temperature_Control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[2] in module soc_design_Temperature_Control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[1] in module soc_design_Temperature_Control_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[0] in module soc_design_Temperature_Control_0_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1435.855 ; gain = 660.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1585.098 ; gain = 810.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1585.805 ; gain = 810.730
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1614.457 ; gain = 839.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    44|
+|2     |LUT1   |    64|
+|3     |LUT2   |    34|
+|4     |LUT3   |     5|
+|5     |LUT4   |    12|
+|6     |LUT5   |    62|
+|7     |LUT6   |    14|
+|8     |FDRE   |   141|
+|9     |FDSE   |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1829.539 ; gain = 1018.996
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1829.539 ; gain = 1054.465
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1838.617 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 44 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1842.312 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 6ded3fbd
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 1842.312 ; gain = 1303.066
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1842.312 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Temperature_Control_0_0_synth_1/soc_design_Temperature_Control_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP soc_design_Temperature_Control_0_0, cache-ID = 76c5779867078d19
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1842.312 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_Temperature_Control_0_0_synth_1/soc_design_Temperature_Control_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file soc_design_Temperature_Control_0_0_utilization_synth.rpt -pb soc_design_Temperature_Control_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  7 15:35:32 2025...

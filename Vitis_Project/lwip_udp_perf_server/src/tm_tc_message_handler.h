@@ -6,7 +6,7 @@
 #include "tm_tc_protocol_handler.h"
 
 
-#define TM_INSTRUMENT_DATA_MAX_LENGHT (50000)
+#define TM_INSTRUMENT_DATA_MAX_LENGHT (1472 - 8) //Ethernet max packet length - frame length
 
 
 

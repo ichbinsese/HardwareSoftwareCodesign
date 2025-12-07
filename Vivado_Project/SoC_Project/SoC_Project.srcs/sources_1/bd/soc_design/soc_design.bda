@@ -215,12 +215,12 @@
                 "MA": "Data",
                 "MX": "/processing_system7_0",
                 "MI": "M_AXI_GP0",
-                "MS": "SEG_temp_control_0_S00_AXI_reg",
+                "MS": "SEG_Temperature_Control_0_S00_AXI_reg",
                 "MV": "xilinx.com:ip:processing_system7:5.5",
-                "SX": "/temp_control_0",
+                "SX": "/Temperature_Control_0",
                 "SI": "S00_AXI",
                 "SS": "S00_AXI_reg",
-                "SV": "xilinx.com:user:temp_control:1.0",
+                "SV": "xilinx.com:user:Temperature_Control:1.0",
                 "TM": "both",
                 "TU": "register"
             }

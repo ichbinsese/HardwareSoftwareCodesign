@@ -1,6 +1,9 @@
 Instrument_Reader_0:
 - Instrument_Reader
 - None
+Temperature_Control_0:
+- Temperature_Control
+- None
 ps7_afi_0:
 - ps7_afi
 - None
@@ -91,6 +94,3 @@ ps7_usb_0:
 ps7_xadc_0:
 - ps7_xadc
 - xadcps
-temp_control_0:
-- temp_control
-- None

@@ -28,7 +28,7 @@
                  <0x0 &ps7_ram_0_memory 0x0 0x30000>,
                  <0xffff0000 &ps7_ram_1_memory 0xffff0000 0xfe00>,
                  <0x43c00000 &Instrument_Reader_0 0x43c00000 0x10000>,
-                 <0x43c10000 &temp_control_0 0x43c10000 0x10000>,
+                 <0x43c10000 &Temperature_Control_0 0x43c10000 0x10000>,
                  <0xf8008000 &ps7_afi_0 0xf8008000 0x1000>,
                  <0xf8009000 &ps7_afi_1 0xf8009000 0x1000>,
                  <0xf800a000 &ps7_afi_2 0xf800a000 0x1000>,
@@ -849,17 +849,17 @@
                         phandle = <0x5>;
                 };
 
-                temp_control_0: temp_control@43c10000 {
+                Temperature_Control_0: Temperature_Control@43c10000 {
                         xlnx,s00-axi-data-width = <0x20>;
-                        compatible = "xlnx,temp-control-1.0";
+                        compatible = "xlnx,Temperature-Control-1.0";
                         status = "okay";
                         clock-names = "s00_axi_aclk";
                         xlnx,s00-axi-addr-width = <0x4>;
-                        xlnx,ip-name = "temp_control";
+                        xlnx,ip-name = "Temperature_Control";
                         xlnx,edk-iptype = "PERIPHERAL";
                         reg = <0x43c10000 0x10000>;
                         clocks = <&clkc 0xf>;
-                        xlnx,name = "temp_control_0";
+                        xlnx,name = "Temperature_Control_0";
                         phandle = <0x6>;
                 };
         };
@@ -965,7 +965,7 @@
                 amba_pl = "/amba_pl";
                 clocking0 = "/amba_pl/clocking0";
                 Instrument_Reader_0 = "/amba_pl/Instrument_Reader@43c00000";
-                temp_control_0 = "/amba_pl/temp_control@43c10000";
+                Temperature_Control_0 = "/amba_pl/Temperature_Control@43c10000";
                 ps7_qspi_linear_0_memory = "/memory@fc000000";
                 ps7_ddr_0_memory = "/memory@00100000";
                 ps7_ram_0_memory = "/memory@0";

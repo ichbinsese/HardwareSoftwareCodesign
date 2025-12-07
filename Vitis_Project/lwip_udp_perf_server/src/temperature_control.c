@@ -11,10 +11,10 @@
 #define REG_SENSOR2_RAW_OFFSET 0x08
 #define REG_BACKUP_OFFSET 0x0C
 
-#define REG_USER_CONTROL_ADDR (XPAR_TEMP_CONTROL_0_BASEADDR + REG_USER_CONTROL_OFFSET)
-#define REG_SENSOR1_RAW_ADDR (XPAR_TEMP_CONTROL_0_BASEADDR + REG_SENSOR1_RAW_OFFSET)   
-#define REG_SENSOR2_RAW_ADDR (XPAR_TEMP_CONTROL_0_BASEADDR + REG_SENSOR2_RAW_OFFSET)
-#define REG_BACKUP_ADDR (XPAR_TEMP_CONTROL_0_BASEADDR + REG_BACKUP_OFFSET)
+#define REG_USER_CONTROL_ADDR (XPAR_TEMPERATURE_CONTROL_0_BASEADDR + REG_USER_CONTROL_OFFSET)
+#define REG_SENSOR1_RAW_ADDR (XPAR_TEMPERATURE_CONTROL_0_BASEADDR + REG_SENSOR1_RAW_OFFSET)   
+#define REG_SENSOR2_RAW_ADDR (XPAR_TEMPERATURE_CONTROL_0_BASEADDR + REG_SENSOR2_RAW_OFFSET)
+#define REG_BACKUP_ADDR (XPAR_TEMPERATURE_CONTROL_0_BASEADDR + REG_BACKUP_OFFSET)
 
 
 // Bit positions in user_control_reg
@@ -58,6 +58,7 @@ static void read_sensor_values(void)
     avg_temp_s1 = (avg_temp_s1 * read_counts + last_temp_s1) / (read_counts + 1);
     avg_temp_s2 = (avg_temp_s2 * read_counts + last_temp_s1) / (read_counts + 1);
 
+    xil_printf("\nSensor Vals: %u  %u", last_temp_s1, last_temp_s2);
     read_counts++;
 }
 

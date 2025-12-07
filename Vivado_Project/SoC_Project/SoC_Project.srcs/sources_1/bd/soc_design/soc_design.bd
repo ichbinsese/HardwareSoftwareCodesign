@@ -12,10 +12,10 @@
     },
     "design_tree": {
       "processing_system7_0": "",
-      "temp_control_0": "",
       "Instrument_Reader_0": "",
       "axi_smc": "",
-      "rst_ps7_0_100M": ""
+      "rst_ps7_0_100M": "",
+      "Temperature_Control_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1921,17 +1921,9 @@
           }
         }
       },
-      "temp_control_0": {
-        "vlnv": "xilinx.com:user:temp_control:1.0",
-        "ip_revision": "4",
-        "xci_name": "soc_design_temp_control_0_0",
-        "xci_path": "ip\\soc_design_temp_control_0_0\\soc_design_temp_control_0_0.xci",
-        "inst_hier_path": "temp_control_0",
-        "has_run_ip_tcl": "true"
-      },
       "Instrument_Reader_0": {
         "vlnv": "xilinx.com:user:Instrument_Reader:1.0",
-        "ip_revision": "3",
+        "ip_revision": "6",
         "xci_name": "soc_design_Instrument_Reader_0_0",
         "xci_path": "ip\\soc_design_Instrument_Reader_0_0\\soc_design_Instrument_Reader_0_0.xci",
         "inst_hier_path": "Instrument_Reader_0",
@@ -2051,6 +2043,14 @@
         "xci_path": "ip\\soc_design_rst_ps7_0_100M_0\\soc_design_rst_ps7_0_100M_0.xci",
         "inst_hier_path": "rst_ps7_0_100M",
         "has_run_ip_tcl": "true"
+      },
+      "Temperature_Control_0": {
+        "vlnv": "xilinx.com:user:Temperature_Control:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_design_Temperature_Control_0_0",
+        "xci_path": "ip\\soc_design_Temperature_Control_0_0\\soc_design_Temperature_Control_0_0.xci",
+        "inst_hier_path": "Temperature_Control_0",
+        "has_run_ip_tcl": "true"
       }
     },
     "interface_nets": {
@@ -2063,7 +2063,7 @@
       "axi_smc_M01_AXI": {
         "interface_ports": [
           "axi_smc/M01_AXI",
-          "temp_control_0/S00_AXI"
+          "Temperature_Control_0/S00_AXI"
         ]
       },
       "processing_system7_0_DDR": {
@@ -2093,7 +2093,7 @@
           "axi_smc/aclk",
           "rst_ps7_0_100M/slowest_sync_clk",
           "Instrument_Reader_0/s00_axi_aclk",
-          "temp_control_0/s00_axi_aclk"
+          "Temperature_Control_0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -2107,7 +2107,7 @@
           "rst_ps7_0_100M/peripheral_aresetn",
           "axi_smc/aresetn",
           "Instrument_Reader_0/s00_axi_aresetn",
-          "temp_control_0/s00_axi_aresetn"
+          "Temperature_Control_0/s00_axi_aresetn"
         ]
       }
     },
@@ -2123,8 +2123,8 @@
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
-              "SEG_temp_control_0_S00_AXI_reg": {
-                "address_block": "/temp_control_0/S00_AXI/S00_AXI_reg",
+              "SEG_Temperature_Control_0_S00_AXI_reg": {
+                "address_block": "/Temperature_Control_0/S00_AXI/S00_AXI_reg",
                 "offset": "0x43C10000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",

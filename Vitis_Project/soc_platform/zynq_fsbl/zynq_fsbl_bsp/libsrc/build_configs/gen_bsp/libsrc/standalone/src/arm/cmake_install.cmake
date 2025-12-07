@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/azmib/Desktop/test/Vitis_Project/soc_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/standalone/src/arm
+# Install script for directory: C:/Users/azmib/Desktop/Vitis_Project/soc_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/standalone/src/arm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/azmib/Desktop/test/Vitis_Project/soc_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/arm/common/cmake_install.cmake")
+  include("C:/Users/azmib/Desktop/Vitis_Project/soc_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/arm/common/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/azmib/Desktop/test/Vitis_Project/soc_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/arm/cortexa9/cmake_install.cmake")
+  include("C:/Users/azmib/Desktop/Vitis_Project/soc_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src/arm/cortexa9/cmake_install.cmake")
 endif()
 

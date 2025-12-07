@@ -129,7 +129,7 @@ begin
 	-- I/O Connections assignments
 
 	S_AXI_AWREADY	<= axi_awready;
-	S_AXI_WREADY	<= axi_wready;
+	S_AXI_WREADY	<= '1';
 	S_AXI_BRESP	<= axi_bresp;
 	S_AXI_BVALID	<= axi_bvalid;
 	S_AXI_ARREADY	<= axi_arready;
@@ -302,135 +302,109 @@ begin
 
 	-- Add user logic here -------------------------------------
 	
-	-- Simple thermal model:
-	-- - user_control_reg(0) = Heater 1 command (0=OFF, 1=ON)
-	-- - user_control_reg(1) = Heater 2 command
-	-- - Sensor 1 raw temp   -> sensor1_raw_reg(15 downto 0)
-	-- - Sensor 2 raw temp   -> sensor2_raw_reg(15 downto 0)
-	--
-	-- Raw temperature model (as seen from OBC using formula):
-	--   T_eng = 0.00162720689 * T_raw - 40
-	--   0°C   ≈ T_raw = 24576 (0x6000)
-	--   0.1°C ≈ 61 raw counts
-	--
-	-- Behaviour:
-	--   - Each heater has its own timer.
-	--   - When heater state changes (ON<->OFF), its timer is reset.
-	--   - After a fixed time (STEP_TICKS), temperature changes by RAW_STEP.
-	--   - As long as state stays constant, temp keeps stepping every STEP_TICKS.
+process (S_AXI_ACLK)
+    -- Constants
+    constant CLK_FREQ_HZ  : integer := 50000000;
+    constant STEP_TICKS   : integer := CLK_FREQ_HZ;
+    constant RAW_MIN      : integer := 0;
+    constant RAW_MAX      : integer := 65535;
+    constant RAW_START    : integer := 24576;
+    constant RAW_STEP     : integer := 61;
 
-    process (S_AXI_ACLK)
-        -- Constants for thermal model
-		constant CLK_FREQ_HZ  : integer := 50000000;      -- 50 MHz AXI clock
-		constant STEP_TICKS   : integer := CLK_FREQ_HZ;   -- one step per second
-		constant RAW_MIN      : integer := 0;             -- 0x0000 (Teng = -40°C )
-		constant RAW_MAX      : integer := 65535;         -- 0xFFFF (eng = +66.6°C)
-		constant RAW_START    : integer := 24576;         -- = 0°C
-		constant RAW_STEP     : integer := 61;            -- Step per second (Teng = 0.1°C)
+    -- Internal state
+    variable s1_raw    : integer := RAW_START;
+    variable s2_raw    : integer := RAW_START;
 
-		-- State variables 
-		variable s1_raw       : integer;
-		variable s2_raw       : integer;
-		variable h1_on        : std_logic;
-		variable h2_on        : std_logic;
-		variable h1_prev      : std_logic;
-		variable h2_prev      : std_logic;
-		variable tick_cnt1    : integer range 0 to STEP_TICKS-1;
-		variable tick_cnt2    : integer range 0 to STEP_TICKS-1;
-		
-        begin
-            if rising_edge(S_AXI_ACLK) then
-                if S_AXI_ARESETN = '0' then
-                    -- Reset thermal model
-                     s1_raw    := RAW_START;
-                     s2_raw    := RAW_START;
-                    h1_on     := '0';
-                    h2_on     := '0';
-                    h1_prev   := '0';
-                    h2_prev   := '0';
-                    tick_cnt1 := 0;
-                    tick_cnt2 := 0;
-    
-                    -- Initialize sensor registers to 0°C
-                    sensor1_raw_reg(15 downto 0)  <= std_logic_vector(to_unsigned(RAW_START, 16));
-                    sensor1_raw_reg(31 downto 16) <= (others => '0');
-    
-                    sensor2_raw_reg(15 downto 0)  <= std_logic_vector(to_unsigned(RAW_START, 16));
-                    sensor2_raw_reg(31 downto 16) <= (others => '0');
-    
-                    -- (backup_reg is still part of AXI template as 4 is the minimum number of registers -Azmit but unused by this logic)
-    
-			     else
-			         -- Check heater commands in user control reg (Heater 1 state = Bit 0; Heater 2 State = Bit 1)
+    variable prev_h1   : std_logic := '0';
+    variable prev_h2   : std_logic := '0';
 
-                     h1_on := user_control_reg(0);
-                     h2_on := user_control_reg(1);
-                     
-                     -- Check whether heater states changed an if so, restart counter
-                     if h1_on /= h1_prev then
-                        tick_cnt1 := 0;      
-                        h1_prev   := h1_on;
-                    end if;
-    
-                    if h2_on /= h2_prev then
-                        tick_cnt2 := 0;       
-                        h2_prev   := h2_on;
-                    end if;
-                    
-    
-                    -- Heater 1 and Sensor 1 timing and connection
-                    if tick_cnt1 = STEP_TICKS-1 then
-                        tick_cnt1 := 0;
-    
-                        -- apply temp step depending on heater 1 on or not
-                        if h1_on = '1' then
-                            s1_raw := s1_raw + RAW_STEP;
-                        else
-                            s1_raw := s1_raw - RAW_STEP;
-                        end if;
-    
-                        -- Clamp to max and min range
-                        if s1_raw > RAW_MAX then
-                            s1_raw := RAW_MAX;
-                        elsif s1_raw < RAW_MIN then
-                            s1_raw := RAW_MIN;
-                        end if;
-    
-                        -- Store to AXI registers
-                        sensor1_raw_reg(15 downto 0)  <= std_logic_vector(to_unsigned(s1_raw, 16));
-                        sensor1_raw_reg(31 downto 16) <= (others => '0');
-                    else
-                        tick_cnt1 := tick_cnt1 + 1;
-                    end if;
-    
-                    -- Heater 2 and Sensor 2 timing and connection
-                    if tick_cnt2 = STEP_TICKS-1 then
-                        tick_cnt2 := 0;
-    
-                        -- Apply one step based on current heater 2 state
-                        if h2_on = '1' then
-                            s2_raw := s2_raw + RAW_STEP;
-                        else
-                            s2_raw := s2_raw - RAW_STEP;
-                        end if;
-    
-                        -- Clamp to valid range
-                        if s2_raw > RAW_MAX then
-                            s2_raw := RAW_MAX;
-                        elsif s2_raw < RAW_MIN then
-                            s2_raw := RAW_MIN;
-                        end if;
-    
-                        -- Store into AXI register
-                        sensor2_raw_reg(15 downto 0)  <= std_logic_vector(to_unsigned(s2_raw, 16));
-                        sensor2_raw_reg(31 downto 16) <= (others => '0');
-                    else
-                        tick_cnt2 := tick_cnt2 + 1;
-                    end if;
-    
-                end if;
+    variable tick1     : integer range 0 to STEP_TICKS-1 := 0;
+    variable tick2     : integer range 0 to STEP_TICKS-1 := 0;
+
+    variable h1        : std_logic;
+    variable h2        : std_logic;
+
+begin
+    if rising_edge(S_AXI_ACLK) then
+
+        -- Reset everything
+        if S_AXI_ARESETN = '0' then
+            s1_raw  := RAW_START;
+            s2_raw  := RAW_START;
+
+            prev_h1 := '0';
+            prev_h2 := '0';
+
+            tick1   := 0;
+            tick2   := 0;
+
+            sensor1_raw_reg <= (others => '0');
+            sensor2_raw_reg <= (others => '0');
+
+        else
+
+            h1 := user_control_reg(0);
+            h2 := user_control_reg(1);
+
+ 
+            if h1 /= prev_h1 then
+                tick1 := 0;
+                prev_h1 := h1;
             end if;
-        end process;
+
+            if h2 /= prev_h2 then
+                tick2 := 0;
+                prev_h2 := h2;
+            end if;
+
+
+            if tick1 = STEP_TICKS - 1 then
+                tick1 := 0;
+
+                if h1 = '1' then
+                    s1_raw := s1_raw + RAW_STEP;
+                else
+                    s1_raw := s1_raw - RAW_STEP;
+                end if;
+
+                -- clamp
+                if s1_raw > RAW_MAX then
+                    s1_raw := RAW_MAX;
+                elsif s1_raw < RAW_MIN then
+                    s1_raw := RAW_MIN;
+                end if;
+
+                -- write to AXI register
+                sensor1_raw_reg(15 downto 0) <= std_logic_vector(to_unsigned(s1_raw, 16));
+            else
+                tick1 := tick1 + 1;
+            end if;
+
+
+            if tick2 = STEP_TICKS - 1 then
+                tick2 := 0;
+
+                if h2 = '1' then
+                    s2_raw := s2_raw + RAW_STEP;
+                else
+                    s2_raw := s2_raw - RAW_STEP;
+                end if;
+
+                if s2_raw > RAW_MAX then
+                    s2_raw := RAW_MAX;
+                elsif s2_raw < RAW_MIN then
+                    s2_raw := RAW_MIN;
+                end if;
+
+                -- write to AXI register
+                sensor2_raw_reg(15 downto 0) <= std_logic_vector(to_unsigned(s2_raw, 16));
+            else
+                tick2 := tick2 + 1;
+            end if;
+
+        end if;
+    end if;
+end process;
 
 	-- User logic ends
 

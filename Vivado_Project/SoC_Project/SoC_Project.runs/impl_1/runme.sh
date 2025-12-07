@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/impl_1'
+HD_PWD='C:/Users/abdud/Desktop/HWSWCodesign/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,7 +42,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log soc_design_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source soc_design_wrapper.tcl -notrace
 
 

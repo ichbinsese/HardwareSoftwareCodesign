@@ -2,8 +2,8 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Sat Dec  6 22:03:07 2025
--- Host        : Azmis_Laptop running 64-bit major release  (build 9200)
+-- Date        : Sun Dec  7 10:13:27 2025
+-- Host        : Abdu_Acer running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ soc_design_temp_control_0_0_sim_netlist.vhdl
 -- Design      : soc_design_temp_control_0_0
@@ -19,42 +19,34 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control_slave_lite_v1_0_S0
   port (
     s00_axi_bvalid : out STD_LOGIC;
     axi_awready_reg_0 : out STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
     axi_rvalid_reg_0 : out STD_LOGIC;
     axi_arready_reg_0 : out STD_LOGIC;
-    \FSM_onehot_state_write_reg[1]_0\ : out STD_LOGIC;
-    axi_wready : out STD_LOGIC;
-    \FSM_onehot_state_write_reg[2]_0\ : out STD_LOGIC;
+    state_write : out STD_LOGIC_VECTOR ( 1 downto 0 );
     state_read : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    \axi_awready0__0\ : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    \FSM_onehot_state_write_reg[0]_0\ : out STD_LOGIC;
-    \FSM_onehot_state_write_reg[1]_1\ : out STD_LOGIC;
     axi_bvalid_reg_0 : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     axi_awready_reg_1 : in STD_LOGIC;
-    axi_wready_reg_0 : in STD_LOGIC;
     axi_rvalid_reg_1 : in STD_LOGIC;
     axi_arready_reg_1 : in STD_LOGIC;
-    s00_axi_wvalid : in STD_LOGIC;
     s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_wvalid : in STD_LOGIC;
     s00_axi_arvalid : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_bready : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control_slave_lite_v1_0_S00_AXI;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control_slave_lite_v1_0_S00_AXI is
-  signal \FSM_onehot_state_write[1]_i_1_n_0\ : STD_LOGIC;
-  signal \FSM_onehot_state_write[2]_i_1_n_0\ : STD_LOGIC;
-  signal \^fsm_onehot_state_write_reg[1]_0\ : STD_LOGIC;
-  signal \^fsm_onehot_state_write_reg[2]_0\ : STD_LOGIC;
   signal \FSM_sequential_state_read[0]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_sequential_state_read[1]_i_1_n_0\ : STD_LOGIC;
+  signal \FSM_sequential_state_write[0]_i_1_n_0\ : STD_LOGIC;
+  signal \FSM_sequential_state_write[1]_i_1_n_0\ : STD_LOGIC;
   signal axi_araddr : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \axi_araddr[2]_i_1_n_0\ : STD_LOGIC;
   signal \axi_araddr[3]_i_1_n_0\ : STD_LOGIC;
@@ -64,16 +56,16 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control
   signal \axi_awaddr[3]_i_1_n_0\ : STD_LOGIC;
   signal \axi_awaddr_reg_n_0_[2]\ : STD_LOGIC;
   signal \axi_awaddr_reg_n_0_[3]\ : STD_LOGIC;
+  signal \^axi_awready0__0\ : STD_LOGIC;
   signal axi_awready_i_1_n_0 : STD_LOGIC;
   signal \^axi_awready_reg_0\ : STD_LOGIC;
   signal \^axi_rvalid_reg_0\ : STD_LOGIC;
-  signal \^axi_wready\ : STD_LOGIC;
   signal backup_reg : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \mem_logic__1\ : STD_LOGIC_VECTOR ( 2 to 2 );
   signal p_1_in : STD_LOGIC_VECTOR ( 31 downto 7 );
-  signal \^s00_axi_bvalid\ : STD_LOGIC;
   signal sel : STD_LOGIC;
   signal \^state_read\ : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal \^state_write\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \user_control_reg[15]_i_1_n_0\ : STD_LOGIC;
   signal \user_control_reg[23]_i_1_n_0\ : STD_LOGIC;
   signal \user_control_reg[31]_i_1_n_0\ : STD_LOGIC;
@@ -110,78 +102,22 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control
   signal \user_control_reg_reg_n_0_[8]\ : STD_LOGIC;
   signal \user_control_reg_reg_n_0_[9]\ : STD_LOGIC;
   attribute FSM_ENCODED_STATES : string;
-  attribute FSM_ENCODED_STATES of \FSM_onehot_state_write_reg[0]\ : label is "idle:001,wdata:100,waddr:010";
-  attribute FSM_ENCODED_STATES of \FSM_onehot_state_write_reg[1]\ : label is "idle:001,wdata:100,waddr:010";
-  attribute FSM_ENCODED_STATES of \FSM_onehot_state_write_reg[2]\ : label is "idle:001,wdata:100,waddr:010";
   attribute FSM_ENCODED_STATES of \FSM_sequential_state_read_reg[0]\ : label is "idle:00,rdata:10,raddr:01";
   attribute FSM_ENCODED_STATES of \FSM_sequential_state_read_reg[1]\ : label is "idle:00,rdata:10,raddr:01";
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \FSM_sequential_state_write[0]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \FSM_sequential_state_write[1]_i_1\ : label is "soft_lutpair0";
+  attribute FSM_ENCODED_STATES of \FSM_sequential_state_write_reg[0]\ : label is "idle:00,wdata:10,waddr:01";
+  attribute FSM_ENCODED_STATES of \FSM_sequential_state_write_reg[1]\ : label is "idle:00,wdata:10,waddr:01";
+  attribute SOFT_HLUTNM of axi_bvalid_i_2 : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \backup_reg[31]_i_2\ : label is "soft_lutpair1";
 begin
-  \FSM_onehot_state_write_reg[1]_0\ <= \^fsm_onehot_state_write_reg[1]_0\;
-  \FSM_onehot_state_write_reg[2]_0\ <= \^fsm_onehot_state_write_reg[2]_0\;
   axi_arready_reg_0 <= \^axi_arready_reg_0\;
+  \axi_awready0__0\ <= \^axi_awready0__0\;
   axi_awready_reg_0 <= \^axi_awready_reg_0\;
   axi_rvalid_reg_0 <= \^axi_rvalid_reg_0\;
-  axi_wready <= \^axi_wready\;
-  s00_axi_bvalid <= \^s00_axi_bvalid\;
   state_read(1 downto 0) <= \^state_read\(1 downto 0);
-\FSM_onehot_state_write[1]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFBFAAFFFFBF00"
-    )
-        port map (
-      I0 => s00_axi_wvalid,
-      I1 => s00_axi_awvalid,
-      I2 => \^axi_awready_reg_0\,
-      I3 => \^fsm_onehot_state_write_reg[1]_0\,
-      I4 => \^axi_wready\,
-      I5 => \^fsm_onehot_state_write_reg[2]_0\,
-      O => \FSM_onehot_state_write[1]_i_1_n_0\
-    );
-\FSM_onehot_state_write[2]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"0F0F0800"
-    )
-        port map (
-      I0 => \^axi_awready_reg_0\,
-      I1 => s00_axi_awvalid,
-      I2 => s00_axi_wvalid,
-      I3 => \^fsm_onehot_state_write_reg[1]_0\,
-      I4 => \^fsm_onehot_state_write_reg[2]_0\,
-      O => \FSM_onehot_state_write[2]_i_1_n_0\
-    );
-\FSM_onehot_state_write_reg[0]\: unisim.vcomponents.FDSE
-    generic map(
-      INIT => '1'
-    )
-        port map (
-      C => s00_axi_aclk,
-      CE => '1',
-      D => '0',
-      Q => \^axi_wready\,
-      S => axi_awready_i_1_n_0
-    );
-\FSM_onehot_state_write_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => s00_axi_aclk,
-      CE => '1',
-      D => \FSM_onehot_state_write[1]_i_1_n_0\,
-      Q => \^fsm_onehot_state_write_reg[1]_0\,
-      R => axi_awready_i_1_n_0
-    );
-\FSM_onehot_state_write_reg[2]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => s00_axi_aclk,
-      CE => '1',
-      D => \FSM_onehot_state_write[2]_i_1_n_0\,
-      Q => \^fsm_onehot_state_write_reg[2]_0\,
-      R => axi_awready_i_1_n_0
-    );
+  state_write(1 downto 0) <= \^state_write\(1 downto 0);
 \FSM_sequential_state_read[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFF0007777FFFF"
@@ -222,6 +158,46 @@ begin
       CE => '1',
       D => \FSM_sequential_state_read[1]_i_1_n_0\,
       Q => \^state_read\(1),
+      R => axi_awready_i_1_n_0
+    );
+\FSM_sequential_state_write[0]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFF0F7FF"
+    )
+        port map (
+      I0 => \^axi_awready_reg_0\,
+      I1 => s00_axi_awvalid,
+      I2 => s00_axi_wvalid,
+      I3 => \^state_write\(0),
+      I4 => \^state_write\(1),
+      O => \FSM_sequential_state_write[0]_i_1_n_0\
+    );
+\FSM_sequential_state_write[1]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FF0F0800"
+    )
+        port map (
+      I0 => s00_axi_awvalid,
+      I1 => \^axi_awready_reg_0\,
+      I2 => s00_axi_wvalid,
+      I3 => \^state_write\(0),
+      I4 => \^state_write\(1),
+      O => \FSM_sequential_state_write[1]_i_1_n_0\
+    );
+\FSM_sequential_state_write_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => s00_axi_aclk,
+      CE => '1',
+      D => \FSM_sequential_state_write[0]_i_1_n_0\,
+      Q => \^state_write\(0),
+      R => axi_awready_i_1_n_0
+    );
+\FSM_sequential_state_write_reg[1]\: unisim.vcomponents.FDRE
+     port map (
+      C => s00_axi_aclk,
+      CE => '1',
+      D => \FSM_sequential_state_write[1]_i_1_n_0\,
+      Q => \^state_write\(1),
       R => axi_awready_i_1_n_0
     );
 \axi_araddr[2]_i_1\: unisim.vcomponents.LUT6
@@ -285,27 +261,27 @@ axi_arready_reg: unisim.vcomponents.FDRE
     );
 \axi_awaddr[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"BFFFFFFF80000000"
+      INIT => X"FFFFBFFF00008000"
     )
         port map (
       I0 => s00_axi_awaddr(0),
       I1 => s00_axi_aresetn,
-      I2 => s00_axi_awvalid,
-      I3 => \^axi_awready_reg_0\,
-      I4 => \^fsm_onehot_state_write_reg[1]_0\,
+      I2 => \^axi_awready0__0\,
+      I3 => \^state_write\(0),
+      I4 => \^state_write\(1),
       I5 => \axi_awaddr_reg_n_0_[2]\,
       O => \axi_awaddr[2]_i_1_n_0\
     );
 \axi_awaddr[3]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"BFFFFFFF80000000"
+      INIT => X"FFFFBFFF00008000"
     )
         port map (
       I0 => s00_axi_awaddr(1),
       I1 => s00_axi_aresetn,
-      I2 => s00_axi_awvalid,
-      I3 => \^axi_awready_reg_0\,
-      I4 => \^fsm_onehot_state_write_reg[1]_0\,
+      I2 => \^axi_awready0__0\,
+      I3 => \^state_write\(0),
+      I4 => \^state_write\(1),
       I5 => \axi_awaddr_reg_n_0_[3]\,
       O => \axi_awaddr[3]_i_1_n_0\
     );
@@ -341,38 +317,21 @@ axi_awready_reg: unisim.vcomponents.FDRE
       Q => \^axi_awready_reg_0\,
       R => axi_awready_i_1_n_0
     );
-axi_bvalid_i_2: unisim.vcomponents.LUT6
+axi_bvalid_i_2: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"FAEAEAEAEAEAEAEA"
+      INIT => X"8"
     )
         port map (
-      I0 => \^axi_wready\,
-      I1 => \^fsm_onehot_state_write_reg[2]_0\,
-      I2 => s00_axi_wvalid,
-      I3 => \^fsm_onehot_state_write_reg[1]_0\,
-      I4 => s00_axi_awvalid,
-      I5 => \^axi_awready_reg_0\,
-      O => \FSM_onehot_state_write_reg[0]_0\
-    );
-axi_bvalid_i_3: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AA80808080808080"
-    )
-        port map (
-      I0 => \^fsm_onehot_state_write_reg[1]_0\,
-      I1 => \^s00_axi_bvalid\,
-      I2 => s00_axi_bready,
-      I3 => \^axi_awready_reg_0\,
-      I4 => s00_axi_awvalid,
-      I5 => s00_axi_wvalid,
-      O => \FSM_onehot_state_write_reg[1]_1\
+      I0 => s00_axi_awvalid,
+      I1 => \^axi_awready_reg_0\,
+      O => \^axi_awready0__0\
     );
 axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => '1',
       D => axi_bvalid_reg_0,
-      Q => \^s00_axi_bvalid\,
+      Q => s00_axi_bvalid,
       R => axi_awready_i_1_n_0
     );
 axi_rvalid_reg: unisim.vcomponents.FDRE
@@ -381,14 +340,6 @@ axi_rvalid_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => axi_rvalid_reg_1,
       Q => \^axi_rvalid_reg_0\,
-      R => axi_awready_i_1_n_0
-    );
-axi_wready_reg: unisim.vcomponents.FDRE
-     port map (
-      C => s00_axi_aclk,
-      CE => '1',
-      D => axi_wready_reg_0,
-      Q => s00_axi_wready,
       R => axi_awready_i_1_n_0
     );
 \backup_reg[15]_i_1\: unisim.vcomponents.LUT6
@@ -1381,9 +1332,8 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control is
     axi_rvalid_reg : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_wvalid : in STD_LOGIC;
     s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_wvalid : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_arvalid : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC;
@@ -1391,34 +1341,28 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control is
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_bready : in STD_LOGIC
   );
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control is
   signal axi_arready_i_1_n_0 : STD_LOGIC;
   signal \^axi_arready_reg\ : STD_LOGIC;
+  signal \axi_awready0__0\ : STD_LOGIC;
   signal axi_awready_i_2_n_0 : STD_LOGIC;
   signal \^axi_awready_reg\ : STD_LOGIC;
   signal axi_bvalid_i_1_n_0 : STD_LOGIC;
   signal axi_rvalid_i_1_n_0 : STD_LOGIC;
   signal \^axi_rvalid_reg\ : STD_LOGIC;
-  signal axi_wready : STD_LOGIC;
-  signal axi_wready_i_1_n_0 : STD_LOGIC;
   signal \^s00_axi_bvalid\ : STD_LOGIC;
-  signal \^s00_axi_wready\ : STD_LOGIC;
   signal state_read : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal temp_control_slave_lite_v1_0_S00_AXI_inst_n_42 : STD_LOGIC;
-  signal temp_control_slave_lite_v1_0_S00_AXI_inst_n_43 : STD_LOGIC;
-  signal temp_control_slave_lite_v1_0_S00_AXI_inst_n_5 : STD_LOGIC;
-  signal temp_control_slave_lite_v1_0_S00_AXI_inst_n_7 : STD_LOGIC;
+  signal state_write : STD_LOGIC_VECTOR ( 1 downto 0 );
 begin
   axi_arready_reg <= \^axi_arready_reg\;
   axi_awready_reg <= \^axi_awready_reg\;
   axi_rvalid_reg <= \^axi_rvalid_reg\;
   s00_axi_bvalid <= \^s00_axi_bvalid\;
-  s00_axi_wready <= \^s00_axi_wready\;
 axi_arready_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"C4C4C4C4FFCFCFCF"
@@ -1432,30 +1376,29 @@ axi_arready_i_1: unisim.vcomponents.LUT6
       I5 => state_read(0),
       O => axi_arready_i_1_n_0
     );
-axi_awready_i_2: unisim.vcomponents.LUT6
+axi_awready_i_2: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FAFFEAEAFFFFEAEA"
+      INIT => X"CCC4FFCF"
     )
         port map (
-      I0 => axi_wready,
-      I1 => temp_control_slave_lite_v1_0_S00_AXI_inst_n_7,
-      I2 => s00_axi_wvalid,
-      I3 => temp_control_slave_lite_v1_0_S00_AXI_inst_n_5,
-      I4 => \^axi_awready_reg\,
-      I5 => s00_axi_awvalid,
+      I0 => s00_axi_awvalid,
+      I1 => \^axi_awready_reg\,
+      I2 => state_write(1),
+      I3 => s00_axi_wvalid,
+      I4 => state_write(0),
       O => axi_awready_i_2_n_0
     );
 axi_bvalid_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"AAA8ABA8BB88BB88"
+      INIT => X"FBFF3838C3FF0000"
     )
         port map (
-      I0 => temp_control_slave_lite_v1_0_S00_AXI_inst_n_42,
-      I1 => temp_control_slave_lite_v1_0_S00_AXI_inst_n_43,
-      I2 => s00_axi_wvalid,
-      I3 => \^s00_axi_bvalid\,
-      I4 => s00_axi_bready,
-      I5 => temp_control_slave_lite_v1_0_S00_AXI_inst_n_7,
+      I0 => \axi_awready0__0\,
+      I1 => state_write(0),
+      I2 => state_write(1),
+      I3 => s00_axi_bready,
+      I4 => \^s00_axi_bvalid\,
+      I5 => s00_axi_wvalid,
       O => axi_bvalid_i_1_n_0
     );
 axi_rvalid_i_1: unisim.vcomponents.LUT6
@@ -1471,45 +1414,30 @@ axi_rvalid_i_1: unisim.vcomponents.LUT6
       I5 => \^axi_rvalid_reg\,
       O => axi_rvalid_i_1_n_0
     );
-axi_wready_i_1: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => axi_wready,
-      I1 => \^s00_axi_wready\,
-      O => axi_wready_i_1_n_0
-    );
 temp_control_slave_lite_v1_0_S00_AXI_inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control_slave_lite_v1_0_S00_AXI
      port map (
-      \FSM_onehot_state_write_reg[0]_0\ => temp_control_slave_lite_v1_0_S00_AXI_inst_n_42,
-      \FSM_onehot_state_write_reg[1]_0\ => temp_control_slave_lite_v1_0_S00_AXI_inst_n_5,
-      \FSM_onehot_state_write_reg[1]_1\ => temp_control_slave_lite_v1_0_S00_AXI_inst_n_43,
-      \FSM_onehot_state_write_reg[2]_0\ => temp_control_slave_lite_v1_0_S00_AXI_inst_n_7,
       axi_arready_reg_0 => \^axi_arready_reg\,
       axi_arready_reg_1 => axi_arready_i_1_n_0,
+      \axi_awready0__0\ => \axi_awready0__0\,
       axi_awready_reg_0 => \^axi_awready_reg\,
       axi_awready_reg_1 => axi_awready_i_2_n_0,
       axi_bvalid_reg_0 => axi_bvalid_i_1_n_0,
       axi_rvalid_reg_0 => \^axi_rvalid_reg\,
       axi_rvalid_reg_1 => axi_rvalid_i_1_n_0,
-      axi_wready => axi_wready,
-      axi_wready_reg_0 => axi_wready_i_1_n_0,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(1 downto 0) => s00_axi_araddr(1 downto 0),
       s00_axi_aresetn => s00_axi_aresetn,
       s00_axi_arvalid => s00_axi_arvalid,
       s00_axi_awaddr(1 downto 0) => s00_axi_awaddr(1 downto 0),
       s00_axi_awvalid => s00_axi_awvalid,
-      s00_axi_bready => s00_axi_bready,
       s00_axi_bvalid => \^s00_axi_bvalid\,
       s00_axi_rdata(31 downto 0) => s00_axi_rdata(31 downto 0),
       s00_axi_rready => s00_axi_rready,
       s00_axi_wdata(31 downto 0) => s00_axi_wdata(31 downto 0),
-      s00_axi_wready => \^s00_axi_wready\,
       s00_axi_wstrb(3 downto 0) => s00_axi_wstrb(3 downto 0),
       s00_axi_wvalid => s00_axi_wvalid,
-      state_read(1 downto 0) => state_read(1 downto 0)
+      state_read(1 downto 0) => state_read(1 downto 0),
+      state_write(1 downto 0) => state_write(1 downto 0)
     );
 end STRUCTURE;
 library IEEE;
@@ -1552,6 +1480,7 @@ end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   signal \<const0>\ : STD_LOGIC;
+  signal \<const1>\ : STD_LOGIC;
   attribute x_interface_info : string;
   attribute x_interface_info of s00_axi_aclk : signal is "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK";
   attribute x_interface_mode : string;
@@ -1587,6 +1516,7 @@ begin
   s00_axi_bresp(0) <= \<const0>\;
   s00_axi_rresp(1) <= \<const0>\;
   s00_axi_rresp(0) <= \<const0>\;
+  s00_axi_wready <= \<const1>\;
 GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
@@ -1607,8 +1537,11 @@ U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_temp_control
       s00_axi_rdata(31 downto 0) => s00_axi_rdata(31 downto 0),
       s00_axi_rready => s00_axi_rready,
       s00_axi_wdata(31 downto 0) => s00_axi_wdata(31 downto 0),
-      s00_axi_wready => s00_axi_wready,
       s00_axi_wstrb(3 downto 0) => s00_axi_wstrb(3 downto 0),
       s00_axi_wvalid => s00_axi_wvalid
+    );
+VCC: unisim.vcomponents.VCC
+     port map (
+      P => \<const1>\
     );
 end STRUCTURE;

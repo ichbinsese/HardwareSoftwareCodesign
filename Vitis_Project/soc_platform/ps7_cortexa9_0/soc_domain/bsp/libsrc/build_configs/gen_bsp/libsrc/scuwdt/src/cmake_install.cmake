@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/scuwdt/src
+# Install script for directory: C:/Users/azmib/Desktop/test/Vitis_Project/soc_platform/ps7_cortexa9_0/soc_domain/bsp/libsrc/scuwdt/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,6 +1,6 @@
 vhdl xil_defaultlib  \
-"../../../bd/soc_design/ipshared/ea3d/hdl/temp_control_slave_lite_v1_0_S00_AXI.vhd" \
-"../../../bd/soc_design/ipshared/ea3d/hdl/temp_control.vhd" \
+"../../../bd/soc_design/ipshared/97fb/hdl/temp_control_slave_lite_v1_0_S00_AXI.vhd" \
+"../../../bd/soc_design/ipshared/97fb/hdl/temp_control.vhd" \
 "../../../bd/soc_design/ip/soc_design_temp_control_0_0/sim/soc_design_temp_control_0_0.vhd" \
 "../../../bd/soc_design/ipshared/3bfc/hdl/Instrument_Reader_slave_lite_v1_0_S00_AXI.vhd" \
 "../../../bd/soc_design/ipshared/3bfc/hdl/instrument_reader_module.vhd" \

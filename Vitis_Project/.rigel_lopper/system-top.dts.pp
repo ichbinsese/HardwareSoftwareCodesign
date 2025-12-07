@@ -1,10 +1,10 @@
-# 1 "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts"
+# 1 "C:\\Users\\azmib\\Desktop\\test\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts"
+# 1 "C:\\Users\\azmib\\Desktop\\test\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts"
 /dts-v1/;
-# 1 "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\zynq-7000.dtsi" 1
-# 10 "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\zynq-7000.dtsi"
+# 1 "C:\\Users\\azmib\\Desktop\\test\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\zynq-7000.dtsi" 1
+# 10 "C:\\Users\\azmib\\Desktop\\test\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\zynq-7000.dtsi"
 / {
  #address-cells = <1>;
  #size-cells = <1>;
@@ -585,8 +585,8 @@
   };
  };
 };
-# 3 "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
-# 1 "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\pl.dtsi" 1
+# 3 "C:\\Users\\azmib\\Desktop\\test\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
+# 1 "C:\\Users\\azmib\\Desktop\\test\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\pl.dtsi" 1
 / {
  amba_pl: amba_pl {
   ranges;
@@ -628,8 +628,8 @@
   };
  };
 };
-# 4 "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
-# 1 "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\pcw.dtsi" 1
+# 4 "C:\\Users\\azmib\\Desktop\\test\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
+# 1 "C:\\Users\\azmib\\Desktop\\test\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\pcw.dtsi" 1
  &ps7_cortexa9_0 {
   xlnx,i-cache-size = <0x8000>;
   xlnx,d-cache-line-size = <20>;
@@ -904,7 +904,7 @@
   fclk-enable = <0x1>;
   ps-clk-frequency = <50000000>;
  };
-# 5 "C:\\Users\\azmib\\Desktop\\Codesign\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
+# 5 "C:\\Users\\azmib\\Desktop\\test\\Vitis_Project\\soc_platform\\export\\soc_platform\\hw\\sdt\\system-top.dts" 2
 / {
  board = "pynq-z2";
  compatible = "xlnx,pynq-z2";

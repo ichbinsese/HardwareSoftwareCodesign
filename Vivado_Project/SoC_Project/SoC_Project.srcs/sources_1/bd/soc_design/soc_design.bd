@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCC6CFA53F622E079",
+      "boundary_crc": "0xCC6CFA53B4580162",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../SoC_Project.gen/sources_1/bd/soc_design",
       "name": "soc_design",
@@ -1923,7 +1923,7 @@
       },
       "temp_control_0": {
         "vlnv": "xilinx.com:user:temp_control:1.0",
-        "ip_revision": "2",
+        "ip_revision": "4",
         "xci_name": "soc_design_temp_control_0_0",
         "xci_path": "ip\\soc_design_temp_control_0_0\\soc_design_temp_control_0_0.xci",
         "inst_hier_path": "temp_control_0",
@@ -2092,8 +2092,8 @@
           "processing_system7_0/M_AXI_GP0_ACLK",
           "axi_smc/aclk",
           "rst_ps7_0_100M/slowest_sync_clk",
-          "temp_control_0/s00_axi_aclk",
-          "Instrument_Reader_0/s00_axi_aclk"
+          "Instrument_Reader_0/s00_axi_aclk",
+          "temp_control_0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -2106,8 +2106,8 @@
         "ports": [
           "rst_ps7_0_100M/peripheral_aresetn",
           "axi_smc/aresetn",
-          "temp_control_0/s00_axi_aresetn",
-          "Instrument_Reader_0/s00_axi_aresetn"
+          "Instrument_Reader_0/s00_axi_aresetn",
+          "temp_control_0/s00_axi_aresetn"
         ]
       }
     },

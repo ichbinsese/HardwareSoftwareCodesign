@@ -3,12 +3,12 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Sun Dec  7 11:17:18 2025
-# Process ID         : 5176
-# Current directory  : C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1
+# Start of session at: Sun Dec  7 11:47:53 2025
+# Process ID         : 9156
+# Current directory  : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1
 # Command line       : vivado.exe -log soc_design_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_design_wrapper.tcl
-# Log file           : C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/soc_design_wrapper.vds
-# Journal file       : C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1\vivado.jou
+# Log file           : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/soc_design_wrapper.vds
+# Journal file       : C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1\vivado.jou
 # Running On         : Azmis_Laptop
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 26200
@@ -19,15 +19,17 @@
 # Host memory        : 16802 MB
 # Swap memory        : 3355 MB
 # Total Virtual      : 20158 MB
-# Available Virtual  : 7427 MB
+# Available Virtual  : 7920 MB
 #-----------------------------------------------------------
 source soc_design_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 497.473 ; gain = 210.758
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 499.148 ; gain = 210.684
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/azmib/Desktop/Codesign/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/azmib/Desktop/HardwareSoftwareCodesign/IP_Cores/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
-Command: read_checkpoint -auto_incremental -incremental C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.srcs/utils_1/imports/synth_1/soc_design_wrapper.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.srcs/utils_1/imports/synth_1/soc_design_wrapper.dcp for incremental synthesis
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.cache/ip 
+Command: read_checkpoint -auto_incremental -incremental C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.srcs/utils_1/imports/synth_1/soc_design_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.srcs/utils_1/imports/synth_1/soc_design_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top soc_design_wrapper -part xc7z020clg400-1
 Starting synth_design
@@ -38,88 +40,88 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20220
+INFO: [Synth 8-7075] Helper process launched with PID 3120
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1271.355 ; gain = 492.746
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1272.230 ; gain = 494.863
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'soc_design_wrapper' [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/hdl/soc_design_wrapper.v:13]
-INFO: [Synth 8-6157] synthesizing module 'soc_design' [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:13]
-INFO: [Synth 8-6157] synthesizing module 'soc_design_Instrument_Reader_0_0' [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-5176-Azmis_Laptop/realtime/soc_design_Instrument_Reader_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'soc_design_Instrument_Reader_0_0' (0#1) [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-5176-Azmis_Laptop/realtime/soc_design_Instrument_Reader_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'soc_design_axi_smc_0' [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-5176-Azmis_Laptop/realtime/soc_design_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'soc_design_axi_smc_0' (0#1) [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-5176-Azmis_Laptop/realtime/soc_design_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'soc_design_processing_system7_0_0' [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-5176-Azmis_Laptop/realtime/soc_design_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'soc_design_processing_system7_0_0' (0#1) [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-5176-Azmis_Laptop/realtime/soc_design_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'soc_design_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:260]
-WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'soc_design_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:260]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'soc_design_processing_system7_0_0' has 65 connections declared, but only 63 given [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:260]
-INFO: [Synth 8-6157] synthesizing module 'soc_design_rst_ps7_0_100M_0' [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-5176-Azmis_Laptop/realtime/soc_design_rst_ps7_0_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'soc_design_rst_ps7_0_100M_0' (0#1) [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-5176-Azmis_Laptop/realtime/soc_design_rst_ps7_0_100M_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'soc_design_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:324]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'soc_design_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:324]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'soc_design_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:324]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'soc_design_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:324]
-WARNING: [Synth 8-7023] instance 'rst_ps7_0_100M' of module 'soc_design_rst_ps7_0_100M_0' has 10 connections declared, but only 6 given [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:324]
-INFO: [Synth 8-6157] synthesizing module 'soc_design_temp_control_0_0' [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-5176-Azmis_Laptop/realtime/soc_design_temp_control_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'soc_design_temp_control_0_0' (0#1) [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-5176-Azmis_Laptop/realtime/soc_design_temp_control_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'soc_design' (0#1) [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'soc_design_wrapper' (0#1) [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/hdl/soc_design_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'soc_design_wrapper' [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/hdl/soc_design_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'soc_design' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:13]
+INFO: [Synth 8-6157] synthesizing module 'soc_design_Instrument_Reader_0_0' [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-9156-Azmis_Laptop/realtime/soc_design_Instrument_Reader_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'soc_design_Instrument_Reader_0_0' (0#1) [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-9156-Azmis_Laptop/realtime/soc_design_Instrument_Reader_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'soc_design_axi_smc_0' [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-9156-Azmis_Laptop/realtime/soc_design_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'soc_design_axi_smc_0' (0#1) [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-9156-Azmis_Laptop/realtime/soc_design_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'soc_design_processing_system7_0_0' [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-9156-Azmis_Laptop/realtime/soc_design_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'soc_design_processing_system7_0_0' (0#1) [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-9156-Azmis_Laptop/realtime/soc_design_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'soc_design_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:260]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'soc_design_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:260]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'soc_design_processing_system7_0_0' has 65 connections declared, but only 63 given [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:260]
+INFO: [Synth 8-6157] synthesizing module 'soc_design_rst_ps7_0_100M_0' [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-9156-Azmis_Laptop/realtime/soc_design_rst_ps7_0_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'soc_design_rst_ps7_0_100M_0' (0#1) [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-9156-Azmis_Laptop/realtime/soc_design_rst_ps7_0_100M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'soc_design_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:324]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'soc_design_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:324]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'soc_design_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:324]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'soc_design_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:324]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_100M' of module 'soc_design_rst_ps7_0_100M_0' has 10 connections declared, but only 6 given [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:324]
+INFO: [Synth 8-6157] synthesizing module 'soc_design_temp_control_0_0' [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-9156-Azmis_Laptop/realtime/soc_design_temp_control_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'soc_design_temp_control_0_0' (0#1) [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/.Xil/Vivado-9156-Azmis_Laptop/realtime/soc_design_temp_control_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'soc_design' (0#1) [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/synth/soc_design.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'soc_design_wrapper' (0#1) [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/hdl/soc_design_wrapper.v:13]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1385.082 ; gain = 606.473
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1384.820 ; gain = 607.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1385.082 ; gain = 606.473
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1384.820 ; gain = 607.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1385.082 ; gain = 606.473
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1384.820 ; gain = 607.453
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1385.082 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1384.820 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0_in_context.xdc] for cell 'soc_design_i/processing_system7_0'
-Finished Parsing XDC File [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0_in_context.xdc] for cell 'soc_design_i/processing_system7_0'
-Parsing XDC File [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_temp_control_0_0/soc_design_temp_control_0_0/soc_design_temp_control_0_0_in_context.xdc] for cell 'soc_design_i/temp_control_0'
-Finished Parsing XDC File [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_temp_control_0_0/soc_design_temp_control_0_0/soc_design_temp_control_0_0_in_context.xdc] for cell 'soc_design_i/temp_control_0'
-Parsing XDC File [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0_in_context.xdc] for cell 'soc_design_i/Instrument_Reader_0'
-Finished Parsing XDC File [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0_in_context.xdc] for cell 'soc_design_i/Instrument_Reader_0'
-Parsing XDC File [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_axi_smc_0/soc_design_axi_smc_0/soc_design_axi_smc_0_in_context.xdc] for cell 'soc_design_i/axi_smc'
-Finished Parsing XDC File [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_axi_smc_0/soc_design_axi_smc_0/soc_design_axi_smc_0_in_context.xdc] for cell 'soc_design_i/axi_smc'
-Parsing XDC File [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0_in_context.xdc] for cell 'soc_design_i/rst_ps7_0_100M'
-Finished Parsing XDC File [c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0_in_context.xdc] for cell 'soc_design_i/rst_ps7_0_100M'
-Parsing XDC File [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0_in_context.xdc] for cell 'soc_design_i/processing_system7_0'
+Finished Parsing XDC File [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0_in_context.xdc] for cell 'soc_design_i/processing_system7_0'
+Parsing XDC File [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_temp_control_0_0/soc_design_temp_control_0_0/soc_design_temp_control_0_0_in_context.xdc] for cell 'soc_design_i/temp_control_0'
+Finished Parsing XDC File [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_temp_control_0_0/soc_design_temp_control_0_0/soc_design_temp_control_0_0_in_context.xdc] for cell 'soc_design_i/temp_control_0'
+Parsing XDC File [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0_in_context.xdc] for cell 'soc_design_i/Instrument_Reader_0'
+Finished Parsing XDC File [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0_in_context.xdc] for cell 'soc_design_i/Instrument_Reader_0'
+Parsing XDC File [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_axi_smc_0/soc_design_axi_smc_0/soc_design_axi_smc_0_in_context.xdc] for cell 'soc_design_i/axi_smc'
+Finished Parsing XDC File [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_axi_smc_0/soc_design_axi_smc_0/soc_design_axi_smc_0_in_context.xdc] for cell 'soc_design_i/axi_smc'
+Parsing XDC File [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0_in_context.xdc] for cell 'soc_design_i/rst_ps7_0_100M'
+Finished Parsing XDC File [c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0_in_context.xdc] for cell 'soc_design_i/rst_ps7_0_100M'
+Parsing XDC File [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1398.004 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1384.820 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1398.004 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1384.820 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1398.004 ; gain = 619.395
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1384.820 ; gain = 607.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1398.004 ; gain = 619.395
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1384.820 ; gain = 607.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1398.004 ; gain = 619.395
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1384.820 ; gain = 607.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1398.004 ; gain = 619.395
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1384.820 ; gain = 607.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -142,25 +144,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1401.531 ; gain = 622.922
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1396.516 ; gain = 619.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1570.711 ; gain = 792.102
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1571.801 ; gain = 794.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1570.934 ; gain = 792.324
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1572.363 ; gain = 794.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1580.598 ; gain = 801.988
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1582.363 ; gain = 804.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -178,37 +180,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.070 ; gain = 1037.461
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.957 ; gain = 1039.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.070 ; gain = 1037.461
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.957 ; gain = 1039.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.070 ; gain = 1037.461
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.957 ; gain = 1039.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.070 ; gain = 1037.461
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.957 ; gain = 1039.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.070 ; gain = 1037.461
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.957 ; gain = 1039.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.070 ; gain = 1037.461
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.957 ; gain = 1039.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -236,24 +238,24 @@ Report Cell Usage:
 |5     |soc_design_temp_control_0       |     1|
 +------+--------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.070 ; gain = 1037.461
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.957 ; gain = 1039.590
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 1816.070 ; gain = 1024.539
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.070 ; gain = 1037.461
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1816.957 ; gain = 1039.590
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1816.957 ; gain = 1039.590
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1816.070 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1816.957 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1828.824 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1829.727 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete | Checksum: fb854d05
 INFO: [Common 17-83] Releasing license: Synthesis
-35 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+35 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1832.797 ; gain = 1286.516
-INFO: [Common 17-1381] The checkpoint 'C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/synth_1/soc_design_wrapper.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1833.684 ; gain = 1285.738
+INFO: [Common 17-1381] The checkpoint 'C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/synth_1/soc_design_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file soc_design_wrapper_utilization_synth.rpt -pb soc_design_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Dec  7 11:18:03 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  7 11:48:38 2025...

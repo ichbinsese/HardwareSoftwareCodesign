@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-//Date        : Sun Dec  7 11:16:11 2025
+//Date        : Sun Dec  7 11:46:44 2025
 //Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 //Command     : generate_target soc_design.bd
 //Design      : soc_design

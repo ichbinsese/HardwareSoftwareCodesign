@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/azmib/Desktop/Codesign/Vitis_Project/soc_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/emacps/src
+# Install script for directory: C:/Users/azmib/Desktop/test/Vitis_Project/soc_platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/emacps/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

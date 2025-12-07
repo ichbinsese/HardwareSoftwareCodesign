@@ -1,5 +1,6 @@
 #include "temperature_control.h"
 #include <xil_io.h>
+#include <xil_printf.h>
 #include "xparameters.h"
 #include "errors.h"
 #include "tm_tc_message_handler.h"
@@ -42,6 +43,9 @@ static void write_heater_states(void)
     value |= (uint32_t)(heater2_state & 0x1u) << HEATER2_BIT;
 
     Xil_Out32(REG_USER_CONTROL_ADDR, value);
+
+    uint32_t control_reg = Xil_In32(REG_USER_CONTROL_ADDR);
+    xil_printf("\nheater state %u", control_reg);
 }
 
 

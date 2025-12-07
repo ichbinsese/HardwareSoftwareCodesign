@@ -31,12 +31,10 @@ static uint8_t overflow = 0;        // true if at least one overwrite has occurr
 uint16_t read_instrument_val()
 {
     uint32_t result;
-    uint32_t read_start = 0;
+    uint32_t read_start = (1 << INSTRUMENT_ENABLE_BIT);
 
-    result = Xil_In32(INSTRUMENT_DATA_ADDR);
-
-    read_start = read_start | (1 << INSTRUMENT_ENABLE_BIT);
     Xil_Out32(INSTRUMENT_CONTROL_ADDR, read_start);
+    result = Xil_In32(INSTRUMENT_DATA_ADDR);
     Xil_Out32(INSTRUMENT_CONTROL_ADDR, read_start);
 
     return (uint16_t)result;

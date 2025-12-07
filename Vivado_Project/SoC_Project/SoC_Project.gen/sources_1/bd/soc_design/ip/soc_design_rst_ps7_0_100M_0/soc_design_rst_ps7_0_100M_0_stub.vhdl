@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
--- Date        : Thu Dec  4 08:17:29 2025
+-- Date        : Sat Dec  6 22:03:07 2025
 -- Host        : Azmis_Laptop running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0_stub.vhdl
+--               c:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/ip/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0_stub.vhdl
 -- Design      : soc_design_rst_ps7_0_100M_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1

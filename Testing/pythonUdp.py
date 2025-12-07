@@ -61,11 +61,17 @@ def decode_tm_instrument_data(payload: bytes):
         return
     status = payload[0]
     raw_data = payload[1:]
-    if len(raw_data) % 2 != 0:
-        print(" TM_INSTRUMENT_DATA: invalid uint16 array")
-        return
-    values = [struct.unpack(">H", raw_data[i:i+2])[0] for i in range(0, len(raw_data), 2)]
-    print(f" TM_INSTRUMENT_DATA: status={status}, values={values}")
+
+    print("\nstatus: ", status);
+    try:
+        for i in range(0, len(raw_data), 2):
+            high = raw_data[i]
+            low = raw_data[i+1]
+
+            little_endian_hex = f"{low:02X}{high:02X}"
+            print(little_endian_hex, end=' ')
+    except: 
+        print("\nFINSIHED")
 
 
 def decode_tm_instrument_hk(payload: bytes):
@@ -103,7 +109,6 @@ def parse_tm(packet: bytes):
 
     print(f"TM header: start=0x{start:04X}, type=0x{ptype:02X}, "
           f"id=0x{pid:02X}, seq={seq}, total_len={total_len}")
-    print(f"Payload ({len(payload)} bytes): {payload.hex()}")
     print(f"Extra data ({len(extra_data)} bytes): {extra_data.hex()}")
 
     # Decode payload
@@ -134,7 +139,7 @@ def parse_tm(packet: bytes):
 # --------------------------------------------------------------------
 def tm_listener(sock: socket.socket):
     while True:
-        data, addr = sock.recvfrom(2048)
+        data, addr = sock.recvfrom(65507)
         print(f"\nReceived {len(data)} bytes from {addr}")
         parse_tm(data)
 

@@ -38,10 +38,10 @@ void udp_message_callback(void *arg, struct udp_pcb *tpcb, struct pbuf *p, const
 
 uint32_t udp_send_message(uint8_t *packet, int packet_lenght){
     xil_printf("\n");
-    for(int i = 0; i < packet_lenght; i++){
-        xil_printf("%x",packet[i]);
-    }
-    xil_printf("\n");
+    //for(int i = 0; i < packet_lenght; i++){
+    //    xil_printf("%x",packet[i]);
+    //}
+    xil_printf("\n%u\n", packet_lenght);
     struct pbuf *p;
     p = pbuf_alloc(PBUF_TRANSPORT, packet_lenght, PBUF_RAM);
     memcpy(p->payload, packet, packet_lenght);

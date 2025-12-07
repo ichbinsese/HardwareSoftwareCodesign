@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/soc_design_rst_ps7_0_100M_0_synth_1'
+HD_PWD='C:/Users/azmib/Desktop/HardwareSoftwareCodesign/Vivado_Project/SoC_Project/SoC_Project.runs/soc_design_rst_ps7_0_100M_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -197,12 +197,30 @@
                 "MA": "Data",
                 "MX": "/processing_system7_0",
                 "MI": "M_AXI_GP0",
-                "MS": "SEG_IP_InstrumentReader_0_S00_AXI_reg",
+                "MS": "SEG_Instrument_Reader_0_S00_AXI_reg",
                 "MV": "xilinx.com:ip:processing_system7:5.5",
-                "SX": "/IP_InstrumentReader_0",
+                "SX": "/Instrument_Reader_0",
                 "SI": "S00_AXI",
                 "SS": "S00_AXI_reg",
-                "SV": "xilinx.com:user:IP_InstrumentReader:1.0",
+                "SV": "xilinx.com:user:Instrument_Reader:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V4": {
+                "VT": "AC",
+                "BA": "0x43C10000",
+                "HA": "0x43C1FFFF",
+                "BP": "C_S00_AXI_BASEADDR",
+                "HP": "C_S00_AXI_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_temp_control_0_S00_AXI_reg",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/temp_control_0",
+                "SI": "S00_AXI",
+                "SS": "S00_AXI_reg",
+                "SV": "xilinx.com:user:temp_control:1.0",
                 "TM": "both",
                 "TU": "register"
             }
@@ -218,6 +236,11 @@
             },
             {
                 "src": "V3",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V4",
                 "trg": "V2",
                 "EH": "2"
             }

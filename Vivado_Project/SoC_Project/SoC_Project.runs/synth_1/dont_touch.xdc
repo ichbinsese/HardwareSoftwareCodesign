@@ -7,8 +7,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design 
 # IP: bd/soc_design/ip/soc_design_processing_system7_0_0/soc_design_processing_system7_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_processing_system7_0_0 || ORIG_REF_NAME==soc_design_processing_system7_0_0} -quiet] -quiet
 
-# IP: bd/soc_design/ip/soc_design_IP_InstrumentReader_0_0/soc_design_IP_InstrumentReader_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_IP_InstrumentReader_0_0 || ORIG_REF_NAME==soc_design_IP_InstrumentReader_0_0} -quiet] -quiet
+# IP: bd/soc_design/ip/soc_design_temp_control_0_0/soc_design_temp_control_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_temp_control_0_0 || ORIG_REF_NAME==soc_design_temp_control_0_0} -quiet] -quiet
+
+# IP: bd/soc_design/ip/soc_design_Instrument_Reader_0_0/soc_design_Instrument_Reader_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_Instrument_Reader_0_0 || ORIG_REF_NAME==soc_design_Instrument_Reader_0_0} -quiet] -quiet
 
 # IP: bd/soc_design/ip/soc_design_axi_smc_0/soc_design_axi_smc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_axi_smc_0 || ORIG_REF_NAME==soc_design_axi_smc_0} -quiet] -quiet
@@ -16,4 +19,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_
 # IP: bd/soc_design/ip/soc_design_rst_ps7_0_100M_0/soc_design_rst_ps7_0_100M_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==soc_design_rst_ps7_0_100M_0 || ORIG_REF_NAME==soc_design_rst_ps7_0_100M_0} -quiet] -quiet
 
-# XDC: c:/Users/azmib/Desktop/Codesign/Vivado_Project/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/soc_design_ooc.xdc
+# XDC: c:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.gen/sources_1/bd/soc_design/soc_design_ooc.xdc

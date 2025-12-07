@@ -48,6 +48,7 @@ set(USER_COMPILE_SOURCES
 "tm_tc_message_handler.c"
 "scheduler.c"
 "instrument_control.c"
+"temperature_control.c"
 )
 
 

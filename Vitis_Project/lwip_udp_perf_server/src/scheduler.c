@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <xil_printf.h>
 #include "instrument_control.h"
+#include "temperature_control.h"
 
 #define PERIOD_10MS 10
 #define PERIOD_500MS 500
@@ -23,6 +24,8 @@ void tasks_cyclical(){
     else if(period_500ms_passed == 1)
 	{
 		period_500ms_passed = 0;
+        temperature_control_cyclic();
+
 	}
 
 	else if(period_10ms_passed == 1)

@@ -602,17 +602,29 @@
    clock-output-names = "fabric_clk";
    clocks = <&clkc 15>;
   };
-  IP_InstrumentReader_0: IP_InstrumentReader@43c00000 {
+  Instrument_Reader_0: Instrument_Reader@43c00000 {
    xlnx,s00-axi-data-width = <32>;
-   compatible = "xlnx,IP-InstrumentReader-1.0";
+   compatible = "xlnx,Instrument-Reader-1.0";
    status = "okay";
    clock-names = "s00_axi_aclk";
    xlnx,s00-axi-addr-width = <4>;
-   xlnx,ip-name = "IP_InstrumentReader";
+   xlnx,ip-name = "Instrument_Reader";
    xlnx,edk-iptype = "PERIPHERAL";
    reg = <0x43c00000 0x10000>;
    clocks = <&clkc 15>;
-   xlnx,name = "IP_InstrumentReader_0";
+   xlnx,name = "Instrument_Reader_0";
+  };
+  temp_control_0: temp_control@43c10000 {
+   xlnx,s00-axi-data-width = <32>;
+   compatible = "xlnx,temp-control-1.0";
+   status = "okay";
+   clock-names = "s00_axi_aclk";
+   xlnx,s00-axi-addr-width = <4>;
+   xlnx,ip-name = "temp_control";
+   xlnx,edk-iptype = "PERIPHERAL";
+   reg = <0x43c10000 0x10000>;
+   clocks = <&clkc 15>;
+   xlnx,name = "temp_control_0";
   };
  };
 };
@@ -943,7 +955,8 @@
          <0x00100000 &ps7_ddr_0_memory 0x00100000 0x1FF00000>,
          <0x0 &ps7_ram_0_memory 0x0 0x30000>,
          <0xffff0000 &ps7_ram_1_memory 0xffff0000 0xfe00>,
-         <0x43c00000 &IP_InstrumentReader_0 0x43c00000 0x10000>,
+         <0x43c00000 &Instrument_Reader_0 0x43c00000 0x10000>,
+         <0x43c10000 &temp_control_0 0x43c10000 0x10000>,
          <0xf8008000 &ps7_afi_0 0xf8008000 0x1000>,
          <0xf8009000 &ps7_afi_1 0xf8009000 0x1000>,
          <0xf800a000 &ps7_afi_2 0xf800a000 0x1000>,

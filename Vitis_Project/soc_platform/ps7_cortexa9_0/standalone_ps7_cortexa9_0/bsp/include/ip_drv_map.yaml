@@ -1,5 +1,5 @@
-IP_InstrumentReader_0:
-- IP_InstrumentReader
+Instrument_Reader_0:
+- Instrument_Reader
 - None
 ps7_afi_0:
 - ps7_afi
@@ -91,3 +91,6 @@ ps7_usb_0:
 ps7_xadc_0:
 - ps7_xadc
 - xadcps
+temp_control_0:
+- temp_control
+- None

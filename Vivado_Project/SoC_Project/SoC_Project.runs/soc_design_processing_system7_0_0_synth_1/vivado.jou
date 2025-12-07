@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Thu Dec  4 08:16:46 2025
-# Process ID         : 17328
+# Start of session at: Sun Dec  7 10:25:35 2025
+# Process ID         : 17660
 # Current directory  : C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/soc_design_processing_system7_0_0_synth_1
 # Command line       : vivado.exe -log soc_design_processing_system7_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_design_processing_system7_0_0.tcl
 # Log file           : C:/Users/azmib/Desktop/Codesign/SoC_Project/SoC_Project.runs/soc_design_processing_system7_0_0_synth_1/soc_design_processing_system7_0_0.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores : 14
 # CPU Logical cores  : 20
 # Host memory        : 16802 MB
-# Swap memory        : 2952 MB
-# Total Virtual      : 19755 MB
-# Available Virtual  : 7296 MB
+# Swap memory        : 3355 MB
+# Total Virtual      : 20158 MB
+# Available Virtual  : 7465 MB
 #-----------------------------------------------------------
 source soc_design_processing_system7_0_0.tcl -notrace

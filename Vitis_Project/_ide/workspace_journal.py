@@ -1,4 +1,4 @@
-# 2025-12-05T16:31:59.804367100
+# 2025-12-07T11:20:59.509768300
 import vitis
 
 client = vitis.create_client()
@@ -10,25 +10,9 @@ status = platform.build()
 comp = client.get_component(name="lwip_udp_perf_server")
 comp.build()
 
-status = platform.build()
-
-comp.build()
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../SoC_Project/soc_design_wrapper.xsa")
 
 status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
 
 status = platform.build()
 

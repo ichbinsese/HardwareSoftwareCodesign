@@ -39,7 +39,7 @@
 					"usingPs7Init": {
 						"runPs7Init": true,
 						"runPs7PostInit": true,
-						"ps7InitTclFile": "C:\\Users\\azmib\\Desktop\\Vitis_Project\\lwip_udp_perf_server\\_ide\\psinit\\ps7_init.tcl"
+						"ps7InitTclFile": "C:\\Users\\azmib\\Desktop\\Abgabe_Codesign_Beyrouti_Demirkiran_Merk\\Project\\Vitis_Project\\lwip_udp_perf_server\\_ide\\psinit\\ps7_init.tcl"
 					}
 				},
 				"downloadElf": [

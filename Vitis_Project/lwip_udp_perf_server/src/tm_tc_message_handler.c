@@ -339,5 +339,5 @@ uint32_t send_tm_instrument_housekeeping_message(uint8_t receive_state, uint8_t 
  */
 uint32_t send_tm_sensor_temperature_reply(uint8_t sensor_id, uint16_t temp_value){
     uint8_t data[] = {sensor_id,(uint8_t)(temp_value & 0xFF),(uint8_t)(temp_value >> 8)};
-    return send_tm_message(TM_instrument_housekeeping, data, TM_SENSOR_TEMPERATURE_REPLY_DATA_LENGHT);;
+    return send_tm_message(TM_sensor_tempertature_reply, data, TM_SENSOR_TEMPERATURE_REPLY_DATA_LENGHT);
 }

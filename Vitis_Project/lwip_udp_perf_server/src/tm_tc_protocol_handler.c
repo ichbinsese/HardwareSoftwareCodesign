@@ -2,18 +2,37 @@
 #include <stdint.h>
 #include "errors.h"
 #include "tm_tc_message_handler.h"
+#include <xil_printf.h>
 
+/**
+ * @file tm_tc_protocol_handler.c
+ * @brief TM/TC protocol implementation: receive parsing and TM message creation.
+ *
+ * Implements parsing of incoming TC packets and creation/sending of TM packets
+ * over the UDP layer. Internal helper functions are static and not exposed.
+ */
 
-uint8_t global_sequence_counter = 0;
+/* Sequence counter used for outgoing TM messages. */
+static uint8_t global_sequence_counter = 0;
 
-uint32_t execute_callback(enum tc_message_type message, uint8_t *data, int data_lenght);
-uint32_t send_tm_ack_message(uint8_t sequence_counter);
-uint32_t send_tm_exec_message(uint8_t status,uint8_t sequence_counter);
+/* Internal helper prototypes (static) */
+static uint32_t create_message(uint8_t** packet, enum tm_message_type type, uint8_t* data, uint16_t data_lenght, uint8_t sequence_counter);
+static uint32_t send_tm_ack_message(uint8_t sequence_counter);
+static uint32_t send_tm_exec_message(uint8_t status, uint8_t sequence_counter);
 
-
+/**
+ * @brief Process a received package from the UDP layer.
+ *
+ * Validates the preamble, packet type and length, sends an ACK and then
+ * dispatches the TC message to the message handler callbacks.
+ *
+ * @param package Pointer to the received package bytes.
+ * @param package_lenght Length of the received package in bytes.
+ * @return ERR_OK on success or an error code from errors.h on failure.
+ */
 uint32_t receive_message(uint8_t *package, int package_lenght){
     uint32_t err;
-        xil_printf("\n");
+    xil_printf("\n");
     for(int i = 0; i < package_lenght; i++){
         xil_printf("%x",package[i]);
     }
@@ -24,14 +43,14 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
     }
     enum tc_message_type message_type = (enum tc_message_type) package[3];
     uint8_t sequence_counter = package[4];
-    //TODO MAYBE CHANGE FOR BIG ENDIAN
+    /* TODO: MAYBE CHANGE FOR BIG ENDIAN */
     uint16_t nominal_package_lenght = ((uint16_t)package[5] << 8) | package[6];
     xil_printf("%x  ",nominal_package_lenght);
     if(nominal_package_lenght!= package_lenght){
         xil_printf("received corrupt or wrong package, stated package lenght does not match actual lenght");
         return ERR_WRONG_PACKAGE_LENGHT;
     }
-    
+
     int data_lenght = package_lenght - TC_PREAMBLE_LENGHT;
     global_sequence_counter = sequence_counter;
     err = send_tm_ack_message(sequence_counter);
@@ -44,23 +63,46 @@ uint32_t receive_message(uint8_t *package, int package_lenght){
     return  err;
 }
 
- uint32_t create_message( uint8_t** packet, enum tm_message_type type, uint8_t* data, uint16_t data_lenght,uint8_t sequence_counter){
-    *packet = malloc(sizeof(uint8_t) * (data_lenght + TM_PREAMBLE_LENGHT));    
+/**
+ * @brief Create a TM packet buffer with preamble and payload.
+ *
+ * Allocates a packet buffer that must be freed by the caller of udp_send_message.
+ *
+ * @param[out] packet Pointer to the allocated packet buffer pointer.
+ * @param type TM message type to set in the preamble.
+ * @param data Pointer to payload bytes or NULL if none.
+ * @param data_lenght Number of payload bytes.
+ * @param sequence_counter Sequence counter to include in the preamble.
+ * @return ERR_OK on success.
+ */
+static uint32_t create_message( uint8_t** packet, enum tm_message_type type, uint8_t* data, uint16_t data_lenght,uint8_t sequence_counter){
+    *packet = malloc(sizeof(uint8_t) * (data_lenght + TM_PREAMBLE_LENGHT));
     (*packet)[0] = START_0;
     (*packet)[1] = START_1;
     (*packet)[2] = TM_PACKAGE_TYPE;
     (*packet)[3] = (uint8_t) type;
     (*packet)[4] = sequence_counter;
-    //TODO MAYBE CHANGE FOR BIG ENDIAN
-    (*packet)[6] = (data_lenght + TM_PREAMBLE_LENGHT) & 0xFF;        
+    /* TODO MAYBE CHANGE FOR BIG ENDIAN */
+    (*packet)[6] = (data_lenght + TM_PREAMBLE_LENGHT) & 0xFF;
     (*packet)[5] = ((data_lenght + TM_PREAMBLE_LENGHT)>> 8) & 0xFF;
-     
+
     if(data_lenght > 0){
           memcpy((*packet) + TM_PREAMBLE_LENGHT , data, data_lenght * sizeof(uint8_t));
-    }               
+    }
     return ERR_OK;
 }
 
+/**
+ * @brief Send a TM message (non-ACK/EXEC) over UDP.
+ *
+ * Increments the global sequence counter and constructs the packet before
+ * handing it to the UDP send function.
+ *
+ * @param type TM message type (must not be TM_Ack or TM_Exec).
+ * @param data Pointer to payload bytes or NULL.
+ * @param data_lenght Number of payload bytes.
+ * @return ERR_OK on success or an error code.
+ */
 uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_lenght){
     uint32_t err;
     uint8_t* packet = NULL;
@@ -71,7 +113,13 @@ uint32_t send_tm_message(enum tm_message_type type, uint8_t *data, int data_leng
     return err;
 }
 
-uint32_t send_tm_ack_message(uint8_t sequence_counter){ 
+/**
+ * @brief Create and send a TM ACK message for a received sequence.
+ *
+ * @param sequence_counter Sequence counter to acknowledge.
+ * @return ERR_OK on success or an error code.
+ */
+static uint32_t send_tm_ack_message(uint8_t sequence_counter){
     uint32_t err;
     uint8_t* packet = NULL;
     err = create_message(&packet, TM_Ack, NULL, 0, sequence_counter);
@@ -79,12 +127,17 @@ uint32_t send_tm_ack_message(uint8_t sequence_counter){
     return err;
 }
 
-uint32_t send_tm_exec_message(uint8_t status,uint8_t sequence_counter){
+/**
+ * @brief Create and send a TM EXEC message reporting execution status.
+ *
+ * @param status Execution status code to report.
+ * @param sequence_counter Sequence counter of the original TC message.
+ * @return ERR_OK on success or an error code.
+ */
+static uint32_t send_tm_exec_message(uint8_t status,uint8_t sequence_counter){
     uint32_t err;
     uint8_t* packet = NULL;
     err = create_message(&packet, TM_Exec, &status, 1, sequence_counter);
     err = udp_send_message(packet,TM_PREAMBLE_LENGHT + 1);
     return err;
 }
-
-
